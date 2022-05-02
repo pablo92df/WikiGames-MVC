@@ -1,4 +1,6 @@
-﻿namespace WikiGames.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WikiGames.Models.Entities
 {
     public class Genero
     {

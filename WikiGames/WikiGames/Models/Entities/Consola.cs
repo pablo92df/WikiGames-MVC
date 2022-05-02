@@ -14,7 +14,7 @@ namespace WikiGames.Models.Entities
         public DateTime FechaLanzamiento { get; set; }
 
         public int MarcaId { get; set; }
-
+        public Marca Marca { get; set; }
         public HashSet<JuegoConsola> JuegoConsola { get; set; }
 
 

@@ -16,6 +16,20 @@ namespace WikiGames.Data
             configurationBuilder.Properties<DateTime>().HaveColumnType("date");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+            modelBuilder.Entity<JuegoConsola>().HasKey(prop => new { prop.JuegoId, prop.ConsolaId });
+           
+
+        }
+
         public DbSet<Marca> Marcas { get; set; }
+        public DbSet<Juego> Juegos { get; set; }
+        public DbSet<Consola> Consolas { get; set; }
+        public DbSet<Genero> Generos { get; set; }
+        public DbSet<Desarrollador> Desarrolladores { get; set; }
+        public DbSet<JuegoConsola> JuegosConsolas { get; set; }
+
+
     }
 }
