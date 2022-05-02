@@ -19,7 +19,8 @@ namespace WikiGames.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
         {
             modelBuilder.Entity<JuegoConsola>().HasKey(prop => new { prop.JuegoId, prop.ConsolaId });
-           
+            modelBuilder.Entity<Genero>().Property(x => x.Nombre).HasField("_Nombre");
+
 
         }
 

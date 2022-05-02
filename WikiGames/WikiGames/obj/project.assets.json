@@ -2030,19 +2030,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pablo\\.nuget\\packages\\": {}
+    "C:\\Users\\Pferreyra\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+      "projectUniqueName": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
       "projectName": "WikiGames",
-      "projectPath": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
-      "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
+      "projectPath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+      "packagesPath": "C:\\Users\\Pferreyra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pferreyra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2109,7 +2114,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
