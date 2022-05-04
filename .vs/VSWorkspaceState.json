@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WikiGames",
+    "\\WikiGames\\WikiGames"
   ],
-  "SelectedNode": "\\C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC",
+  "SelectedNode": "\\WikiGames\\WikiGames.sln",
   "PreviewInSolutionExplorer": false
 }

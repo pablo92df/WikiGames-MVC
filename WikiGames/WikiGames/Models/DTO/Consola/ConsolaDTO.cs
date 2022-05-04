@@ -1,22 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using WikiGames.Models.Entities;
 
-namespace WikiGames.Models.Entities
+namespace WikiGames.Models.DTO.Consola
 {
-    public class Consola
+    public class ConsolaDTO
     {
         public int ConsolaId { get; set; }
-        [Required,MaxLength(50)]
-
         public string ConsolaName { get; set; }
-        [Required,MaxLength(500)]
-
         public string Descripcion { get; set; }
-        
         public DateTime FechaLanzamiento { get; set; }
-        [Required]
         public int MarcaId { get; set; }
         public Marca Marca { get; set; }
-        public HashSet<JuegoConsola> JuegoConsola { get; set; }
-
+        //public HashSet<JuegoConsola> JuegoConsola { get; set; }
     }
 }

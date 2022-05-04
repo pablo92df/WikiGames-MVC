@@ -1,0 +1,55 @@
+﻿@model WikiGames.Models.DTO.Juego.JuegoCreacionDTO
+
+@{
+    ViewData["Title"] = "Cargar Nuevo Juego";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-12">
+			<h3>Crear Juego</h3>
+		</div>
+		
+	</div>
+
+	<div class="row">
+		<div class="col-sm-10">
+			@*<form method="post" asp-action="Create">*@
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="form-group">
+					<label asp-for="JuegoName" class="control-label"></label>
+					<input asp-for="JuegoName" class="form-control" />
+					<span asp-validation-for="JuegoName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="FechaLanzamientoOficial" class="control-label"></label>
+					<input asp-for="FechaLanzamientoOficial" type="datetime" class="form-control" />
+					<span asp-validation-for="FechaLanzamientoOficial" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label class="control-label">Marcas</label>
+					<select name="GeneroId" class="form-control" asp-items="ViewBag.Generos"></select>
+				</div>
+				<div class="form-group">
+					<label asp-for="Descripcion" class="control-label"></label>
+					<input asp-for="Descripcion" class="form-control" />
+					<span asp-validation-for="Descripcion" class="text-danger"></span>
+				</div>
+				
+
+				<div class="form-group">
+					<input type="submit" value="Crear Producto" class="btn btn-primary" />
+				</div>
+			@*</form>*@
+		</div>
+	</div>
+</div>
+@*Validacion lado cliente*@
+	@section Scripts{
+
+			@{ <partial name="_ValidationScriptsPartial" />
+		}
+}

@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
+using WikiGames.Models.DTO.Juego;
+using WikiGames.Models.Entities;
 
 namespace WikiGames.Controllers
 {
@@ -21,5 +24,20 @@ namespace WikiGames.Controllers
 
             return View(Juegos);
         }
+
+        public IActionResult Create()
+        {
+            ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");
+
+            return View();
+        }
+
+        //[HttpPost]
+        //public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
+        //{ 
+            
+        //}
+
+
     }
 }

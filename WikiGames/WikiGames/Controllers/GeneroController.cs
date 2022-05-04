@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
+using WikiGames.Models.DTO;
 using WikiGames.Models.Entities;
 
 namespace WikiGames.Controllers
@@ -23,10 +24,15 @@ namespace WikiGames.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(Genero genero) 
+        public async Task<IActionResult> Create(GeneroDTO generoDTO) 
         {
-            if (!(genero is null)) 
+            if (!(generoDTO is null)) 
             {
+                Genero genero = new Genero()
+                    {
+                        Nombre = generoDTO.Nombre
+                    };
+
                 context.Generos.Add(genero);
                 context.SaveChanges();
                 TempData["mensaje"] = "Genero Cargado con exito";
