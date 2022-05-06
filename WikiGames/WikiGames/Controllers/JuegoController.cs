@@ -28,15 +28,16 @@ namespace WikiGames.Controllers
         public IActionResult Create()
         {
             ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");
-
+            ViewData["Consolas"] = new SelectList(context.Consolas, "ConsolaId", "ConsolaName");
             return View();
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
-        //{ 
-            
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
+        {
+            var jueguito = juegoDTO;
+            return View(juegoDTO);
+        }
 
 
     }

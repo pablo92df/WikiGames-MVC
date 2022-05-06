@@ -1,4 +1,6 @@
-﻿using WikiGames.Models.Entities;
+﻿using WikiGames.Models.DTO.JuegosConsola;
+
+
 
 namespace WikiGames.Models.DTO.Juego
 {
@@ -10,6 +12,6 @@ namespace WikiGames.Models.DTO.Juego
         public string Descripcion { get; set; }
         public DateTime FechaLanzamientoOficial { get; set; }
         public List<int> Generos { get; set; }
-        public List<JuegoConsola> JuegosConsola { get; set; }
+        public List<JuegoConsolaDTO> JuegosConsolaDTO { get; set; }
     }
 }

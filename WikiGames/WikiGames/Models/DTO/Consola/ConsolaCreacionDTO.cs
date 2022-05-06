@@ -8,7 +8,7 @@ namespace WikiGames.Models.DTO.Consola
         public string Descripcion { get; set; }
         public DateTime FechaLanzamiento { get; set; }
         public int MarcaId { get; set; }
-       //public Marca Marca { get; set; }
+        //public Marca Marca { get; set; }
         
     }
 }
