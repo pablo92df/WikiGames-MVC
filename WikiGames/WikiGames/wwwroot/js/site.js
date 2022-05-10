@@ -3,53 +3,46 @@
 
 // Write your JavaScript code.
 const Generos = new Array();
-
-$(document).ready(function () {
-    console.log("document");
-    if ($("#generos").length > 0)
-    {
-        //  generateArrayJuehos();
-    }
-});
+const consolaGame = new Array();
 
 
+//CARGAR JUEGOS NUEVOS
+//AGREGAR LANZAMIENTO POR CONSOLA
 $("#btnAgregar").click(function () {
-
+    let publicadoConsola = {};
     let listConsolas = $("#tBody");
     let consola = $("#consolaName option:selected").text();
     let consolaId = $("#consolaName option:selected").val();
     let cantidad = $("#ventas").val();
     let fecha = $("#fechaLanzamiento").val();
-   
+
+    publicadoConsola.ConsolaName = consola;
+    publicadoConsola.ConsolaId = consolaId;
+    publicadoConsola.FechaLanzamiento = fecha;
+    publicadoConsola.CopiasVendidas = cantidad;
+    consolaGame.push(publicadoConsola);
+
     let juegoConsola =
         "<tr><td>" + consola
-        + "</td style='visibility:hidden'><td>" + consolaId
         + "</td><td>" + fecha
         + "</td><td>" + cantidad
-        +"</tr >";
+        + "</td><td><button>Borrar</button></td></tr >";
 
     listConsolas.append(juegoConsola);
     resetFieldJuegoConsola();
 
 });
 
-function quitarGenero(idGenero) {
-    for (let i in Generos) {
-        if (Generos[i] === idGenero) {
-            Generos.splice(i)
-        }
-    }
-    var divElement = document.getElementById("generosSeleccionados");
-    var divDelete = document.getElementById("idGenero");
-    divElement.removeChild(divDelete);
-}
+
 
 $("#generos").change(function () {
-
+ 
     let divGeneros = $("#generosSeleccionados");
     let generoId = $("#generos option:selected").val();
     let generoName = $("#generos option:selected").text();
     let flag = false;
+
+
     for (let i in Generos)
     {
         if (Generos[i] === generoId)
@@ -60,13 +53,30 @@ $("#generos").change(function () {
     if (!flag)
     {
         Generos.push(generoId);
-        debugger;
-        var $divConGenero = $('<div id=' + generoId + '><label >' + generoName + '</><label class="btnSacarGenero" onClick='+quitarGenero(generoId)+'>X</label></div>')
-        divGeneros.append($divConGenero);
-    }
  
+        var $divConGenero = $('<div ><label type="button" >' + generoName + '</label><button id=' + generoId + ' class="btnQuickGenero">X</button></div>')
+        divGeneros.append($divConGenero);
+
+        var buttonQuick = document.querySelectorAll("button.btnQuickGenero")
+
+        buttonQuick.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                quitarGenero(e.target.id);
+                $(this).parent().remove();
+            });
+        });  
+    }
 });
 
+function quitarGenero(idGenero) {
+    for (let i in Generos) {
+        if (Generos[i] === idGenero) {
+            Generos.splice(i, 1);
+        }
+    }
+
+
+}
 
 function resetFieldJuegoConsola()
 {
@@ -76,6 +86,11 @@ function resetFieldJuegoConsola()
 }
 
 $("#crearJuego").click(function () {
+    for (var i in Generos)
+    {
+        console.log(Generos[i]);
+    }
+    debugger;
     let juegoDTO = {};
     juegoDTO.JuegoName = $("#juegoName").val();
     console.log($("#juegoName").val());
@@ -83,19 +98,7 @@ $("#crearJuego").click(function () {
     juegoDTO.Generos = Generos;
     juegoDTO.FechaLanzamientoOficial = $("#fechaOficial").text();
 
-  
-    let JuegosConsolaDTO = new Array();
-    $("#tableConsolas").find("tr:gt(0)").each(function () {
-        var juegoConsola = {};
-
-        juegoConsola.ConsolaName = $(this).find("td:eq(0)").text();
-        juegoConsola.ConsolaId = $(this).find("td:eq(1)").text();
-        juegoConsola.FechaLanzamiento = $(this).find("td:eq(2)").text();
-        juegoConsola.CopiasVendidas = $(this).find("td:eq(3)").text();
- 
-        JuegosConsolaDTO.push(juegoConsola);
-        juegoDTO.JuegosConsolaDTO = JuegosConsolaDTO;
-    });
+    juegoDTO.JuegosConsolaDTO = consolaGame;
 
     $.ajax({
         async: true,
@@ -111,3 +114,5 @@ $("#crearJuego").click(function () {
         }
     })
 });
+//FIN DE CARGAR JUEGOS NUEVOS 
+////////////////////////////////

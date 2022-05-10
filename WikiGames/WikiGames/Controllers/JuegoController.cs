@@ -36,7 +36,8 @@ namespace WikiGames.Controllers
         public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
         {
             var jueguito = juegoDTO;
-            return View(juegoDTO);
+            return RedirectToAction("Index");
+          //  return View(juegoDTO);
         }
 
 
