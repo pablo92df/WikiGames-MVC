@@ -1,5 +1,4 @@
 ﻿@model WikiGames.Models.DTO.Juego.JuegoCreacionDTO
-
 @{
     ViewData["Title"] = "Cargar Nuevo Juego";
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,35 +15,33 @@
 
 	<div class="row">
 		<div class="col-sm-10">
-			@*<form method="post" asp-action="Create">*@
-				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-				<div class="form-group">
-					<label asp-for="JuegoName" class="control-label"></label>
-					<input asp-for="JuegoName" class="form-control" id="juegoName"/>
-					<span asp-validation-for="JuegoName" class="text-danger" ></span>
-				</div>
-				<div class="form-group">
-					<label asp-for="FechaLanzamientoOficial" class="control-label"></label>
-					<input asp-for="FechaLanzamientoOficial" type="date" class="form-control" id="fechaOficial"/>
-					<span asp-validation-for="FechaLanzamientoOficial" class="text-danger" ></span>
-				</div>
-				<div class="form-group">
-					<label class="control-label">Generos</label>
-					<select name="GeneroId" class="form-select" asp-items="ViewBag.Generos" id="generos"></select>
-				</div>
-				<div class="generosSeleccionados" id="generosSeleccionados">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="JuegoName" class="control-label"></label>
+				<input asp-for="JuegoName" class="form-control" id="juegoName"/>
+				<span asp-validation-for="JuegoName" class="text-danger" ></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="FechaLanzamientoOficial" class="control-label"></label>
+				<input asp-for="FechaLanzamientoOficial" type="date" class="form-control" id="fechaOficial"/>
+				<span asp-validation-for="FechaLanzamientoOficial"  class="text-danger" ></span>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Generos</label>
+				<select name="GeneroId" class="form-select" asp-items="ViewBag.Generos" id="generos"></select>
+			</div>
+			<div class="generosSeleccionados" id="generosSeleccionados">
 
-				</div>
+			</div>
 
-				<div class="form-group">
-					<label asp-for="Descripcion" class="control-label"></label>
-					<input asp-for="Descripcion" class="form-control" id="descripcion"/>
-					<span asp-validation-for="Descripcion" class="text-danger"  ></span>
-				</div>
-				<div class="form-group">
-					<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
-				</div>
-			@*</form>*@
+			<div class="form-group">
+				<label asp-for="Descripcion" class="control-label"></label>
+				<input asp-for="Descripcion" class="form-control" id="descripcion"/>
+				<span asp-validation-for="Descripcion" class="text-danger"  ></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
+			</div>
 		</div>
 	</div>
 	<div class="container">
@@ -70,7 +67,6 @@
 		<thead>
 			<tr>
 				<th scope="col">Consola</th>
-				<th scope="col">Id Consola</th>
 				<th scope="col">Fecha Lanzamiento</th>
 				<th scope="col">Copias Vendidas Hasta La fecha</th>
 			</tr>
