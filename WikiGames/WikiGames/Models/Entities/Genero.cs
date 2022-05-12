@@ -20,5 +20,6 @@ namespace WikiGames.Models.Entities
                     .Select(x => x[0].ToString().ToUpper() + x.Substring(1).ToLower()).ToArray());
             }
         }
+        public List<Juego> Juego { get; set; }
     }
 }

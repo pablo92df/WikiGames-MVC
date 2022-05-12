@@ -6,10 +6,11 @@
 // Write your JavaScript code.
 const Generos = new Array();
 const consolaGame = new Array();
-
+const Desarrolladores = new Array();
 
 //CARGAR JUEGOS NUEVOS
 //AGREGAR LANZAMIENTO POR CONSOLA
+
 $("#btnAgregar").click(function () {
 
     let publicadoConsola = {};
@@ -18,9 +19,11 @@ $("#btnAgregar").click(function () {
     let consolaId = $("#consolaName option:selected").val();
     let cantidad = $("#ventas").val();
     let fecha = $("#fechaLanzamiento").val();
+   
+   // validacionConsola(consola, cantidad, fecha);
+    if (validacionConsola())
+    {
 
-
-    validacionConsola(consola, cantidad, fecha);
         publicadoConsola.ConsolaName = consola;
         publicadoConsola.ConsolaId = consolaId;
         publicadoConsola.FechaLanzamiento = fecha;
@@ -38,34 +41,61 @@ $("#btnAgregar").click(function () {
 
         buttonQuickConsola.forEach(function (btn) {
             btn.addEventListener('click', function (e) {
-
-
                 console.log(e.target.id);
                 quitarConsola(e.target.id);
                 $(this).closest('tr').remove();
             });
         });
         resetFieldJuegoConsola();
+    }
+    
+       
 });
-function validacionConsola(consola, cantidad, fecha)
-{
-    let flag = true;
-    if (validarString(consola)) {
-       // alert("Cargar Un nombre consola");
-      
-        flag = false;
+///////////////////////////////AGREGAR EVENTOS ADDEVENTLISTENER/////////
+body.addEventListener('keyup', () => {
+    if (event.target.id == "ventas") {
+        let campo = document.getElementById("ventas");
+        if (campo.value == '' || campo.value < 0) {
+            campo.style.borderColor = "red";
+        }
+        else {
+            campo.style.borderColor = "green";
+        }
     }
-    if (isNaN(cantidad) || cantidad < 0) {
-       // alert("Cantidad incorrecta");
-        console.log("Cantidad incorrecta");
-        flag = false;
+    if (event.target.id == "juegoName") {
+        let campo = document.getElementById("juegoName");
+        if (validarString(campo.value)) {
+            campo.style.borderColor = "red";
+        }
+        else {
+            campo.style.borderColor = "green";
+        }
+    }
 
-    }
-    if (ValidarFecha($("#fechaOficial").val())) {
-       // alert("Fecha Incorrecta");
-        console.log("Cantidad fecha");
+});
+
+
+function validacionConsola()
+{
+
+    var ventas = document.getElementById("ventas");
+
+    let flag = true;
+    //if (validarString(consola)) {
+    //    // alert("Cargar Un nombre consola");
+
+
+    //    flag = false;
+    //}
+    if (ventas.value == '') {
+        ventas.style.borderColor = "red";
         flag = false;
     }
+    //if (ValidarFecha($("#fechaOficial").val())) {
+    //   // alert("Fecha Incorrecta");
+    //    console.log("Cantidad fecha");
+    //    flag = false;
+    //}
     return flag;
 }
 function quitarConsola(idConsola) {
@@ -76,7 +106,7 @@ function quitarConsola(idConsola) {
         }
     }
 }
-
+//-------------------------AGREGAR GENEROS A LOS JUEGOS--------------------------//
 $("#generos").change(function () {
  
     let divGeneros = $("#generosSeleccionados");
@@ -118,7 +148,37 @@ function quitarGenero(idGenero) {
         }
     }
 }
+//---------------------------AGREGAR DESARROLLADORA-------------------------//
+$("#desarrollador").change(function () {
 
+    let divDesarrollador = $("#desarrolladorSeleccionados");
+    let desarrolladorId = $("#desarrollador option:selected").val();
+    let desarrolladorName = $("#desarrollador option:selected").text();
+    let flag = false;
+
+
+    for (let i in Desarrolladores) {
+        if (Desarrolladores[i] === desarrolladorId) {
+            flag = true;
+        }
+    }
+    if (!flag) {
+        Desarrolladores.push(desarrolladorId);
+
+        var $divConDesarrollo = $('<div ><label  >' + desarrolladorName + '</label><button  value=' + desarrolladorId + ' id=' + desarrolladorName + ' class="btnQuickGenero"/>X</button></div>')
+        divDesarrollador.append($divConDesarrollo);
+
+        var buttonQuick = document.querySelectorAll("button.btnQuickGenero")
+
+        buttonQuick.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                quitarGenero($(this).val());
+                $(this).parent().remove();
+            });
+        });
+    }
+});
+//------------------------
 function resetFieldJuegoConsola()
 {
     $("#consolaName option:selected").text();
@@ -153,10 +213,10 @@ $("#crearJuego").click(function () {
         let juegoDTO = {};
         juegoDTO.JuegoName = $("#juegoName").val();
         console.log($("#juegoName").val());
-        juegoDTO.Descripcion = $("#descripcion").val();
+        juegoDTO.JuegoDescription = $("#descripcion").val();
         juegoDTO.Generos = Generos;
         juegoDTO.FechaLanzamientoOficial = $("#fechaOficial").text();
-
+        juegoDTO.Desarrolladora = Desarrolladores;
         juegoDTO.JuegosConsolaDTO = consolaGame;
 
         $.ajax({
@@ -189,7 +249,7 @@ function validarGeneros(Generos)
 }
 function validarString(text)
 {
-    if (text.length == 0) {
+    if (text == null || text.length == 0 || /^\s+$/.test(text)) {
        
         return true;
     }
@@ -203,42 +263,6 @@ function ValidarFecha(fecha) {
         return false;
     }
     return true;
-    //const day = parseInt(fecha.split('-')[2])
-    //console.log(day);
-    //const month = parseInt(fecha.split('-')[1])
-    //console.log(month);
-    //const year = parseInt(fecha.split('-')[0])
-    //console.log(year);
-    
-    //if (year > 1900 && (month >= 1 && month <= 12) && (day >= 1 && day <= 31))
-    //{
-    //    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
-    //        if (day >= 1 && day <= 31) {
-    //            return true;
-    //        }
-    //    }
-    //    if (month == 4 || month == 6 || month == 9 || month == 11)
-    //    {
-    //        if (day >= 1 && day <= 30) {
-    //            return true;
-    //        }
-    //    }
-    //    if (month == 2) {
-    //        if (day >= 1 && day <= 28) {
-    //            return true;
-    //        }
-    //        if ((!(year % 4) && year % 100) || !(year % 400) && day == 29) {
-    //            return true;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        return false;
-    //    }
-    //}
-
-    //return false;
-
 }
 //FIN DE CARGAR JUEGOS NUEVOS 
 ////////////////////////////////

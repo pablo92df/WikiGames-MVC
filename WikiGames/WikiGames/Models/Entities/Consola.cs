@@ -16,7 +16,7 @@ namespace WikiGames.Models.Entities
         [Required]
         public int MarcaId { get; set; }
         public Marca Marca { get; set; }
-        public HashSet<JuegoConsola> JuegoConsola { get; set; }
+        public List<JuegoConsola> JuegoConsola { get; set; }
 
     }
 }

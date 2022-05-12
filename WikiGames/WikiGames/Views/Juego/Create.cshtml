@@ -27,17 +27,23 @@
 				<span asp-validation-for="FechaLanzamientoOficial"  class="text-danger" ></span>
 			</div>
 			<div class="form-group">
+				<label class="control-label">Desarrolladora</label>
+				<select name="DesarrolladorId" class="form-select" asp-items="ViewBag.Desarrollador" id="desarrollador"></select>
+			</div>
+			<div class="desarrolladorSeleccionados" id="desarrolladorSeleccionados">
+
+			</div>
+			<div class="form-group">
 				<label class="control-label">Generos</label>
 				<select name="GeneroId" class="form-select" asp-items="ViewBag.Generos" id="generos"></select>
 			</div>
 			<div class="generosSeleccionados" id="generosSeleccionados">
 
 			</div>
-
 			<div class="form-group">
-				<label asp-for="Descripcion" class="control-label"></label>
-				<input asp-for="Descripcion" class="form-control" id="descripcion"/>
-				<span asp-validation-for="Descripcion" class="text-danger"  ></span>
+				<label asp-for="JuegoDescription" class="control-label"></label>
+				<input asp-for="JuegoDescription" class="form-control" id="descripcion"/>
+				<span asp-validation-for="JuegoDescription" class="text-danger"  ></span>
 			</div>
 			<div class="form-group">
 				<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
@@ -47,15 +53,15 @@
 	<div class="container">
 		<div class="row">
 			<div col="sm-3">
-				<p>Consola</p>
+				<label class="form-label">Consola</label>
 				<select name="ConsolaId" class="form-select" id="consolaName"asp-items="ViewBag.Consolas"></select>
 			</div>
 			<div col="sm-3">
-				<p>Fecha de Lanzamiento</p>
+				<label class="form-label">Fecha Lanzamiento</label>
 				<input type="date" class="form-control" id="fechaLanzamiento"/>
 			</div>
 			<div col="sm-3">
-				<p>Ventas</p>
+				<label class="form-label">Ventas</label>
 				<input type="number" class="form-control" id="ventas"/>
 			</div>
 			<div col="sm-3">

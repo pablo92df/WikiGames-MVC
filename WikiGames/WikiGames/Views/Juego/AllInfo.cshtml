@@ -1,0 +1,80 @@
+﻿@model WikiGames.Models.Entities.Juego
+
+@{
+	ViewData["Title"] = "Lista de Juegos";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	@if (TempData["mensaje"] != null)
+	{ 
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			@TempData["mensaje"]
+			<button type="button" class="close" data-dismiss="alert" arial-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	}
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Lista de Juegos</h3>
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Juego">Agregar nuevo Juego</a>
+		</div>
+	</div>
+
+	<div class="row">
+		@if (Model is not null)
+		{
+			
+			<h2>@Model.JuegoName</h2>
+			<p>@Model.FechaLanzamientoOficial</p>
+		}
+		else
+		{
+			<p>No hay registros</p>
+		}
+
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>Desarrolladora</td>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.Desarrolladora)
+				{
+					<tr>
+						<td>@item.DesarrolladorName</td>
+							
+					</tr>
+				}
+			</tbody>
+		</table>
+
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<td>Consola</td>
+					<td>Lanzamiento</td>
+					<td>Copias</td>
+
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model.JuegoConsola)
+				{
+					<tr>
+						<td>@item.Consola.ConsolaName</td>
+						<td>@item.FechaLanzamiento</td>
+						<td>@item.CopiasVendidas</td>
+							
+					</tr>
+				}
+			</tbody>
+		</table>
+		
+
+	</div>
+</div>

@@ -44,11 +44,10 @@
 							<td>@item.JuegoName</td>
 							<td>@item.FechaLanzamientoOficial</td>
 							<td>@item.Desarrolladora</td>
-							@*<td>
-								<a asp-controller="Productos" asp-action="Edit" asp-route-id="@item.idProducto" class="btn btn-warning">Editar</a>
-								<a asp-controller="Productos" asp-action="Delete" asp-route-id="@item.idProducto" class="btn btn-warning">Delete</a>
-
-							</td>*@
+							<td>
+								<a asp-controller="Juego" asp-action="AllInfo" asp-route-id="@item.JuegoId" class="btn btn-warning">Mas info</a>
+						
+							</td>
 						</tr>
 					}
 				</tbody>

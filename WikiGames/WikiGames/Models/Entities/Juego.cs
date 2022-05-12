@@ -13,7 +13,7 @@ namespace WikiGames.Models.Entities
         public DateTime FechaLanzamientoOficial { get; set; }
         public List<Genero> Generos { get; set; }  
         
-        public HashSet<JuegoConsola> JuegoConsola { get; set; }
+        public List<JuegoConsola> JuegoConsola { get; set; }
         public List<Desarrollador> Desarrolladora { get; set; }
 
     }
