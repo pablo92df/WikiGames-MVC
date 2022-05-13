@@ -17,7 +17,7 @@
 	}
 	<div class="row">
 		<div class="col-sm-6">
-			<h3>Lista de Juegos</h3>
+			<h2>Juego</h2>
 		</div>
 		<div class="col-sm-6">
 			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Juego">Agregar nuevo Juego</a>
@@ -28,53 +28,54 @@
 		@if (Model is not null)
 		{
 			
-			<h2>@Model.JuegoName</h2>
+			<h3>@Model.JuegoName</h3>
+			<div>
+
+
+			</div>
 			<p>@Model.FechaLanzamientoOficial</p>
+			<p>@Model.JuegoDescription</p>
 		}
 		else
 		{
 			<p>No hay registros</p>
 		}
-
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<td>Desarrolladora</td>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var item in Model.Desarrolladora)
-				{
-					<tr>
-						<td>@item.DesarrolladorName</td>
-							
-					</tr>
-				}
-			</tbody>
-		</table>
-
-		<table class="table table-bordered table-striped">
-			<thead>
-				<tr>
-					<td>Consola</td>
-					<td>Lanzamiento</td>
-					<td>Copias</td>
-
-				</tr>
-			</thead>
-			<tbody>
-				@foreach (var item in Model.JuegoConsola)
-				{
-					<tr>
-						<td>@item.Consola.ConsolaName</td>
-						<td>@item.FechaLanzamiento</td>
-						<td>@item.CopiasVendidas</td>
-							
-					</tr>
-				}
-			</tbody>
-		</table>
-		
-
 	</div>
+	<h2>Empresas Desarrolladora</h2>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<td>Nombre</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.Desarrolladora)
+			{
+				<tr>
+					<td>@item.DesarrolladorName</td>
+							
+				</tr>
+			}
+		</tbody>
+	</table>
+	<h2>Lanzamientos</h2>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<td>Consola</td>
+				<td>fecha</td>
+				<td>Ventas</td>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model.JuegoConsola)
+			{
+				<tr>
+					<td>@item.Consola.ConsolaName</td>
+					<td>@item.FechaLanzamiento</td>
+					<td>@item.CopiasVendidas</td>		
+				</tr>
+			}
+		</tbody>
+	</table>
 </div>

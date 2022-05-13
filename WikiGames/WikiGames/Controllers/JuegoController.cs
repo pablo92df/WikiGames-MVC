@@ -28,6 +28,7 @@ namespace WikiGames.Controllers
         }
         public async Task<IActionResult> AllInfo(int id) 
         {
+          
             var Juegos = await context.Juegos
                     .Where(j=>j.JuegoId == id)
                     .Include(j => j.Generos.OrderByDescending(g => g.Nombre))
@@ -49,31 +50,30 @@ namespace WikiGames.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
         {
-            var jueguito = mapper.Map<Juego>(juegoDTO);
-            //Juego jueguito = new Juego() 
-            //{
-            //    JuegoName = juegoDTO.JuegoName,
-            //    JuegoDescription = juegoDTO.Descripcion,
-            //    FechaLanzamientoOficial = juegoDTO.FechaLanzamientoOficial
-            //};
-            jueguito.Generos.ForEach(g => context.Entry(g).State = EntityState.Unchanged);
-            jueguito.Desarrolladora.ForEach(d => context.Entry(d).State = EntityState.Unchanged);
-            if (juegoDTO.JuegosConsolaDTO is not null)
+
+            if (!ModelState.IsValid)
             {
-                List<JuegoConsola> jconsola = new List<JuegoConsola>();
-
-                for (int i = 0; i < juegoDTO.JuegosConsolaDTO.Count; i++)
+                var jueguito = mapper.Map<Juego>(juegoDTO);
+                jueguito.Generos.ForEach(g => context.Entry(g).State = EntityState.Unchanged);
+                jueguito.Desarrolladora.ForEach(d => context.Entry(d).State = EntityState.Unchanged);
+                if (juegoDTO.JuegosConsolaDTO is not null)
                 {
-                    jconsola.Add(new JuegoConsola());
-                    jconsola[jconsola.Count-1] = mapper.Map<JuegoConsola>(juegoDTO.JuegosConsolaDTO[i]);
-                }
-                jueguito.JuegoConsola = jconsola;
-            }
-            context.Add(jueguito);
-            await context.SaveChangesAsync();
+                    List<JuegoConsola> jconsola = new List<JuegoConsola>();
 
-            return RedirectToAction("Index");
-          //  return View(juegoDTO);
+                    for (int i = 0; i < juegoDTO.JuegosConsolaDTO.Count; i++)
+                    {
+                        jconsola.Add(new JuegoConsola());
+                        jconsola[jconsola.Count - 1] = mapper.Map<JuegoConsola>(juegoDTO.JuegosConsolaDTO[i]);
+                    }
+                    jueguito.JuegoConsola = jconsola;
+                }
+                context.Add(jueguito);
+                await context.SaveChangesAsync();
+
+                return RedirectToAction("Index");
+            }
+         
+            return View();
         }
 
 
