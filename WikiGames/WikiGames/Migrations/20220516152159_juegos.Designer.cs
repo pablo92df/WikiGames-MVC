@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WikiGames.Data;
 
@@ -11,9 +12,10 @@ using WikiGames.Data;
 namespace WikiGames.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220516152159_juegos")]
+    partial class juegos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +23,21 @@ namespace WikiGames.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("DesarrolladorJuego", b =>
+                {
+                    b.Property<int>("DesarrolladoraDesarrolladorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("JuegosJuegoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DesarrolladoraDesarrolladorId", "JuegosJuegoId");
+
+                    b.HasIndex("JuegosJuegoId");
+
+                    b.ToTable("DesarrolladorJuego");
+                });
 
             modelBuilder.Entity("GeneroJuego", b =>
                 {
@@ -155,9 +172,6 @@ namespace WikiGames.Migrations
                     b.Property<string>("Argumento")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DesarrolladoraDesarrolladorId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("FechaLanzamientoOficial")
                         .HasColumnType("date");
 
@@ -170,14 +184,10 @@ namespace WikiGames.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PublicadoraId")
+                    b.Property<int>("PublicadoraId")
                         .HasColumnType("int");
 
                     b.HasKey("JuegoId");
-
-                    b.HasIndex("DesarrolladoraDesarrolladorId");
-
-                    b.HasIndex("PublicadoraId");
 
                     b.ToTable("Juegos");
                 });
@@ -237,7 +247,7 @@ namespace WikiGames.Migrations
 
                     b.HasKey("ModosDeJuegoId");
 
-                    b.ToTable("ModosDeJuegos");
+                    b.ToTable("ModosDeJuego");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.Personaje", b =>
@@ -265,26 +275,19 @@ namespace WikiGames.Migrations
                     b.ToTable("Personaje");
                 });
 
-            modelBuilder.Entity("WikiGames.Models.Entities.Publicadora", b =>
+            modelBuilder.Entity("DesarrolladorJuego", b =>
                 {
-                    b.Property<int>("PublicadoraId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.HasOne("WikiGames.Models.Entities.Desarrollador", null)
+                        .WithMany()
+                        .HasForeignKey("DesarrolladoraDesarrolladorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PublicadoraId"), 1L, 1);
-
-                    b.Property<DateTime>("Fundacion")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Historia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PublicadoraNombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PublicadoraId");
-
-                    b.ToTable("Publicadoras");
+                    b.HasOne("WikiGames.Models.Entities.Juego", null)
+                        .WithMany()
+                        .HasForeignKey("JuegosJuegoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GeneroJuego", b =>
@@ -343,21 +346,6 @@ namespace WikiGames.Migrations
                     b.Navigation("Marca");
                 });
 
-            modelBuilder.Entity("WikiGames.Models.Entities.Juego", b =>
-                {
-                    b.HasOne("WikiGames.Models.Entities.Desarrollador", "Desarrolladora")
-                        .WithMany("Juegos")
-                        .HasForeignKey("DesarrolladoraDesarrolladorId");
-
-                    b.HasOne("WikiGames.Models.Entities.Publicadora", "Publicadora")
-                        .WithMany("Juegos")
-                        .HasForeignKey("PublicadoraId");
-
-                    b.Navigation("Desarrolladora");
-
-                    b.Navigation("Publicadora");
-                });
-
             modelBuilder.Entity("WikiGames.Models.Entities.JuegoConsola", b =>
                 {
                     b.HasOne("WikiGames.Models.Entities.Consola", "Consola")
@@ -382,11 +370,6 @@ namespace WikiGames.Migrations
                     b.Navigation("JuegoConsola");
                 });
 
-            modelBuilder.Entity("WikiGames.Models.Entities.Desarrollador", b =>
-                {
-                    b.Navigation("Juegos");
-                });
-
             modelBuilder.Entity("WikiGames.Models.Entities.Juego", b =>
                 {
                     b.Navigation("JuegoConsola");
@@ -395,11 +378,6 @@ namespace WikiGames.Migrations
             modelBuilder.Entity("WikiGames.Models.Entities.Marca", b =>
                 {
                     b.Navigation("Consola");
-                });
-
-            modelBuilder.Entity("WikiGames.Models.Entities.Publicadora", b =>
-                {
-                    b.Navigation("Juegos");
                 });
 #pragma warning restore 612, 618
         }

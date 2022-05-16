@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WikiGames.Data;
 
@@ -11,9 +12,10 @@ using WikiGames.Data;
 namespace WikiGames.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220516154253_juegosDesarrollador")]
+    partial class juegosDesarrollador
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,14 +172,12 @@ namespace WikiGames.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PublicadoraId")
+                    b.Property<int>("PublicadoraId")
                         .HasColumnType("int");
 
                     b.HasKey("JuegoId");
 
                     b.HasIndex("DesarrolladoraDesarrolladorId");
-
-                    b.HasIndex("PublicadoraId");
 
                     b.ToTable("Juegos");
                 });
@@ -237,7 +237,7 @@ namespace WikiGames.Migrations
 
                     b.HasKey("ModosDeJuegoId");
 
-                    b.ToTable("ModosDeJuegos");
+                    b.ToTable("ModosDeJuego");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.Personaje", b =>
@@ -263,28 +263,6 @@ namespace WikiGames.Migrations
                     b.HasKey("PersonajeId");
 
                     b.ToTable("Personaje");
-                });
-
-            modelBuilder.Entity("WikiGames.Models.Entities.Publicadora", b =>
-                {
-                    b.Property<int>("PublicadoraId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PublicadoraId"), 1L, 1);
-
-                    b.Property<DateTime>("Fundacion")
-                        .HasColumnType("date");
-
-                    b.Property<string>("Historia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PublicadoraNombre")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("PublicadoraId");
-
-                    b.ToTable("Publicadoras");
                 });
 
             modelBuilder.Entity("GeneroJuego", b =>
@@ -349,13 +327,7 @@ namespace WikiGames.Migrations
                         .WithMany("Juegos")
                         .HasForeignKey("DesarrolladoraDesarrolladorId");
 
-                    b.HasOne("WikiGames.Models.Entities.Publicadora", "Publicadora")
-                        .WithMany("Juegos")
-                        .HasForeignKey("PublicadoraId");
-
                     b.Navigation("Desarrolladora");
-
-                    b.Navigation("Publicadora");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.JuegoConsola", b =>
@@ -395,11 +367,6 @@ namespace WikiGames.Migrations
             modelBuilder.Entity("WikiGames.Models.Entities.Marca", b =>
                 {
                     b.Navigation("Consola");
-                });
-
-            modelBuilder.Entity("WikiGames.Models.Entities.Publicadora", b =>
-                {
-                    b.Navigation("Juegos");
                 });
 #pragma warning restore 612, 618
         }

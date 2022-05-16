@@ -15,67 +15,67 @@
 			</button>
 		</div>
 	}
-	<div class="row">
+	<h2>@Model.JuegoName</h2>
+	<div class="mw-parser-output">
+	
 		<div class="col-sm-6">
-			<h2>Juego</h2>
+			<article>@Model.JuegoDescription</article>
 		</div>
-		<div class="col-sm-6">
-			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Juego">Agregar nuevo Juego</a>
+		
+		<div clase="col-sm-5">
+			<table class="Infobox" cellpadding="2" cellspacing="2" align="right" width="240px" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
+				<tbody>
+					<tr>
+						<td align="center" colspan="2" bgcolor="gold" style="font-size:110%;"><i><b>@Model.JuegoName</b></i>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align: center;"><a href="https://static.wikia.nocookie.net/hitman/images/1/13/HitmanCodename47.jpg/revision/latest?cb=20101119210705&amp;path-prefix=es" class="image"><img alt="HitmanCodename47.jpg" src="https://static.wikia.nocookie.net/hitman/images/1/13/HitmanCodename47.jpg/revision/latest/scale-to-width-down/170?cb=20101119210705&amp;path-prefix=es" decoding="async" width="170" height="200" data-image-name="HitmanCodename47.jpg" data-image-key="HitmanCodename47.jpg"></a>
+						</td>
+					</tr>
+					<tr class="">
+						<th style="background-color: gold;">Desarrollador</th>
+						<td>
+							<a href="/es/wiki/IO_Interactive" title="">@Model.Desarrolladora.DesarrolladorName</a>
+						</td>
+					</tr>
+					<tr class="hiddenStructure{{{Distribuidor}}}">
+						<th style="background-color: gold;">Distribuidor</th>
+						<td>
+							<a href="/es/wiki/Eidos_Interactive" title="">Eidos Interactive</a>
+						</td>
+					</tr>
+					<tr class="hiddenStructure{{{Lanzamiento}}}">
+						<th style="background-color: gold;">Fecha de lanzamiento</th>
+						<td>@Model.FechaLanzamientoOficial</a>
+						</td>
+					</tr>
+					<tr class="hiddenStructure{{{Género}}}">
+						<th style="background-color: gold;">Género</th>
+						<td><ul>
+								<li>aventura</li>
+								<li>aventura</li>
+								<li>aventura</li>
+							</ul>
+						</td>
+					</tr>
+						<tr class="hiddenStructure{{{Protagonista}}}">
+						<th style="background-color: gold;">Protagonista</th>
+						<td><a href="/es/wiki/Agente_47" title="Agente 47">Agente 47</a></td>
+					</tr>
+						<tr class="hiddenStructure{{{Plataformas}}}">
+						<th style="background-color: gold;">Plataformas</th>
+						<td><a href="/es/wiki/Pc" class="mw-redirect" title="Pc">Pc</a></td>
+					</tr>
+					<tr class="hiddenStructure{{{Clasificación}}}">
+					<th style="background-color: gold;">Clasificación
+					</th>
+					<td>ESRB: Mature (17+)
+					</td></tr>
+				</tbody>
+			</table>
 		</div>
+	
 	</div>
-
-	<div class="row">
-		@if (Model is not null)
-		{
-			
-			<h3>@Model.JuegoName</h3>
-			<div>
-
-
-			</div>
-			<p>@Model.FechaLanzamientoOficial</p>
-			<p>@Model.JuegoDescription</p>
-		}
-		else
-		{
-			<p>No hay registros</p>
-		}
-	</div>
-	<h2>Empresas Desarrolladora</h2>
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<td>Nombre</td>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var item in Model.Desarrolladora)
-			{
-				<tr>
-					<td>@item.DesarrolladorName</td>
-							
-				</tr>
-			}
-		</tbody>
-	</table>
-	<h2>Lanzamientos</h2>
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<td>Consola</td>
-				<td>fecha</td>
-				<td>Ventas</td>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach (var item in Model.JuegoConsola)
-			{
-				<tr>
-					<td>@item.Consola.ConsolaName</td>
-					<td>@item.FechaLanzamiento</td>
-					<td>@item.CopiasVendidas</td>		
-				</tr>
-			}
-		</tbody>
-	</table>
+	
 </div>

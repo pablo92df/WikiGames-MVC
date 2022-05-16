@@ -12,9 +12,8 @@
 			<h3>Crear Juego</h3>
 		</div>
 	</div>
-
-	<div class="row g-3">
-		<div  class="col-auto">
+	<div class="row">
+		<div  class="col-md-5">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 			<div class="form-group">
 				<label asp-for="JuegoName" class="control-label"></label>
@@ -29,10 +28,10 @@
 			<div class="form-group">
 				<label class="control-label">Desarrolladora</label>
 				<select name="DesarrolladorId" class="form-select" asp-items="ViewBag.Desarrollador" id="desarrollador"></select>
-			
 			</div>
-			<div class="desarrolladorSeleccionados" id="desarrolladorSeleccionados">
-
+			<div class="form-group">
+				<label class="control-label">Publicadora</label>
+				<select name="PublicadoraId" class="form-select" asp-items="ViewBag.Publicadora" id="publicadora"></select>
 			</div>
 			<div class="form-group">
 				<label class="control-label">Generos</label>
@@ -42,47 +41,57 @@
 
 			</div>
 			<div class="form-group">
-				<label asp-for="JuegoDescription" class="control-label"></label>
-				<textarea  asp-for="JuegoDescription" class="form-control" rows="3" id="descripcion"></textarea>
-				<span asp-validation-for="JuegoDescription" class="text-danger"  ></span>
+				<label class="control-label">Modos de juego</label>
+				<select name="ModoJuegoId" class="form-select" asp-items="ViewBag.ModoJuegos" id="modoJuegos"></select>
 			</div>
-			<div class="form-group">
-				<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
+			<div class="modoJuego" id="modoJuego">
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div col="sm-3">
+		<div class="col-md-5">
+			<div >
 				<label class="form-label">Consola</label>
 				<select name="ConsolaId" class="form-select" id="consolaName"asp-items="ViewBag.Consolas"></select>
 			</div>
-			<div col="sm-3">
+			<div >
 				<label class="form-label">Fecha Lanzamiento</label>
 				<input type="date" class="form-control" id="fechaLanzamiento"/>
 			</div>
-			<div col="sm-3">
+			<div >
 				<label class="form-label">Ventas</label>
 				<input type="number" class="form-control" id="ventas"/>
 			</div>
-			<div col="sm-3">
+			<div >
 				<button class="btn-primary btnAgregar" id="btnAgregar">Agregar</button>
 			</div>
+			<table class="table table-striped" id="tableConsolas">
+				<thead>
+					<tr>
+						<th scope="col">Consola</th>
+						<th scope="col">Fecha Lanzamiento</th>
+						<th scope="col">Copias Vendidas Hasta La fecha</th>
+					</tr>
+				</thead>
+				<tbody class="tBody" id="tBody">
+				</tbody>
+			</table>
 		</div>
 	</div>
-	<table class="table table-striped" id="tableConsolas">
-		<thead>
-			<tr>
-				<th scope="col">Consola</th>
-				<th scope="col">Fecha Lanzamiento</th>
-				<th scope="col">Copias Vendidas Hasta La fecha</th>
-			</tr>
-		</thead>
-		<tbody class="tBody" id="tBody">
-		</tbody>
-	</table>
+	<div class="row">
+		<div class="form-group">
+			<label  class="control-label">Decripcion</label>
+			<textarea  class="form-control" rows="4" id="descripcion"></textarea>
+			
+		</div>
+		<div class="form-group">
+			<label  class="control-label">Argumento</label>
+			<textarea   class="form-control" rows="4" id="argumento"></textarea>
+			
+		</div>
+		<div class="form-group">
+				<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
+		</div>
+	</div>
 
-	
 </div>
 @*Validacion lado cliente*@
 	@section Scripts{

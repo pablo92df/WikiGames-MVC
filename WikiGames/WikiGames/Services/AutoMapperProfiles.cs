@@ -18,9 +18,8 @@ namespace WikiGames.Services
             
             CreateMap<ConsolaCreacionDTO, Consola>();
             CreateMap<JuegoCreacionDTO, Juego>()
-                .ForMember(ent => ent.Generos, dto => dto.MapFrom(campo => campo.Generos.Select(id => new Genero() { GeneroId = id })))
-                .ForMember(ent => ent.Desarrolladora, dto => dto.MapFrom(campo => campo.Desarrolladora.Select(id => new Desarrollador() { DesarrolladorId = id })));
-            
+                .ForMember(ent => ent.Generos, dto => dto.MapFrom(campo => campo.Generos.Select(id => new Genero() { GeneroId = id })));
+                
 
             CreateMap<JuegoConsolaDTO, JuegoConsola>();
         }

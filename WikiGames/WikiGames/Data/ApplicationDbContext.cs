@@ -20,8 +20,6 @@ namespace WikiGames.Data
         {
             modelBuilder.Entity<JuegoConsola>().HasKey(prop => new { prop.JuegoId, prop.ConsolaId });
             modelBuilder.Entity<Genero>().Property(x => x.Nombre).HasField("_Nombre");
-
-
         }
 
         public DbSet<Marca> Marcas { get; set; }
@@ -30,7 +28,8 @@ namespace WikiGames.Data
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Desarrollador> Desarrolladores { get; set; }
         public DbSet<JuegoConsola> JuegosConsolas { get; set; }
-
+        public DbSet<Publicadora> Publicadoras { get; set; }
+        public DbSet<ModosDeJuego> ModosDeJuegos { get; set; }
 
     }
 }
