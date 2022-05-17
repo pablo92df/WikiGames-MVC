@@ -6,7 +6,31 @@
 // Write your JavaScript code.
 const Generos = new Array();
 const consolaGame = new Array();
-const Desarrolladores = new Array();
+const ModosDeJuego = new Array();
+
+
+///////////////////////////////AGREGAR EVENTOS ADDEVENTLISTENER/////////
+body.addEventListener('keyup', () => {
+    if (event.target.id == "ventas") {
+        let campo = document.getElementById("ventas");
+        if (campo.value == '' || campo.value < 0) {
+            campo.style.borderColor = "red";
+        }
+        else {
+            campo.style.borderColor = "green";
+        }
+    }
+    if (event.target.id == "juegoName") {
+        let campo = document.getElementById("juegoName");
+        if (validarString(campo.value)) {
+            campo.style.borderColor = "red";
+        }
+        else {
+            campo.style.borderColor = "green";
+        }
+    }
+
+});
 
 //CARGAR JUEGOS NUEVOS
 //AGREGAR LANZAMIENTO POR CONSOLA
@@ -50,28 +74,6 @@ $("#btnAgregar").click(function () {
     }
     
        
-});
-///////////////////////////////AGREGAR EVENTOS ADDEVENTLISTENER/////////
-body.addEventListener('keyup', () => {
-    if (event.target.id == "ventas") {
-        let campo = document.getElementById("ventas");
-        if (campo.value == '' || campo.value < 0) {
-            campo.style.borderColor = "red";
-        }
-        else {
-            campo.style.borderColor = "green";
-        }
-    }
-    if (event.target.id == "juegoName") {
-        let campo = document.getElementById("juegoName");
-        if (validarString(campo.value)) {
-            campo.style.borderColor = "red";
-        }
-        else {
-            campo.style.borderColor = "green";
-        }
-    }
-
 });
 
 
@@ -149,24 +151,24 @@ function quitarGenero(idGenero) {
     }
 }
 //---------------------------AGREGAR DESARROLLADORA-------------------------//
-$("#desarrollador").change(function () {
+$("#ModoDeJuegoId").change(function () {
 
-    let divDesarrollador = $("#desarrolladorSeleccionados");
-    let desarrolladorId = $("#desarrollador option:selected").val();
-    let desarrolladorName = $("#desarrollador option:selected").text();
+    let divModosDeJuego = $("#ModoDeJuegoSeleccionados");
+    let ModoDeJuegoId = $("#ModoDeJuegoId option:selected").val();
+    let ModoDeJuegoName = $("#ModoDeJuegoId option:selected").text();
     let flag = false;
 
 
-    for (let i in Desarrolladores) {
-        if (Desarrolladores[i] === desarrolladorId) {
+    for (let i in ModosDeJuego) {
+        if (ModosDeJuego[i] === ModoDeJuegoId) {
             flag = true;
         }
     }
     if (!flag) {
-        Desarrolladores.push(desarrolladorId);
+        ModosDeJuego.push(ModoDeJuegoId);
 
-        var $divConDesarrollo = $('<div ><label  >' + desarrolladorName + '</label><button  value=' + desarrolladorId + ' id=' + desarrolladorName + ' class="btnQuickGenero"/>X</button></div>')
-        divDesarrollador.append($divConDesarrollo);
+        var $divConModos = $('<div ><label  >' + ModoDeJuegoName + '</label><button  value=' + ModoDeJuegoId + ' id=' + ModoDeJuegoName + ' class="btnQuickGenero"/>X</button></div>')
+        divModosDeJuego.append($divConModos);
 
         var buttonQuick = document.querySelectorAll("button.btnQuickGenero")
 
@@ -264,5 +266,6 @@ function ValidarFecha(fecha) {
     }
     return true;
 }
-//FIN DE CARGAR JUEGOS NUEVOS 
+//-----------------------------FIN DE CARGAR JUEGOS NUEVOS 
 ////////////////////////////////
+

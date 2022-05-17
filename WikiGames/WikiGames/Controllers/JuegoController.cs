@@ -17,59 +17,54 @@ namespace WikiGames.Controllers
             this.context = context;
             this.mapper = mapper;
         }
-        public async Task<IActionResult> Index([FromQuery] JuegoFiltroDTO juegoFiltroDTO)
+        public async Task<IActionResult> Index(string juegoName, int GeneroId, int ConsolaId, int DesarrolladoraId, int ModoDeJuegoId)
         {
             // ViewData["Desarrollador"] = new SelectList(context.Desarrolladores, "DesarrolladorId", "DesarrolladorName");
-            ViewBag.Desarrolladores = new SelectList(context.Desarrolladores.OrderBy(x => x.DesarrolladorName), "DesarrolladorId", "DesarrolladorName");
-            ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");
-            ViewData["Consolas"] = new SelectList(context.Consolas, "ConsolaId", "ConsolaName");
-            ViewData["Publicadora"] = new SelectList(context.Publicadoras, "PublicadoraId", "PublicadoraNombre");
-            ViewData["ModoJuegos"] = new SelectList(context.ModosDeJuegos, "ModosDeJuegoId", "ModosDeJuegoName");
-            var juegoQueryable = context.Juegos.AsQueryable();
-            if (!string.IsNullOrEmpty(juegoFiltroDTO.JuegoName))
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.JuegoName.Contains(juegoFiltroDTO.JuegoName));
-            }
+            //ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");
+            // ViewData["Consolas"] = new SelectList(context.Consolas, "ConsolaId", "ConsolaName");
+            // ViewData["ModoJuegos"] = new SelectList(context.ModosDeJuegos, "ModosDeJuegoId", "ModosDeJuegoName");
 
-            if (juegoFiltroDTO.GeneroId != 0)
+            ViewBag.Desarrolladores = new SelectList(context.Desarrolladores.OrderBy(x => x.DesarrolladorName), "DesarrolladorId", "DesarrolladorName");
+            ViewBag.Generos = new SelectList(context.Generos.OrderBy(x => x.Nombre), "GeneroId", "Nombre");
+            ViewBag.Consolas = new SelectList(context.Consolas.OrderBy(c => c.ConsolaName), "ConsolaId", "ConsolaName");
+            ViewBag.ModoJuegos = new SelectList(context.ModosDeJuegos.OrderBy(m => m.ModosDeJuegoName), "ModosDeJuegoId", "ModosDeJuegoName");
+           
+            var juegoQueryable = context.Juegos.AsQueryable();
+            if (!string.IsNullOrEmpty(juegoName))
+            {
+                juegoQueryable = juegoQueryable.Where(p => p.JuegoName.Contains(juegoName));
+            }
+            if (DesarrolladoraId != 0)
+            {
+                juegoQueryable = juegoQueryable.Where(p => p.Desarrolladora.DesarrolladorId == DesarrolladoraId);
+
+            }
+            if (GeneroId != 0)
             {
                 juegoQueryable = juegoQueryable.Where(p => p.Generos
                                                 .Select(g => g.GeneroId)
-                                                .Contains(juegoFiltroDTO.GeneroId));
+                                                .Contains(GeneroId));
             }
-            if (juegoFiltroDTO.ConsolaId != 0)
+            if (ConsolaId != 0)
             {
                 juegoQueryable = juegoQueryable.Where(p => p.JuegoConsola
                                                 .Select(g => g.ConsolaId)
-                                                .Contains(juegoFiltroDTO.ConsolaId));
+                                                .Contains(ConsolaId));
             }
-            if (juegoFiltroDTO.DesarrolladoraId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.Desarrolladora.DesarrolladorId == juegoFiltroDTO.DesarrolladoraId);
-
-            }
-            if (juegoFiltroDTO.PublicadoraId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.Publicadora.PublicadoraId == juegoFiltroDTO.PublicadoraId);
-            }
-            if (juegoFiltroDTO.ModoDeJuegoId != 0)
+           
+            if (ModoDeJuegoId != 0)
             {
                 juegoQueryable = juegoQueryable.Where(p => p.ModosDeJuegos
                                                 .Select(g => g.ModosDeJuegoId)
-                                                .Contains(juegoFiltroDTO.ModoDeJuegoId));
+                                                .Contains(ModoDeJuegoId));
             }
 
-            var juegos = await juegoQueryable.Include(j => j.Generos)
+            var juegos = await juegoQueryable.OrderBy(j=>j.JuegoName)
+                                             .Include(j => j.Generos)
                                              .Include(j => j.Desarrolladora)
                                              .Include(j => j.Publicadora).ToListAsync();
 
-            var Juegos = await context.Juegos
-                .Include(j => j.Generos.OrderByDescending(g => g.Nombre))
-                .Include(j => j.Desarrolladora)
-                .Include(j => j.Publicadora).ToListAsync();
-
-
-            return View(Juegos);
+            return View(juegos);
         }
         public async Task<IActionResult> AllInfo(int id) 
         {
@@ -84,48 +79,6 @@ namespace WikiGames.Controllers
             return View(Juegos);
         }
 
-        //public async Task<IActionResult> Filtrar([FromQuery] JuegoFiltroDTO juegoFiltroDTO)
-        //{
-        //    var juegoQueryable = context.Juegos.AsQueryable();
-        //    if (!string.IsNullOrEmpty(juegoFiltroDTO.JuegoName))
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.JuegoName.Contains(juegoFiltroDTO.JuegoName));
-        //    }
-
-        //    if (juegoFiltroDTO.GeneroId != 0) 
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.Generos
-        //                                        .Select(g => g.GeneroId)
-        //                                        .Contains(juegoFiltroDTO.GeneroId));
-        //    }
-        //    if (juegoFiltroDTO.ConsolaId != 0)
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.JuegoConsola
-        //                                        .Select(g => g.ConsolaId)
-        //                                        .Contains(juegoFiltroDTO.ConsolaId));
-        //    }
-        //    if (juegoFiltroDTO.DesarrolladoraId != 0)
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.Desarrolladora.DesarrolladorId == juegoFiltroDTO.DesarrolladoraId);
-                                                
-        //    }
-        //    if (juegoFiltroDTO.PublicadoraId != 0)
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.Publicadora.PublicadoraId == juegoFiltroDTO.PublicadoraId);
-        //    }
-        //    if (juegoFiltroDTO.ModoDeJuegoId != 0)
-        //    {
-        //        juegoQueryable = juegoQueryable.Where(p => p.ModosDeJuegos
-        //                                        .Select(g => g.ModosDeJuegoId)
-        //                                        .Contains(juegoFiltroDTO.ModoDeJuegoId));
-        //    }
-
-        //    var juegos = await juegoQueryable.Include(j=>j.Generos)
-        //                                     .Include(j=>j.Desarrolladora)
-        //                                     .Include(j=>j.Publicadora).ToListAsync();
-
-        //    return View(juegos);
-        //}
         public IActionResult Create()
         {
             ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");

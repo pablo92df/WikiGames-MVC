@@ -9,7 +9,6 @@
         public int ConsolaId { get; set; }
         
         public int DesarrolladoraId { get; set; }
-        public int PublicadoraId { get; set; }
 
         public int ModoDeJuegoId { get; set; }
     }

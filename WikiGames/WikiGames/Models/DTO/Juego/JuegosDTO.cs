@@ -9,7 +9,5 @@ namespace WikiGames.Models.DTO.Juego
         public DateTime FechaLanzamientoOficial { get; set; }
         public List<Genero> Generos { get; set; }
         public HashSet<JuegoConsola> JuegoConsola { get; set; }
-
-
     }
 }

@@ -26,23 +26,28 @@
 				<span asp-validation-for="FechaLanzamientoOficial"  class="text-danger" ></span>
 			</div>
 			<div class="form-group">
+
 				<label class="control-label">Desarrolladora</label>
-				<select name="DesarrolladorId" class="form-select" asp-items="ViewBag.Desarrollador" id="desarrollador"></select>
+				@Html.DropDownList("desarrollador", (SelectList)ViewBag.Desarrolladores, "Please select", new { @class = "form-control" })
+
 			</div>
 			<div class="form-group">
 				<label class="control-label">Publicadora</label>
-				<select name="PublicadoraId" class="form-select" asp-items="ViewBag.Publicadora" id="publicadora"></select>
+				@Html.DropDownList("Publicadora", (SelectList)ViewBag.Publicadora, "Please select", new { @class = "form-control"})
 			</div>
 			<div class="form-group">
 				<label class="control-label">Generos</label>
-				<select name="GeneroId" class="form-select" asp-items="ViewBag.Generos" id="generos"></select>
+				@Html.DropDownList("generos", (SelectList)ViewBag.Generos, "Please select", new { @class = "form-control"})
 			</div>
 			<div class="generosSeleccionados" id="generosSeleccionados">
 
 			</div>
 			<div class="form-group">
-				<label class="control-label">Modos de juego</label>
-				<select name="ModoJuegoId" class="form-select" asp-items="ViewBag.ModoJuegos" id="modoJuegos"></select>
+				<label class="control-label">Modo de juego</label>
+				@Html.DropDownList("ModoDeJuegoId", (SelectList)ViewBag.ModoJuegos, "Please select", new { @class = "form-control" })
+			</div>
+			<div class="ModoDeJuegoSeleccionados" id="ModoDeJuegoSeleccionados">
+
 			</div>
 			<div class="modoJuego" id="modoJuego">
 			</div>
@@ -88,7 +93,7 @@
 			
 		</div>
 		<div class="form-group">
-				<input type="submit" value="Crear Juego" id="crearJuego"class="btn btn-primary" />
+				<input type="submit" value="Crear Juego" id="crearJuego" class="btn btn-primary" />
 		</div>
 	</div>
 

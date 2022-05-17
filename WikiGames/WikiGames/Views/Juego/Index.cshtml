@@ -24,36 +24,32 @@
 		</div>
 	</div>
 	<div class="row">
-		<form>
 
-		
+		<form method="get" action=@Url.Action("Index","Juego") >
 			<div class="col-md-3">
 				<label  class="control-label">Juego</label>
-				<input  class="form-control" id="juegoName"/>
+				@Html.TextBox("juegoName", null, new { placeholder = "Juego",
+                                    @class = "form-control" })
 			</div>
 			<div class="col-md-3">
 				<label class="control-label">Desarrolladora</label>
-				@*<select name="DesarrolladorId" class="form-select" asp-items="@ViewBag.Desarrollador" id="desarrollador"></select>*@
-					@Html.DropDownList("DesarrolladorId", (SelectList)ViewBag.Desarrolladores, "Please select", new { @class = "form-control" })
-			</div>
-			<div class="col-md-3">
-				<label class="control-label">Publicadora</label>
-				<select name="PublicadoraId" class="form-select" asp-items="ViewBag.Publicadora" id="publicadora"></select>
+					@Html.DropDownList("DesarrolladoraId", (SelectList)ViewBag.Desarrolladores, "Please select", new { @class = "form-control" })
 			</div>
 			<div class="col-md-3">
 				<label class="control-label">Generos</label>
-				<select name="GeneroId" class="form-select" asp-items="ViewBag.Generos" id="generos"></select>
+				@Html.DropDownList("GeneroId", (SelectList)ViewBag.Generos, "Please select", new { @class = "form-control"})
 			</div>
 			<div class="col-md-3">
-				<label class="control-label">Modos de juego</label>
-				<select name="ModoJuegoId" class="form-select" asp-items="ViewBag.ModoJuegos" id="modoJuegos"></select>
+				<label class="control-label">Consolas</label>
+				@Html.DropDownList("ConsolaId", (SelectList)ViewBag.Consolas, "Please select", new { @class = "form-control" })
 			</div>
 			<div class="col-md-3" >
-				<label class="control-label">Consola</label>
-				<select name="ConsolaId" class="form-select" id="consolaName"asp-items="ViewBag.Consolas"></select>
+				<label class="control-label">Modo de juego</label>
+				@Html.DropDownList("ModoDeJuegoId", (SelectList)ViewBag.ModoJuegos, "Please select", new { @class = "form-control" })
 			</div>
 			<div class="col-md-3" >
-				<a asp-controller="Juego" asp-action="Index" class="btn btn-warning">Mas info</a>
+
+				 <button class="btn btn-default" type="submit">Buscar</button>
 			</div>
 		</form>
 	</div>
@@ -62,7 +58,7 @@
 		@if (Model.Count() > 0)
 		{
 			
-			<table class="table table-bordered table-striped">
+			<table class="table table-bordered table-striped" id="tablaJuegos">
 				<thead>
 					<tr>
 						<td>Nombre</td>
