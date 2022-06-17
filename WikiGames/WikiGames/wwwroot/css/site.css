@@ -17,6 +17,22 @@ body {
   margin-bottom: 60px;
 }
 
- .form-select {
+.form-select {
     width: 200px !important;
+}
+
+.divCardConsolas {
+
+ width: 90%;
+
+}
+
+.imgConsolaCard {
+    padding: 5px;
+    width: auto;
+    height: auto;
+}
+
+.cardConsola {
+   height: 400px!important;
 }

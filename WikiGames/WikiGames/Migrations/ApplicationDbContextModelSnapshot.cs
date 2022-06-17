@@ -88,13 +88,17 @@ namespace WikiGames.Migrations
                     b.Property<DateTime>("FechaLanzamiento")
                         .HasColumnType("date");
 
+                    b.Property<int>("ImgConsolasId")
+                        .HasColumnType("int");
+
                     b.Property<int>("MarcaId")
                         .HasColumnType("int");
 
                     b.HasKey("ConsolaId");
 
-                    b.HasIndex("MarcaId")
-                        .IsUnique();
+                    b.HasIndex("ImgConsolasId");
+
+                    b.HasIndex("MarcaId");
 
                     b.ToTable("Consolas");
                 });
@@ -123,7 +127,12 @@ namespace WikiGames.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<int?>("ImgDesarrolladoresId")
+                        .HasColumnType("int");
+
                     b.HasKey("DesarrolladorId");
+
+                    b.HasIndex("ImgDesarrolladoresId");
 
                     b.ToTable("Desarrolladores");
                 });
@@ -144,6 +153,50 @@ namespace WikiGames.Migrations
                     b.ToTable("Generos");
                 });
 
+            modelBuilder.Entity("WikiGames.Models.Entities.ImgConsolas", b =>
+                {
+                    b.Property<int>("ImgConsolasId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImgConsolasId"), 1L, 1);
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("imgext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ImgConsolasId");
+
+                    b.ToTable("ImgConsolas");
+                });
+
+            modelBuilder.Entity("WikiGames.Models.Entities.ImgDesarrolladores", b =>
+                {
+                    b.Property<int>("ImgDesarrolladoresId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImgDesarrolladoresId"), 1L, 1);
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("imgext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ImgDesarrolladoresId");
+
+                    b.ToTable("ImgDesarrolladores");
+                });
+
             modelBuilder.Entity("WikiGames.Models.Entities.Juego", b =>
                 {
                     b.Property<int>("JuegoId")
@@ -155,7 +208,7 @@ namespace WikiGames.Migrations
                     b.Property<string>("Argumento")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("DesarrolladoraDesarrolladorId")
+                    b.Property<int>("DesarrolladoraId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FechaLanzamientoOficial")
@@ -170,12 +223,12 @@ namespace WikiGames.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PublicadoraId")
+                    b.Property<int>("PublicadoraId")
                         .HasColumnType("int");
 
                     b.HasKey("JuegoId");
 
-                    b.HasIndex("DesarrolladoraDesarrolladorId");
+                    b.HasIndex("DesarrolladoraId");
 
                     b.HasIndex("PublicadoraId");
 
@@ -251,18 +304,35 @@ namespace WikiGames.Migrations
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsProtagonista")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsVillano")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PersonajeId");
 
                     b.ToTable("Personaje");
+                });
+
+            modelBuilder.Entity("WikiGames.Models.Entities.PersonajeJuegos", b =>
+                {
+                    b.Property<int>("JuegoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PersonajeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descripcion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoPersonaje")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("nvarchar(max)")
+                        .HasDefaultValue("Secundario");
+
+                    b.HasKey("JuegoId", "PersonajeId");
+
+                    b.HasIndex("PersonajeId");
+
+                    b.ToTable("PersonajeJuegos");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.Publicadora", b =>
@@ -334,24 +404,45 @@ namespace WikiGames.Migrations
 
             modelBuilder.Entity("WikiGames.Models.Entities.Consola", b =>
                 {
+                    b.HasOne("WikiGames.Models.Entities.ImgConsolas", "imgConsolas")
+                        .WithMany()
+                        .HasForeignKey("ImgConsolasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("WikiGames.Models.Entities.Marca", "Marca")
-                        .WithOne("Consola")
-                        .HasForeignKey("WikiGames.Models.Entities.Consola", "MarcaId")
+                        .WithMany("Consola")
+                        .HasForeignKey("MarcaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Marca");
+
+                    b.Navigation("imgConsolas");
+                });
+
+            modelBuilder.Entity("WikiGames.Models.Entities.Desarrollador", b =>
+                {
+                    b.HasOne("WikiGames.Models.Entities.ImgDesarrolladores", "ImgDesarrolladores")
+                        .WithMany()
+                        .HasForeignKey("ImgDesarrolladoresId");
+
+                    b.Navigation("ImgDesarrolladores");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.Juego", b =>
                 {
                     b.HasOne("WikiGames.Models.Entities.Desarrollador", "Desarrolladora")
                         .WithMany("Juegos")
-                        .HasForeignKey("DesarrolladoraDesarrolladorId");
+                        .HasForeignKey("DesarrolladoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("WikiGames.Models.Entities.Publicadora", "Publicadora")
                         .WithMany("Juegos")
-                        .HasForeignKey("PublicadoraId");
+                        .HasForeignKey("PublicadoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Desarrolladora");
 
@@ -375,6 +466,25 @@ namespace WikiGames.Migrations
                     b.Navigation("Consola");
 
                     b.Navigation("Juego");
+                });
+
+            modelBuilder.Entity("WikiGames.Models.Entities.PersonajeJuegos", b =>
+                {
+                    b.HasOne("WikiGames.Models.Entities.Juego", "Juego")
+                        .WithMany()
+                        .HasForeignKey("JuegoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WikiGames.Models.Entities.Personaje", "Personaje")
+                        .WithMany()
+                        .HasForeignKey("PersonajeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Juego");
+
+                    b.Navigation("Personaje");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.Consola", b =>

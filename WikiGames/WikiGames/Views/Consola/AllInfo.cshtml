@@ -1,0 +1,78 @@
+﻿@model WikiGames.Models.ViewModel.ConsolaViewModel.ConsolaAllInfoViewModel
+
+@{
+	ViewData["Title"] = "Info Consola";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+	<h2>@Model.ConsolaName</h2>
+	<div class="mw-parser-output">
+		<div class="row">
+			<div class="col-sm-6">
+				<article>@Model.Descripcion</article>
+			</div>
+		
+			<div class="col-sm-5">
+				<table class="Infobox" cellpadding="2" cellspacing="2" align="right" width="240px" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
+					<tbody>
+						<tr>
+							<td align="center" colspan="2" bgcolor="gold" style="font-size:110%;"><i><b>@Model.ConsolaName</b></i>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;"><a href="" class="image"><img src="@Model.imgConsolas.ImagePath"alt="" decoding="async" width="170" height="200" ></a>
+							</td>
+						</tr>
+						<tr class="">
+							<th style="background-color: gold;">Marca</th>
+							<td>
+								<a href="/es/wiki/IO_Interactive" title="">@Model.Marca.MarcaName</a>
+							</td>
+						</tr>
+						<tr class="hiddenStructure{{{Distribuidor}}}">
+							<th style="background-color: gold;">Fecha de Lanzamiento</th>
+							<td>
+								<a href="/es/wiki/Eidos_Interactive" title="">@Model.FechaLanzamiento</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h3>Juegos publicados</h3>
+		@if (Model.juegoConsola.Count() > 0)
+		{
+			<table class="table table-bordered table-striped" id="tablaJuegos">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Lanzamiento</td>
+						<td>Ventas</td>
+						<td>Info</td>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model.juegoConsola)
+					{
+						<tr>
+							<td>@item.Juego.JuegoName</td>
+							<td>@item.FechaLanzamiento</td>
+							<td>@item.CopiasVendidas</td>
+							<td><a asp-controller="Juego" asp-action="AllInfo" asp-route-id="@item.JuegoId" class="btn btn-warning">Info</a></td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No hay registros</p>
+		}
+	</div>
+	
+</div>

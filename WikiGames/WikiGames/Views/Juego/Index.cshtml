@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WikiGames.Models.Entities.Juego>
+﻿@model IEnumerable<WikiGames.Models.ViewModel.JuegoViewModel.JuegosViewModel>
 
 @{
 	ViewData["Title"] = "Lista de Juegos";
@@ -23,13 +23,13 @@
 			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Juego">Agregar nuevo Juego</a>
 		</div>
 	</div>
-	<div class="row">
 
-		<form method="get" action=@Url.Action("Index","Juego") >
+	<div class="row">
+		 <form method="get" action=@Url.Action("Index","Juego") >
 			<div class="col-md-3">
 				<label  class="control-label">Juego</label>
 				@Html.TextBox("juegoName", null, new { placeholder = "Juego",
-                                    @class = "form-control" })
+									@class = "form-control" })
 			</div>
 			<div class="col-md-3">
 				<label class="control-label">Desarrolladora</label>
@@ -48,12 +48,10 @@
 				@Html.DropDownList("ModoDeJuegoId", (SelectList)ViewBag.ModoJuegos, "Please select", new { @class = "form-control" })
 			</div>
 			<div class="col-md-3" >
-
-				 <button class="btn btn-default" type="submit">Buscar</button>
+					<button class="btn btn-primary" type="submit">Buscar</button>
 			</div>
-		</form>
+		 </form>
 	</div>
-
 	<div class="row">
 		@if (Model.Count() > 0)
 		{

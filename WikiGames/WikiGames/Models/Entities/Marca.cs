@@ -8,6 +8,6 @@ namespace WikiGames.Models.Entities
         [Required, MaxLength(50)]
         public string MarcaName { get; set;}
 
-        public Consola Consola { get; set; }
+        public List<Consola> Consola { get; set; }
     }
 }

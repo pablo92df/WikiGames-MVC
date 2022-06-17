@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
 using System.Text.Json.Serialization;
-
+using WikiGames.Services.Repositories;
+using WikiGames.Services.RepositoriesInterface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,15 @@ builder.Services.AddControllersWithViews().AddJsonOptions(options =>
                     options.JsonSerializerOptions.ReferenceHandler
                     = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
 string connectionString = builder.Configuration.GetConnectionString("DBConnection");
+builder.Services.AddTransient<IMarcaRepository, MarcaRepository>();
+builder.Services.AddTransient<IGeneroRepository, GeneroRepository>();
+builder.Services.AddTransient<IDesarrolladorRepository, DesarrolladorRepository>();
+builder.Services.AddTransient<IImgDesarrolladoresRepository, ImgDesarrolladoresRepository>();
+builder.Services.AddTransient<IJuegoRepository, JuegoRepository>();
+
+
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(connectionString, sqlServer => sqlServer.UseNetTopologySuite());

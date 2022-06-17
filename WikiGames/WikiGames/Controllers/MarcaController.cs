@@ -2,25 +2,27 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
-using WikiGames.Models.DTO;
+using WikiGames.Models.ViewModel;
 using WikiGames.Models.Entities;
+using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Controllers
 {
     public class MarcaController : Controller
     {
-        private readonly ApplicationDbContext context;
+       
         private readonly IMapper mapper;
+        private readonly IMarcaRepository marcaRepository;
 
-        public MarcaController(ApplicationDbContext context, IMapper mapper)
+        public MarcaController(IMapper mapper, IMarcaRepository marcaRepository)
         {
             this.mapper = mapper;
-
-            this.context = context;
+            this.marcaRepository = marcaRepository;
         }
         public async Task<IActionResult> Index()
         {
-            var marcas = await context.Marcas.OrderBy(m => m.MarcaName).ToListAsync();
+            var marca = await marcaRepository.GetAll();
+            var marcas = mapper.Map<MarcaViewModel>(marca);
             return View(marcas);
         }
 
@@ -29,19 +31,37 @@ namespace WikiGames.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(MarcaCreacionDTO marcaDTO)
+        public async Task<IActionResult> Create(MarcaCreacionViewModel marcaViewModel)
         {
-            //Marca marca = new Marca() 
-            //{
-            //    MarcaName = marcaDTO.MarcaName,
-            //};
-            //var marca = 
-            //context.Marcas.Add(marca);
-            //context.SaveChanges();
-            //TempData["mensaje"] = "Marca Cargada con exito";
+
+            if (!ModelState.IsValid) 
+            {
+                return View(marcaViewModel);
+            }
+            Marca marca = new Marca()
+            {
+                MarcaName = marcaViewModel.MarcaName,
+            };
+            await marcaRepository.Create(marca);
+            TempData["mensaje"] = "Marca Cargada con exito";
             return RedirectToAction("Index");
-          
-            //return View();
+        }
+
+        public async Task<IActionResult> Delete(int id, MarcaViewModel marcaViewModel) 
+        {
+            var marca = await marcaRepository.GetById(id);
+            if (marca is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            if (id != marcaViewModel.MarcaId) 
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+
+            await marcaRepository.Delete(marca);
+            TempData["mensaje"] = "Marca Cargada con exito";
+            return RedirectToAction("Index");
         }
     }
 }

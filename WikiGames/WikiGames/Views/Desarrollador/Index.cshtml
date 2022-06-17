@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WikiGames.Models.ViewModel.DesarrolladoresViewModel.DesarrolladorViewModel>
+
+@{
+	ViewData["Title"] = "Lista de Desarrolladores";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	@if (TempData["mensaje"] != null)
+	{ 
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			@TempData["mensaje"]
+			<button type="button" class="close" data-dismiss="alert" arial-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	}
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Lista de Desarrolladores</h3>
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Desarrollador">Agregar nuevo Desarrollador</a>
+		</div>
+	</div>
+
+	<div class="row">
+		 <form method="get" action=@Url.Action("Index","Desarrollador")>
+			<div class="col-md-3">
+				<label  class="control-label">Juego</label>
+				@Html.TextBox("DesarrolladorName", null, new { placeholder = "Desarrollador",
+									@class = "form-control" })
+			</div>
+			<div class="col-md-3" >
+					<button class="btn btn-primary" type="submit">Buscar</button>
+			</div>
+		 </form>
+	</div>
+	<div class="row">
+		@if (Model.Count() > 0)
+		{
+			
+			<table class="table table-bordered table-striped" id="tablaJuegos">
+				<thead>
+					<tr>
+						<td>Desarrollador</td>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							@if(!(@item.ImgDesarrolladores.ImagePath is null))
+							{
+								<td><img src="@item.ImgDesarrolladores.ImagePath"/></td>
+
+							}
+							else
+							{
+								<td>@item.DesarrolladorName</td>
+								
+							}
+							<td>
+								<a asp-controller="Desarrollador" asp-action="AllInfo" asp-route-id="@item.DesarrolladorId" class="btn btn-warning">Mas info</a>
+
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No hay registros</p>
+		}
+	</div>
+</div>

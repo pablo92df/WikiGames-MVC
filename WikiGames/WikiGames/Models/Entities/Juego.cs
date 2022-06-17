@@ -14,11 +14,16 @@ namespace WikiGames.Models.Entities
         public List<Genero> Generos { get; set; }  
         
         public List<JuegoConsola> JuegoConsola { get; set; }
+        [Required]
+        public int DesarrolladoraId { get; set; }
+
         public Desarrollador Desarrolladora { get; set; }
+        [Required]
+        public int PublicadoraId { get; set; }
+
         public Publicadora Publicadora { get; set; }
 
         public string Argumento { get; set; }
-
         public List<ModosDeJuego> ModosDeJuegos { get; set; }
         public List<Personaje> Personajes { get; set; }
 

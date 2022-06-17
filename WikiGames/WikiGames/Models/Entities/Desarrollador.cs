@@ -15,6 +15,7 @@ namespace WikiGames.Models.Entities
         public DateTime? Cierre { get; set; }
 
         public List<Juego> Juegos { get; set;}
+        public ImgDesarrolladores ImgDesarrolladores { get; set; }
 
     }
 }

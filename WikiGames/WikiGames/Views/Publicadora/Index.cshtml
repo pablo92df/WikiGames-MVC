@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WikiGames.Models.Entities.Publicadora>
+
+@{
+	ViewData["Title"] = "Lista de Publicadoras";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+	@if (TempData["mensaje"] != null)
+	{ 
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			@TempData["mensaje"]
+			<button type="button" class="close" data-dismiss="alert" arial-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	}
+	<div class="row">
+		<div class="col-sm-6">
+			<h3>Lista de Publicadoras</h3>
+		</div>
+		<div class="col-sm-6">
+			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Publicadora">Agregar nueva Publicadora</a>
+		</div>
+	</div>
+
+	<div class="row">
+		@* <form method="get" action=@Url.Action("Index","Desarrollador") >
+			<div class="col-md-3">
+				<label  class="control-label">Juego</label>
+				@Html.TextBox("DesarrolladorName", null, new { placeholder = "Desarrollador",
+									@class = "form-control" })
+			</div>
+			<div class="col-md-3" >
+					<button class="btn btn-primary" type="submit">Buscar</button>
+			</div>
+		 </form>*@
+	</div>
+	<div class="row">
+		@if (Model.Count() > 0)
+		{
+			
+			<table class="table table-bordered table-striped" id="tablaJuegos">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Fundacion</td>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td>@item.PublicadoraNombre</td>
+							<td>@item.Fundacion</td>
+							<td>
+								<a asp-controller="Desarrollador" asp-action="AllInfo" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Mas info</a>
+				
+
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No hay registros</p>
+		}
+	</div>
+</div>

@@ -20,6 +20,14 @@ namespace WikiGames.Data
         {
             modelBuilder.Entity<JuegoConsola>().HasKey(prop => new { prop.JuegoId, prop.ConsolaId });
             modelBuilder.Entity<Genero>().Property(x => x.Nombre).HasField("_Nombre");
+
+            modelBuilder.Entity<PersonajeJuegos>().HasKey(prop => new { prop.JuegoId, prop.PersonajeId });
+
+            modelBuilder.Entity<PersonajeJuegos>().Property(prop => prop.TipoPersonaje).HasDefaultValue(TipoPersonaje.Secundario).HasConversion<string>();
+
+            //modelBuilder.Entity<Juego>().HasOne(j => j.Desarrolladora).WithOne().HasForeignKey<Desarrollador>(de => de.DesarrolladorId).IsRequired();
+            //modelBuilder.Entity<Juego>().HasOne(j => j.Publicadora).WithOne().HasForeignKey<Publicadora>(de => de.PublicadoraId).IsRequired();
+
         }
 
         public DbSet<Marca> Marcas { get; set; }
@@ -30,6 +38,9 @@ namespace WikiGames.Data
         public DbSet<JuegoConsola> JuegosConsolas { get; set; }
         public DbSet<Publicadora> Publicadoras { get; set; }
         public DbSet<ModosDeJuego> ModosDeJuegos { get; set; }
+        public DbSet<ImgConsolas> ImgConsolas { get; set; }
+        public DbSet<ImgDesarrolladores> ImgDesarrolladores { get; set; }
+        public DbSet<PersonajeJuegos> PersonajeJuegos { get; set; }
 
     }
 }

@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Pablo\source\repos\WikiGames-MVC\WikiGames\WikiGames
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/AllInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc29sYVxBbGxJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc29sYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -23,8 +27,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc29sYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/AllInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzYXJyb2xsYWRvclxBbGxJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzYXJyb2xsYWRvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzYXJyb2xsYWRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Genero/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Genero/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJvXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Genero/Index.cshtml]
@@ -33,6 +53,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Home/NoEncontrado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb0VuY29udHJhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Home/Privacy.cshtml]
@@ -57,6 +81,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Marca/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/ModosDeJuego/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NEZUp1ZWdvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/ModosDeJuego/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9kb3NEZUp1ZWdvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Publicadora/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWRvcmFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Publicadora/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWRvcmFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pablo/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Shared/Error.cshtml]

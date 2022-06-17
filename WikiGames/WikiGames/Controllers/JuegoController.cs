@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
-using WikiGames.Models.DTO.Juego;
+using WikiGames.Models.ViewModel.JuegoViewModel;
 using WikiGames.Models.Entities;
+using WikiGames.Models.ViewModel.JuegViewModel;
+using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Controllers
 {
@@ -12,71 +14,43 @@ namespace WikiGames.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
-        public JuegoController(ApplicationDbContext context, IMapper mapper)
+        private readonly IJuegoRepository juegoRepository;
+        private readonly IGeneroRepository generoRepository;
+        private readonly IDesarrolladorRepository desarrolladorRepository;
+
+        public JuegoController(ApplicationDbContext context,
+            IMapper mapper,
+            IJuegoRepository juegoRepository,
+            IGeneroRepository generoRepository,
+            IDesarrolladorRepository desarrolladorRepository)
         {
             this.context = context;
             this.mapper = mapper;
+            this.juegoRepository = juegoRepository;
+            this.generoRepository = generoRepository;
+            this.desarrolladorRepository = desarrolladorRepository;
         }
+        [HttpGet]
         public async Task<IActionResult> Index(string juegoName, int GeneroId, int ConsolaId, int DesarrolladoraId, int ModoDeJuegoId)
         {
-            // ViewData["Desarrollador"] = new SelectList(context.Desarrolladores, "DesarrolladorId", "DesarrolladorName");
-            //ViewData["Generos"] = new SelectList(context.Generos, "GeneroId", "Nombre");
-            // ViewData["Consolas"] = new SelectList(context.Consolas, "ConsolaId", "ConsolaName");
-            // ViewData["ModoJuegos"] = new SelectList(context.ModosDeJuegos, "ModosDeJuegoId", "ModosDeJuegoName");
 
             ViewBag.Desarrolladores = new SelectList(context.Desarrolladores.OrderBy(x => x.DesarrolladorName), "DesarrolladorId", "DesarrolladorName");
             ViewBag.Generos = new SelectList(context.Generos.OrderBy(x => x.Nombre), "GeneroId", "Nombre");
             ViewBag.Consolas = new SelectList(context.Consolas.OrderBy(c => c.ConsolaName), "ConsolaId", "ConsolaName");
             ViewBag.ModoJuegos = new SelectList(context.ModosDeJuegos.OrderBy(m => m.ModosDeJuegoName), "ModosDeJuegoId", "ModosDeJuegoName");
-           
-            var juegoQueryable = context.Juegos.AsQueryable();
-            if (!string.IsNullOrEmpty(juegoName))
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.JuegoName.Contains(juegoName));
-            }
-            if (DesarrolladoraId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.Desarrolladora.DesarrolladorId == DesarrolladoraId);
 
-            }
-            if (GeneroId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.Generos
-                                                .Select(g => g.GeneroId)
-                                                .Contains(GeneroId));
-            }
-            if (ConsolaId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.JuegoConsola
-                                                .Select(g => g.ConsolaId)
-                                                .Contains(ConsolaId));
-            }
-           
-            if (ModoDeJuegoId != 0)
-            {
-                juegoQueryable = juegoQueryable.Where(p => p.ModosDeJuegos
-                                                .Select(g => g.ModosDeJuegoId)
-                                                .Contains(ModoDeJuegoId));
-            }
+            var juegos = await juegoRepository.GetAll(juegoName, GeneroId, ConsolaId, DesarrolladoraId, ModoDeJuegoId);
+            var juegosViewModel = mapper.Map<List<JuegosViewModel>>(juegos);
 
-            var juegos = await juegoQueryable.OrderBy(j=>j.JuegoName)
-                                             .Include(j => j.Generos)
-                                             .Include(j => j.Desarrolladora)
-                                             .Include(j => j.Publicadora).ToListAsync();
-
-            return View(juegos);
+            return View(juegosViewModel);
         }
         public async Task<IActionResult> AllInfo(int id) 
         {
           
-            var Juegos = await context.Juegos
-                    .Where(j=>j.JuegoId == id)
-                    .Include(j => j.Generos.OrderByDescending(g => g.Nombre))
-                    .Include(j => j.JuegoConsola)
-                     .ThenInclude(jc => jc.Consola).ThenInclude(c => c.Marca)
-                     .Include(j=>j.Desarrolladora).FirstOrDefaultAsync();
+            var juego = await juegoRepository.GetById(id);
 
-            return View(Juegos);
+            var juegosViewModel = mapper.Map<JuegoAllInfoViewModel>(juego);
+            return View(juegosViewModel);
         }
 
         public IActionResult Create()
@@ -87,19 +61,62 @@ namespace WikiGames.Controllers
             ViewData["Publicadora"] = new SelectList(context.Publicadoras, "PublicadoraId", "PublicadoraNombre");
             ViewData["ModoJuegos"] = new SelectList(context.ModosDeJuegos, "ModosDeJuegoId", "ModosDeJuegoName");
 
-
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(JuegoCreacionDTO juegoDTO)
+        public async Task<IActionResult> CreateJuego(JuegoCreacionViewModel juegoViewModel)
         {
 
             if (!ModelState.IsValid)
             {
+                return View(juegoViewModel);
+            }
+            foreach (var i in juegoViewModel.Generos) 
+            {
+                var genero = generoRepository.GetById(i.GeneroId);
+                if (genero is null) 
+                {
+                    return View(juegoViewModel);
+                }
+            }
+            var desarrollador = desarrolladorRepository.GetById(juegoViewModel.DesarrolladoraId);
+            if (desarrollador is null) 
+            {
+                return View(desarrollador);
+            }
+            Juego juego = mapper.Map<Juego>(juegoViewModel);
+           
+            await juegoRepository.Create(juego);
+
+            // jueguito.Generos.ForEach(g => context.Entry(g).State = EntityState.Unchanged);
+            //if (juegoDTO.JuegosConsolaDTO is not null)
+            //{
+            //    List<JuegoConsola> jconsola = new List<JuegoConsola>();
+
+            //    for (int i = 0; i < juegoDTO.JuegosConsolaDTO.Count; i++)
+            //    {
+            //        jconsola.Add(new JuegoConsola());
+            //        jconsola[jconsola.Count - 1] = mapper.Map<JuegoConsola>(juegoDTO.JuegosConsolaDTO[i]);
+            //    }
+            //    jueguito.JuegoConsola = jconsola;
+            //}
+   
+        
+
+            return RedirectToAction("Index");
+            
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateJuegoPersonajes(JuegoCreacionViewModel juegoDTO)
+        {
+
+            if (ModelState.IsValid)
+            {
+
                 var jueguito = mapper.Map<Juego>(juegoDTO);
                 jueguito.Generos.ForEach(g => context.Entry(g).State = EntityState.Unchanged);
-                //jueguito.Desarrolladora(d => context.Entry(d).State = EntityState.Unchanged);
                 if (juegoDTO.JuegosConsolaDTO is not null)
                 {
                     List<JuegoConsola> jconsola = new List<JuegoConsola>();
@@ -111,15 +128,14 @@ namespace WikiGames.Controllers
                     }
                     jueguito.JuegoConsola = jconsola;
                 }
-                context.Add(jueguito);
+                context.Juegos.Add(jueguito);
                 await context.SaveChangesAsync();
 
                 return RedirectToAction("Index");
             }
-         
+
             return View();
         }
-
 
     }
 }

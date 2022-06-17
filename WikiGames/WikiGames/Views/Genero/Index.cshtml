@@ -39,11 +39,10 @@
 					{
 						<tr>
 							<td>@item.Nombre</td>
-							@*<td>
-								<a asp-controller="Genero" asp-action="Edit" asp-route-id="@item.idProducto" class="btn btn-warning">Editar</a>
-								<a asp-controller="Productos" asp-action="Delete" asp-route-id="@item.idProducto" class="btn btn-warning">Delete</a>
-
-							</td>*@
+							<td>
+								<a asp-controller="Genero" asp-action="Edit" asp-route-id="@item.GeneroId" class="btn btn-warning">Editar</a>
+								<a asp-controller="Genero" asp-action="Delete" asp-route-id="@item.GeneroId" class="btn btn-warning">Delete</a>
+							</td>
 						</tr>
 					}
 				</tbody>

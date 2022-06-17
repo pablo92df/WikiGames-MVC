@@ -72,7 +72,6 @@ C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6
 C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\WikiGames.deps.json
 C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\WikiGames.runtimeconfig.json
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\WikiGames.dll
-C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\ref\WikiGames.dll
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\WikiGames.pdb
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
@@ -132,3 +131,4 @@ C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\ref\WikiGames.dll
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\WikiGames.pdb
 C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\WikiGames.genruntimeconfig.cache
+C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\refint\WikiGames.dll

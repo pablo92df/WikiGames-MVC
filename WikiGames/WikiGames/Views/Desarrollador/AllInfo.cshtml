@@ -1,0 +1,88 @@
+﻿@model WikiGames.Models.ViewModel.DesarrolladoresViewModel.DesarrolladorViewModel
+
+@{
+	ViewData["Title"] = "Desarrollador";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+	@if (TempData["mensaje"] != null)
+	{ 
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			@TempData["mensaje"]
+			<button type="button" class="close" data-dismiss="alert" arial-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	}@*
+	<h2>@Model.DesarrolladorName</h2>
+	<div class="mw-parser-output">
+		<div class="row">
+			<div class="col-sm-6">
+				<article>@Model.Descripcion</article>
+			</div>
+		
+			<div class="col-sm-5">
+				<table class="Infobox" cellpadding="2" cellspacing="2" align="right" width="240px" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
+					<tbody>
+						<tr>
+							<td align="center" colspan="2" bgcolor="gold" style="font-size:110%;"><i><b>@Model.DesarrolladorName</b></i>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="text-align: center;"><a href="" class="image"><img alt="HitmanCodename47.jpg" src="@Model.ImgDesarrolladores.ImagePath" decoding="async" width="170" height="50" data-image-name="HitmanCodename47.jpg" data-image-key="HitmanCodename47.jpg"></a>
+							</td>
+						</tr>
+						<tr class="">
+							<th style="background-color: gold;">Desarrollador</th>
+							<td>
+								<a href="/es/wiki/IO_Interactive" title=""></a>
+							</td>
+						</tr>
+						<tr class="hiddenStructure{{{Lanzamiento}}}">
+							<th style="background-color: gold;">Fecha de lanzamiento</th>
+							<td>@Model.Creacion</a>
+							</td>
+						</tr>
+						
+						@*<tr class="hiddenStructure{{{Clasificación}}}">
+						<th style="background-color: gold;">Clasificación
+						</th>
+						<td>ESRB: Mature (17+)
+						</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<h3>Lanzamiento en Consolas</h3>
+		@if (Model.Juegos.Count() > 0)
+		{
+
+			<table class="table table-bordered table-striped" id="tablaJuegos">
+				<thead>
+					<tr>
+						<td>Nombre</td>
+						<td>Ventas</td>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model.Juegos)
+					{
+						<tr>
+							<td>@item.JuegoName</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+		else
+		{
+			<p>No hay registros</p>
+		}
+	</div>
+
+</div>	*@

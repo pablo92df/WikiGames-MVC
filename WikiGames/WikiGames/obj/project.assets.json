@@ -2035,11 +2035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+      "projectUniqueName": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
       "projectName": "WikiGames",
-      "projectPath": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+      "projectPath": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
       "packagesPath": "C:\\Users\\Pablo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pablo\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
+      "outputPath": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Pablo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2112,5 +2112,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

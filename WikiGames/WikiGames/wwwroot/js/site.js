@@ -44,7 +44,21 @@ $("#btnAgregar").click(function () {
     let cantidad = $("#ventas").val();
     let fecha = $("#fechaLanzamiento").val();
    
-   // validacionConsola(consola, cantidad, fecha);
+    // validacionConsola(consola, cantidad, fecha);
+    if (consolaGame.length > 0)
+    {
+
+        for (let i in consolaGame)
+        {
+
+            if (consolaGame[i].ConsolaId === consolaId)
+            {
+                alert("Consola ya cargada");
+                return;
+            }
+        }
+    }
+
     if (validacionConsola())
     {
 
@@ -190,7 +204,7 @@ function resetFieldJuegoConsola()
 
 $("#crearJuego").click(function () {
 
-
+ 
 
     if (validarGeneros(Generos))
     {
@@ -212,28 +226,30 @@ $("#crearJuego").click(function () {
         return false;
     }
 
-        let juegoDTO = {};
-        juegoDTO.JuegoName = $("#juegoName").val();
-        console.log($("#juegoName").val());
-        juegoDTO.JuegoDescription = $("#descripcion").val();
-        juegoDTO.Generos = Generos;
-        juegoDTO.FechaLanzamientoOficial = $("#fechaOficial").text();
-        juegoDTO.Desarrolladora = Desarrolladores;
-        juegoDTO.JuegosConsolaDTO = consolaGame;
+    let juegoViewModel = {};
+    juegoViewModel.JuegoName = $("#juegoName").val();
+    juegoViewModel.JuegoDescription = $("#descripcion").val(); 
+    juegoViewModel.Generos = Generos;
+    juegoViewModel.FechaLanzamientoOficial = $("#fechaOficial").val();
+    juegoViewModel.DesarrolladoraId = $("#desarrollador option:selected").val();
+    juegoViewModel.PublicadoraId = $("#Publicadora option:selected").val();
+    juegoViewModel.JuegosConsolaDTO = consolaGame;
+    juegoViewModel.Argumento = $("#argumento").val();
+    juegoViewModel.ModosDeJuegos = ModosDeJuego;
 
-        $.ajax({
-            async: true,
-            type: 'POST',
-            dataType: "application/json; charset=UTF-8",
-            data: juegoDTO,
-            url: "https://localhost:7033/Juego/Create",
-            success: function (data) {
+    $.ajax({
+        async: true,
+        type: 'POST',
+        dataType: "application/json; charset=UTF-8",
+        data: juegoViewModel,
+        url: "https://localhost:7033/Juego/CreateJuego",
+        success: function (data) {
 
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(errorThrown);
-            }
-        })
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    })
     
     
 });
