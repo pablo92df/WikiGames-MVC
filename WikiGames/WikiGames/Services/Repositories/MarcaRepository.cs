@@ -17,20 +17,6 @@ namespace WikiGames.Services.Repositories
             var marcas = await _context.Marcas.OrderBy(m => m.MarcaName).ToListAsync();
             return marcas;
         }
-        public async Task<Marca> GetById(int id) 
-        {
-            var marca = await _context.Marcas.FirstOrDefaultAsync(m => m.MarcaId == id);
-            return marca;
-        }
-        public async Task Delete(Marca marca) 
-        {
-            _context.Remove(marca);
-            await _context.SaveChangesAsync();
-        }
-        public  async Task Create(Marca marca) 
-        {
-            _context.Marcas.Add(marca);
-            await _context.SaveChangesAsync();
-        }
+
     }
 }

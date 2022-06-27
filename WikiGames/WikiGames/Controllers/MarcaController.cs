@@ -13,16 +13,18 @@ namespace WikiGames.Controllers
        
         private readonly IMapper mapper;
         private readonly IMarcaRepository marcaRepository;
+        private readonly ICRUD icrud;
 
-        public MarcaController(IMapper mapper, IMarcaRepository marcaRepository)
+        public MarcaController(IMapper mapper, IMarcaRepository marcaRepository, ICRUD icrud)
         {
             this.mapper = mapper;
             this.marcaRepository = marcaRepository;
+            this.icrud = icrud;
         }
         public async Task<IActionResult> Index()
         {
             var marca = await marcaRepository.GetAll();
-            var marcas = mapper.Map<MarcaViewModel>(marca);
+            var marcas = mapper.Map<List<MarcaViewModel>>(marca);
             return View(marcas);
         }
 
@@ -42,14 +44,14 @@ namespace WikiGames.Controllers
             {
                 MarcaName = marcaViewModel.MarcaName,
             };
-            await marcaRepository.Create(marca);
+            await icrud.Create(marca);
             TempData["mensaje"] = "Marca Cargada con exito";
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Delete(int id, MarcaViewModel marcaViewModel) 
         {
-            var marca = await marcaRepository.GetById(id);
+            var marca = await icrud.GetByID<Marca>(id);
             if (marca is null)
             {
                 return RedirectToAction("NoEncontrado", "Home");
@@ -59,8 +61,8 @@ namespace WikiGames.Controllers
                 return RedirectToAction("NoEncontrado", "Home");
             }
 
-            await marcaRepository.Delete(marca);
-            TempData["mensaje"] = "Marca Cargada con exito";
+            await icrud.Delete<Marca>(id);
+            TempData["mensaje"] = "Marca Eliminada con exito";
             return RedirectToAction("Index");
         }
     }

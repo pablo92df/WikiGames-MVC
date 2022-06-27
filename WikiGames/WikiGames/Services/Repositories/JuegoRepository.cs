@@ -65,10 +65,6 @@ namespace WikiGames.Services.Repositories
                      .Include(j => j.Publicadora).FirstOrDefaultAsync();
         }
 
-        public async Task Create(Juego juego) 
-        {
-            _context.Juegos.Add(juego);
-            await _context.SaveChangesAsync();
-        }
+
     }
 }

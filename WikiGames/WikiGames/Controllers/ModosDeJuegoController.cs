@@ -2,16 +2,19 @@
 using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
 using WikiGames.Models.Entities;
+using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Controllers
 {
     public class ModosDeJuegoController : Controller
     {
         private readonly ApplicationDbContext context;
+        private readonly ICRUD icrud;
 
-        public ModosDeJuegoController(ApplicationDbContext context)
+        public ModosDeJuegoController(ApplicationDbContext context, ICRUD icrud)
         {
             this.context = context;
+            this.icrud = icrud;
         }
         public async Task<IActionResult> Index()
         {
@@ -28,8 +31,8 @@ namespace WikiGames.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.ModosDeJuegos.Add(modosDeJuego);
-                await context.SaveChangesAsync();
+
+                await icrud.Create<ModosDeJuego>(modosDeJuego);
                 TempData["mensaje"] = "Cargado con exito";
                 return RedirectToAction("Index");
             }

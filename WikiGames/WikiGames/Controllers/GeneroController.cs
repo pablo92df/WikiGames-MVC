@@ -15,17 +15,19 @@ namespace WikiGames.Controllers
 
         private readonly IGeneroRepository generoRepository;
         private readonly IMapper mapper;
+        private readonly ICRUD icrud;
 
-        public GeneroController(IGeneroRepository generoRepository, IMapper mapper)
+        public GeneroController(IGeneroRepository generoRepository, IMapper mapper, ICRUD icrud)
         {
  ;
             this.generoRepository = generoRepository;
             this.mapper = mapper;
+            this.icrud = icrud;
         }
-        public async  Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             var gen = await generoRepository.GetAll();
-            var generos = mapper.Map<GeneroViewModel>(gen);
+            var generos = mapper.Map<List<GeneroViewModel>>(gen);
 
             return View(generos);
         }
@@ -34,7 +36,7 @@ namespace WikiGames.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(GeneroViewModel generoViewModel) 
+        public async Task<IActionResult> Create(Genero generoViewModel) 
         {
             if(!ModelState.IsValid)
             {
@@ -42,15 +44,15 @@ namespace WikiGames.Controllers
 
             }
             var genero = mapper.Map<Genero>(generoViewModel);
+            await icrud.Create<Genero>(genero);
 
-            await generoRepository.Create(genero);
             TempData["mensaje"] = "Genero Cargado con exito";
             return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            Genero gen = await generoRepository.GetById(id);
+            Genero gen = await icrud.GetByID<Genero>(id);
 
             if (gen is null)
             {
@@ -67,7 +69,7 @@ namespace WikiGames.Controllers
             {
                 return RedirectToAction("NoEncontrado","Home");
             }
-            Genero gen = await generoRepository.GetById(GeneroId);
+            Genero gen = await icrud.GetByID<Genero>(GeneroId);
 
             if (gen is null) 
             {
@@ -76,7 +78,7 @@ namespace WikiGames.Controllers
 
             gen = mapper.Map<Genero>(generoViewModel);
             
-            await generoRepository.Update(gen);
+            await icrud.Update(gen);
             TempData["mensaje"] = "Genero actualizado Exitosamente";
 
             return RedirectToAction("Index");
@@ -84,14 +86,13 @@ namespace WikiGames.Controllers
 
         public async Task<IActionResult> Delete(int idGenero)
         {
-            var genero = generoRepository.GetById(idGenero);
+            var genero = icrud.GetByID<Genero>(idGenero);
 
             if (genero is null) 
             {
                 return RedirectToAction("NoEncontrado","Home");
             }
-
-            await generoRepository.Delete(idGenero);
+            await icrud.Delete<Genero>(idGenero);
 
             return RedirectToAction("Index");
         }

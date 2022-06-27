@@ -16,6 +16,8 @@ builder.Services.AddTransient<IGeneroRepository, GeneroRepository>();
 builder.Services.AddTransient<IDesarrolladorRepository, DesarrolladorRepository>();
 builder.Services.AddTransient<IImgDesarrolladoresRepository, ImgDesarrolladoresRepository>();
 builder.Services.AddTransient<IJuegoRepository, JuegoRepository>();
+builder.Services.AddTransient<ICRUD, CRUD>();
+
 
 
 

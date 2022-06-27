@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
 using WikiGames.Models.ViewModel.ConsolaViewModel;
 using WikiGames.Models.Entities;
+using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Controllers
 {
@@ -13,13 +14,15 @@ namespace WikiGames.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IWebHostEnvironment hostingEnvironment;
+        private readonly ICRUD icrud;
         private readonly IMapper mapper;
 
-        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment)
+        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud)
         {
             this.context = context;
             this.mapper = mapper;
             this.hostingEnvironment = hostingEnvironment;
+            this.icrud = icrud;
         }
         public async Task<IActionResult> Index(string ConsolaName, int MarcaId)
         {
