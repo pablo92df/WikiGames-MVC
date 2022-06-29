@@ -19,12 +19,16 @@ namespace WikiGames.Services.Repositories
 			return await _context.ImgDesarrolladores.Where(i => i.ImagePath == imgPath).FirstOrDefaultAsync();
 		}
 
-		public async Task Create(ImgDesarrolladores imgDesarrolladores) 
-		{
-			_context.ImgDesarrolladores.Add(imgDesarrolladores);
-			await _context.SaveChangesAsync();
-		}
+		//public async Task Create(ImgDesarrolladores imgDesarrolladores) 
+		//{
+		//	_context.ImgDesarrolladores.Add(imgDesarrolladores);
+		//	await _context.SaveChangesAsync();
+		//}
 
+		public async Task<ImgDesarrolladores> GetById(int id)
+		{
+			return await _context.ImgDesarrolladores.Where(i => i.ImgDesarrolladoresId == id).FirstOrDefaultAsync();
+		}
 		public async Task Delete(ImgDesarrolladores imgDesarrollador) 
 		{
 			_context.ImgDesarrolladores.Remove(imgDesarrollador);

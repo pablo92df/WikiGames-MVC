@@ -9,7 +9,9 @@ namespace WikiGames.Models.ViewModel.DesarrolladoresViewModel
         public int DesarrolladorId { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(maximumLength: 50, ErrorMessage = "El nombre no puede ser mayo a {1} catacteres")]
+        [Display(Name = "Nombre")]
         public string DesarrolladorName { get; set; }
+
 
         public ImgDesarrolladores ImgDesarrolladores { get; set; }
     }

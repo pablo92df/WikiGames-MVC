@@ -21,6 +21,7 @@
 		</div>
 		<div class="col-sm-6">
 			<a class="btn btn-success d-block" asp-action="Create" asp-controller="Publicadora">Agregar nueva Publicadora</a>
+			
 		</div>
 	</div>
 
@@ -54,7 +55,8 @@
 							<td>@item.PublicadoraNombre</td>
 							<td>@item.Fundacion</td>
 							<td>
-								<a asp-controller="Desarrollador" asp-action="AllInfo" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Mas info</a>
+								<a asp-controller="Publicadora" asp-action="AllInfo" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Mas info</a>
+								<a asp-controller="Publicadora" asp-action="Edit" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Edit</a>
 				
 
 							</td>

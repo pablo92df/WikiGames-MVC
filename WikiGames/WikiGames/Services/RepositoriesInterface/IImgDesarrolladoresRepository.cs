@@ -4,7 +4,9 @@ namespace WikiGames.Services.RepositoriesInterface
 {
 	public interface IImgDesarrolladoresRepository
 	{
-		Task Create(ImgDesarrolladores imgDesarrolladores);
-		Task<ImgDesarrolladores> GetByPath(string imgPath);
+        Task<ImgDesarrolladores> GetById(int id);
+
+        //	Task Create(ImgDesarrolladores imgDesarrolladores);
+        Task<ImgDesarrolladores> GetByPath(string imgPath);
 	}
 }

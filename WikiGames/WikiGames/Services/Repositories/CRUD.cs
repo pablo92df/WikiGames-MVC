@@ -37,7 +37,9 @@ namespace WikiGames.Services.Repositories
 
         public async Task Update<T>(T objectToUpdate) where T : class
         {
-           _context.Entry(objectToUpdate).CurrentValues.SetValues(objectToUpdate);
+           //_context.Entry(objectToUpdate).CurrentValues.SetValues(objectToUpdate);
+
+            _context.Update<T>(objectToUpdate);
             await _context.SaveChangesAsync();
         }
     }

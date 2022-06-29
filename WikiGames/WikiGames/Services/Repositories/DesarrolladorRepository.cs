@@ -26,15 +26,15 @@ namespace WikiGames.Services.Repositories
 
         public async Task<Desarrollador> GetById(int desarrolladorId) 
         {
-            return await _context.Desarrolladores.Where(d => d.DesarrolladorId == desarrolladorId).FirstOrDefaultAsync();
+            return await _context.Desarrolladores.Where(d => d.DesarrolladorId == desarrolladorId).Include(d =>d.ImgDesarrolladores).FirstOrDefaultAsync();
         }
 
-        public async Task Create(Desarrollador desarrollador)
-        {
+        //public async Task Create(Desarrollador desarrollador)
+        //{
 
-            _context.Desarrolladores.Add(desarrollador);
-            await _context.SaveChangesAsync();
-        }
+        //    _context.Desarrolladores.Add(desarrollador);
+        //    await _context.SaveChangesAsync();
+        //}
 
         public async Task Edit(Desarrollador desarrollador)
         {

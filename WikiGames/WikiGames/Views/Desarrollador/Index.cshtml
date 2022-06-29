@@ -52,7 +52,11 @@
 						<tr>
 							@if(!(@item.ImgDesarrolladores.ImagePath is null))
 							{
-								<td><img src="@item.ImgDesarrolladores.ImagePath"/></td>
+								<td>
+									<a asp-controller="Desarrollador" asp-action="AllInfo" asp-route-id="@item.DesarrolladorId" class="btn">
+										<img class="imgLogo" src="@item.ImgDesarrolladores.ImagePath"/>
+									</a>
+								</td>
 
 							}
 							else
@@ -61,7 +65,8 @@
 								
 							}
 							<td>
-								<a asp-controller="Desarrollador" asp-action="AllInfo" asp-route-id="@item.DesarrolladorId" class="btn btn-warning">Mas info</a>
+								<a asp-controller="Desarrollador" asp-action="Edit" asp-route-id="@item.DesarrolladorId" class="btn btn-warning">Editar</a>
+								<a asp-controller="Desarrollador" asp-action="Delete" asp-route-id="@item.DesarrolladorId" class="btn btn-danger">Borrar</a>
 
 							</td>
 						</tr>
