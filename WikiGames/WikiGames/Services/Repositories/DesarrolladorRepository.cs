@@ -29,23 +29,22 @@ namespace WikiGames.Services.Repositories
             return await _context.Desarrolladores.Where(d => d.DesarrolladorId == desarrolladorId).Include(d =>d.ImgDesarrolladores).FirstOrDefaultAsync();
         }
 
-        //public async Task Create(Desarrollador desarrollador)
-        //{
+        public async Task<Desarrollador> GetAllInfo(int desarrolladorId) 
+        {
+            return await _context.Desarrolladores.Where(d => d.DesarrolladorId == desarrolladorId).Include(d =>d.ImgDesarrolladores).Include(d=>d.Juegos).FirstOrDefaultAsync();
 
-        //    _context.Desarrolladores.Add(desarrollador);
+        }
+
+        //public async Task Edit(Desarrollador desarrollador)
+        //{
+        //    _context.Desarrolladores.Update(desarrollador);
         //    await _context.SaveChangesAsync();
         //}
-
-        public async Task Edit(Desarrollador desarrollador)
-        {
-            _context.Desarrolladores.Update(desarrollador);
-            await _context.SaveChangesAsync();
-        }
-        public async Task Delete(int desarrolladorId)
-        {
-            var desarrollador = await GetById(desarrolladorId);
-            _context.Desarrolladores.Remove(desarrollador);
-            await _context.SaveChangesAsync();
-        }
+        //public async Task Delete(int desarrolladorId)
+        //{
+        //    var desarrollador = await GetById(desarrolladorId);
+        //    _context.Desarrolladores.Remove(desarrollador);
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

@@ -27,6 +27,8 @@ namespace WikiGames.Models.Entities
         public List<ModosDeJuego> ModosDeJuegos { get; set; }
         public List<Personaje> Personajes { get; set; }
 
+        public ImgJuegos ImgJuegos { get; set; }
+
 
     }
 }

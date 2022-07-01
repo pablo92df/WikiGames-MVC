@@ -55,10 +55,9 @@
 							<td>@item.PublicadoraNombre</td>
 							<td>@item.Fundacion</td>
 							<td>
-								<a asp-controller="Publicadora" asp-action="AllInfo" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Mas info</a>
+								<a asp-controller="Publicadora" asp-action="AllInfo" asp-route-id="@item.PublicadoraId" class="btn btn-primary">Mas info</a>
 								<a asp-controller="Publicadora" asp-action="Edit" asp-route-id="@item.PublicadoraId" class="btn btn-warning">Edit</a>
-				
-
+								<a asp-controller="Publicadora" asp-action="Delete" asp-route-id="@item.PublicadoraId" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 					}

@@ -7,6 +7,6 @@
         Task<T> GetByID<T>(int entityId) where T : class;
         Task<List<T>> GetAll<T>() where T : class;
         Task Update<T>(T objectToUpdate) where T : class;
-        Task Delete<T>(int entityId) where T : class;
+        Task Delete<T>(T entity) where T : class;
     }
 }

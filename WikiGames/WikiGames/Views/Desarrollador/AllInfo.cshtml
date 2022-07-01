@@ -1,4 +1,4 @@
-﻿@model WikiGames.Models.ViewModel.DesarrolladoresViewModel.DesarrolladorViewModel
+﻿@model WikiGames.Models.ViewModel.DesarrolladoresViewModel.DesarrolladorAllInfoViewModel
 
 @{
 	ViewData["Title"] = "Desarrollador";
@@ -8,15 +8,7 @@
 
 
 <div class="container">
-	@if (TempData["mensaje"] != null)
-	{ 
-		<div class="alert alert-warning alert-dismissible fade show" role="alert">
-			@TempData["mensaje"]
-			<button type="button" class="close" data-dismiss="alert" arial-label="Close">
-				<span aria-hidden="true">&times;</span>
-			</button>
-		</div>
-	}@*
+
 	<h2>@Model.DesarrolladorName</h2>
 	<div class="mw-parser-output">
 		<div class="row">
@@ -47,7 +39,7 @@
 							</td>
 						</tr>
 						
-						@*<tr class="hiddenStructure{{{Clasificación}}}">
+						<tr class="hiddenStructure{{{Clasificación}}}">
 						<th style="background-color: gold;">Clasificación
 						</th>
 						<td>ESRB: Mature (17+)
@@ -59,7 +51,7 @@
 	</div>
 	<div class="row">
 		<h3>Lanzamiento en Consolas</h3>
-		@if (Model.Juegos.Count() > 0)
+		@if (Model.juegosViewModels.Count() > 0)
 		{
 
 			<table class="table table-bordered table-striped" id="tablaJuegos">
@@ -70,7 +62,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach (var item in Model.Juegos)
+					@foreach (var item in Model.juegosViewModels)
 					{
 						<tr>
 							<td>@item.JuegoName</td>
@@ -85,4 +77,4 @@
 		}
 	</div>
 
-</div>	*@
+</div>	

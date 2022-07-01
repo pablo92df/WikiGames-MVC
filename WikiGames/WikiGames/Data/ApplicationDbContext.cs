@@ -41,7 +41,9 @@ namespace WikiGames.Data
         public DbSet<ModosDeJuego> ModosDeJuegos { get; set; }
         public DbSet<ImgConsolas> ImgConsolas { get; set; }
         public DbSet<ImgDesarrolladores> ImgDesarrolladores { get; set; }
+        public DbSet<ImgJuegos> ImgJuegos { get; set; }
         public DbSet<PersonajeJuegos> PersonajeJuegos { get; set; }
+        public DbSet<Personaje> Personajes { get; set; }
 
     }
 }

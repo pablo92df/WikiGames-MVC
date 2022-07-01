@@ -53,29 +53,57 @@ namespace WikiGames.Controllers
 
             if (publicadora is null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("NoEncontrado", "Home");
             }
 
             var publicadoraViewModel = mapper.Map<PublicadoraEditViewModel>(publicadora);
 
             return View(publicadoraViewModel);
         }
-        //[HttpPost]
-        //public async Task<IActionResult> Edit(DesarrolladorEditViewModel desarrolladorEditDTO)
-        //{
 
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(desarrolladorEditDTO);
-        //    }
-           
+        [HttpPost]
+        public async Task<IActionResult> Edit(PublicadoraEditViewModel publicadoraEdit, int PublicadoraId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(publicadoraEdit);
+            }
+            var publicador = await iCRUD.GetByID<Publicadora>(PublicadoraId);
+
+            if (publicador is null) 
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
 
 
-        //    var desarrollador = mapper.Map<Desarrollador>(desarrolladorEditDTO);
+            publicador = mapper.Map<Publicadora>(publicadoraEdit);
 
-        //    await icrud.Update<Desarrollador>(desarrollador);
+            await iCRUD.Update(publicador);
 
-        //    return RedirectToAction("Index");
-        //}
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int id) 
+        {
+            var publicador = await iCRUD.GetByID<Publicadora>(id);
+            if (publicador is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+
+            return View(publicador);
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeletePublicadora(int PublicadoraId)
+        {
+            var publicador = await iCRUD.GetByID<Publicadora>(PublicadoraId);
+            if (publicador is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+
+            await iCRUD.Delete<Publicadora>(publicador);
+            return RedirectToAction("Index");
+        }
     }
 }

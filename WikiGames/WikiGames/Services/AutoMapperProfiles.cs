@@ -40,7 +40,7 @@ namespace WikiGames.Services
             CreateMap<JuegoConsolaViewModel, JuegoConsola>();
 
 
-            //CreateMap<PublicadoraEditViewModel, Publicadora>();
+            CreateMap<PublicadoraEditViewModel, Publicadora>();
             CreateMap<Publicadora, PublicadoraEditViewModel>();
 
 
@@ -51,6 +51,8 @@ namespace WikiGames.Services
             CreateMap<Desarrollador, DesarrolladorViewModel>();
             CreateMap<Desarrollador, DesarrolladorEditViewModel>();
             CreateMap<DesarrolladorEditViewModel, Desarrollador>();
+            CreateMap<DesarrolladorAllInfoViewModel, Desarrollador>();
+            CreateMap<Desarrollador, DesarrolladorAllInfoViewModel>();
 
 
 

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using WikiGames.Data;
 using WikiGames.Models.ViewModel.DesarrolladoresViewModel;
 using WikiGames.Models.Entities;
-
+using System.IO;
 using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Controllers
@@ -18,7 +18,7 @@ namespace WikiGames.Controllers
         private readonly ICRUD icrud;
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
-
+        
         public DesarrolladorController(IMapper mapper,
             IWebHostEnvironment hostingEnvironment,
             IDesarrolladorRepository desarrolladorRepository,
@@ -52,10 +52,11 @@ namespace WikiGames.Controllers
             //        .Include(d=>d.ImgDesarrolladores)
             //        .FirstOrDefaultAsync();
             //    var desarrolladorDTO = mapper.Map<DesarrolladorViewModel>(desarrollador);
-            await desarrolladorRepository.GetById(id);
+           var desarrollador =  await desarrolladorRepository.GetAllInfo(id);
+            var desarrolladorView = mapper.Map<DesarrolladorAllInfoViewModel>(desarrollador);
             //    return View(desarrolladorDTO);
             //}
-            return View();
+            return View(desarrolladorView);
         }
         public IActionResult Create() 
         {
@@ -82,7 +83,8 @@ namespace WikiGames.Controllers
 			if (img == null)
 			{
                 FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
-                imgDesarrollador.CopyTo(stream);
+               await imgDesarrollador.CopyToAsync(stream);
+                
                 stream.Close();
 
                     await icrud.Create(imgDesa);
@@ -135,8 +137,10 @@ namespace WikiGames.Controllers
                 var imgDesarrolladorOld = await imgDesarrolladoresRepository.GetById(desarrolladorEditDTO.ImgDesarrolladores.ImgDesarrolladoresId);
 
                 FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
-                imgDesarrollador.CopyTo(stream);
+                await imgDesarrollador.CopyToAsync(stream);
                 stream.Close();
+
+                DeleteFile(imgDesarrolladorOld.ImagePath);
 
                 imgDesarrolladorOld.Nombre = imgDesa.Nombre;
                 imgDesarrolladorOld.ImagePath = imgDesa.ImagePath;
@@ -156,13 +160,56 @@ namespace WikiGames.Controllers
 
             }
 
-
-
             var desarrollador = mapper.Map<Desarrollador>(desarrolladorEditDTO);
  
             await icrud.Update<Desarrollador>(desarrollador);
 
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int id) 
+        {
+            var desarrolladora = await desarrolladorRepository.GetById(id);
+            if (desarrolladora is null) 
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+
+            var desarrolladorView = mapper.Map<DesarrolladorViewModel>(desarrolladora);
+
+            return View(desarrolladorView);
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteDesarrolladora(int DesarrolladorId) 
+        {
+
+            var desarrolladora = await desarrolladorRepository.GetById(DesarrolladorId);
+            if (desarrolladora is null) 
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            var imgDesarrolladora = await icrud.GetByID<ImgDesarrolladores>(desarrolladora.ImgDesarrolladores.ImgDesarrolladoresId);
+            
+            DeleteFile(imgDesarrolladora.ImagePath);
+
+            await icrud.Delete<Desarrollador>(desarrolladora);
+            await icrud.Delete<ImgDesarrolladores>(imgDesarrolladora);
+
+            return RedirectToAction("Index");
+        }
+
+        private bool DeleteFile(string path)
+        {
+            var ruta = Path.Combine(this.hostingEnvironment.WebRootPath + path);
+            
+            FileInfo file = new FileInfo(ruta);
+            if (file.Exists)
+            { 
+                file.Delete();
+                return true;
+            }
+            return false;
         }
     }
 }

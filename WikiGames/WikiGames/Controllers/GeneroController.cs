@@ -49,7 +49,7 @@ namespace WikiGames.Controllers
             TempData["mensaje"] = "Genero Cargado con exito";
             return RedirectToAction("Index");
         }
-
+       
         public async Task<IActionResult> Edit(int id)
         {
             Genero gen = await icrud.GetByID<Genero>(id);
@@ -58,7 +58,7 @@ namespace WikiGames.Controllers
             {
                 return RedirectToAction("NoEncontrado","Home");
             }
-            return View("Index");
+            return View();
         }
 
 
@@ -86,13 +86,13 @@ namespace WikiGames.Controllers
 
         public async Task<IActionResult> Delete(int idGenero)
         {
-            var genero = icrud.GetByID<Genero>(idGenero);
+            var genero = await icrud.GetByID<Genero>(idGenero);
 
             if (genero is null) 
             {
                 return RedirectToAction("NoEncontrado","Home");
             }
-            await icrud.Delete<Genero>(idGenero);
+            await icrud.Delete<Genero>(genero);
 
             return RedirectToAction("Index");
         }

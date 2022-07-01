@@ -26,7 +26,7 @@ builder.Services.AddTransient<ICRUD, CRUD>();
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(connectionString, sqlServer => sqlServer.UseNetTopologySuite());
-    opciones.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);//comportamiento por defecto para consultas solo lectua
+   // opciones.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);//comportamiento por defecto para consultas solo lectua
                                                                         // opciones.UseLazyLoadingProxies();
 }
     );

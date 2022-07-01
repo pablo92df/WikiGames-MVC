@@ -80,6 +80,9 @@ namespace WikiGames.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<DateTime>("Descontinuacion")
+                        .HasColumnType("date");
+
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -92,6 +95,9 @@ namespace WikiGames.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("MarcaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnidadesVendidas")
                         .HasColumnType("int");
 
                     b.HasKey("ConsolaId");
@@ -197,6 +203,28 @@ namespace WikiGames.Migrations
                     b.ToTable("ImgDesarrolladores");
                 });
 
+            modelBuilder.Entity("WikiGames.Models.Entities.ImgJuegos", b =>
+                {
+                    b.Property<int>("ImgJuegosId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ImgJuegosId"), 1L, 1);
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("imgext")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ImgJuegosId");
+
+                    b.ToTable("ImgJuegos");
+                });
+
             modelBuilder.Entity("WikiGames.Models.Entities.Juego", b =>
                 {
                     b.Property<int>("JuegoId")
@@ -214,6 +242,9 @@ namespace WikiGames.Migrations
                     b.Property<DateTime>("FechaLanzamientoOficial")
                         .HasColumnType("date");
 
+                    b.Property<int?>("ImgJuegosId")
+                        .HasColumnType("int");
+
                     b.Property<string>("JuegoDescription")
                         .HasMaxLength(10000)
                         .HasColumnType("nvarchar(max)");
@@ -229,6 +260,8 @@ namespace WikiGames.Migrations
                     b.HasKey("JuegoId");
 
                     b.HasIndex("DesarrolladoraId");
+
+                    b.HasIndex("ImgJuegosId");
 
                     b.HasIndex("PublicadoraId");
 
@@ -309,7 +342,7 @@ namespace WikiGames.Migrations
 
                     b.HasKey("PersonajeId");
 
-                    b.ToTable("Personaje");
+                    b.ToTable("Personajes");
                 });
 
             modelBuilder.Entity("WikiGames.Models.Entities.PersonajeJuegos", b =>
@@ -438,6 +471,10 @@ namespace WikiGames.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("WikiGames.Models.Entities.ImgJuegos", "ImgJuegos")
+                        .WithMany()
+                        .HasForeignKey("ImgJuegosId");
+
                     b.HasOne("WikiGames.Models.Entities.Publicadora", "Publicadora")
                         .WithMany("Juegos")
                         .HasForeignKey("PublicadoraId")
@@ -445,6 +482,8 @@ namespace WikiGames.Migrations
                         .IsRequired();
 
                     b.Navigation("Desarrolladora");
+
+                    b.Navigation("ImgJuegos");
 
                     b.Navigation("Publicadora");
                 });

@@ -11,8 +11,11 @@ namespace WikiGames.Models.Entities
         [Required,MaxLength(500)]
 
         public string Descripcion { get; set; }
-      //public int UnidadesVendidas { get; set; }
+        public int UnidadesVendidas { get; set; }
         public DateTime FechaLanzamiento { get; set; }
+
+        public DateTime Descontinuacion { get; set; }
+
         [Required]
         public int MarcaId { get; set; }
         public Marca Marca { get; set; }

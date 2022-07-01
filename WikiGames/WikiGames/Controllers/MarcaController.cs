@@ -61,7 +61,7 @@ namespace WikiGames.Controllers
                 return RedirectToAction("NoEncontrado", "Home");
             }
 
-            await icrud.Delete<Marca>(id);
+            await icrud.Delete<Marca>(marca);
             TempData["mensaje"] = "Marca Eliminada con exito";
             return RedirectToAction("Index");
         }

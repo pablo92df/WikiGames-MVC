@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WikiGames
 build_property.RootNamespace = WikiGames
-build_property.ProjectDir = C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\
+build_property.ProjectDir = C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames
+build_property.MSBuildProjectDirectory = C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/AllInfo.cshtml]
@@ -33,6 +33,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzYXJyb2xsYWRvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzYXJyb2xsYWRvclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Desarrollador/Edit.cshtml]
@@ -97,6 +101,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Publicadora/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWRvcmFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Publicadora/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWRvcmFcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Publicadora/Edit.cshtml]

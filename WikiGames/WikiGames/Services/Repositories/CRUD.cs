@@ -18,9 +18,10 @@ namespace WikiGames.Services.Repositories
            await _context.SaveChangesAsync();
         }
 
-        public Task Delete<T>(int entityId) where T : class
+        public async Task Delete<T>(T entity) where T : class
         {
-            throw new NotImplementedException();
+            _context.Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<T>> GetAll<T>() where T : class
