@@ -74,6 +74,7 @@ namespace WikiGames.Controllers
         {
             if (!ModelState.IsValid) 
             {
+                ViewData["Marcas"] = new SelectList(context.Marcas, "MarcaId", "MarcaName");
                 return View(consolaDTO);
             }
             var marca = context.Marcas.Where(x => x.MarcaId == consolaDTO.MarcaId).FirstOrDefaultAsync();

@@ -51,107 +51,192 @@
         </div>*@
     </div>
     <div class="col-sm-12">
-        <form method="post" asp-action="Create" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group col-sb-2">
-                <label asp-for="ConsolaName" class="control-label"></label>
-                <input asp-for="ConsolaName" class="form-control" />
-                <span asp-validation-for="ConsolaName" class="text-danger"></span>
-            </div>
-            <div class="mw-parser-output">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <label asp-for="Descripcion" class="control-label"></label>
-                        <textarea asp-for="Descripcion" class="form-control" rows="10"></textarea>
-                        <span asp-validation-for="Descripcion" class="text-danger"></span>
-                    </div>
 
-                    <div class="col-sm-4">
-                        <table class="Infobox" cellpadding="2" cellspacing="2" align="right" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
-                            <tbody>
-                                <tr>
-                                    <td align="center" colspan="2" bgcolor="gold" style="font-size:110%;">
-                                        <i><b></b></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" style="text-align: center;">
-
-                                        <img src="" alt="" decoding="async" width="343" height="183" id="output" />
-                                        <div>
-                                            <input type="file" name="imgConsolas" class="form-control" id="file" />
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="">
-                                    <th style="background-color: gold;">Marca</th>
-                                    <td>
-                                        @Html.DropDownList("desarrollador", (SelectList)ViewBag.Marcas, "Please select", new { @class = "form-control" })
-                                        @*<select name="MarcaId" class="form-control" asp-items="ViewBag.Marcas"></select>*@
-                                    </td>
-                                </tr>
-                                <tr class="hiddenStructure{{{Distribuidor}}}">
-                                    <th style="background-color: gold;">Fecha de Lanzamiento</th>
-                                    <td>
-
-                                        <input asp-for="FechaLanzamiento" type="date" class="form-control" id="fechaLanzamiento" />
-                                        <span asp-validation-for="FechaLanzamiento" class="text-danger"></span>
-                                    </td>
-                                </tr>
-                                <tr class="hiddenStructure{{{Distribuidor}}}">
-                                    <th style="background-color: gold;">Fecha de Descontinuacion</th>
-                                    <td>
-                                        <input asp-for="Descontinuacion" type="date" class="form-control" id="descontinuacion" />
-                                        <span asp-validation-for="Descontinuacion" class="text-danger"></span>
-                                    </td>
-                                </tr>
-                                <tr class="hiddenStructure{{{Distribuidor}}}">
-                                    <th style="background-color: gold;">Unidades Vendidas</th>
-                                    <td>
-                                        <input asp-for="UnidadesVendidas" class="form-control" />
-                                        <span asp-validation-for="UnidadesVendidas" class="text-danger"></span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group col-sb-2">
+            <label asp-for="ConsolaName" class="control-label"></label>
+            <input asp-for="ConsolaName" class="form-control" id="consolaName" />
+            <span class="text-danger" id="spanName"></span>
+        </div>
+        <div class="mw-parser-output">
+            <div class="row">
+                <div class="col-sm-7">
+                    <label asp-for="Descripcion" class="control-label"></label>
+                    <textarea asp-for="Descripcion" class="form-control" rows="10"></textarea>
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Crear Producto" class="btn btn-primary" />
+
+                <div class="col-sm-4">
+                    <table class="Infobox" cellpadding="2" cellspacing="2" align="right" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
+                        <tbody>
+                            <tr>
+                                <td align="center" colspan="2" bgcolor="gold" style="font-size:110%;">
+                                    <i><b></b></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="text-align: center;">
+
+                                    <img src="" alt="" decoding="async" width="343" height="183" id="output" />
+                                    <div>
+                                        <input type="file" name="imgConsolas" class="form-control" id="file" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="">
+                                <th style="background-color: gold;">Marca</th>
+                                <td>
+                                    @Html.DropDownList("marcas", (SelectList)ViewBag.Marcas, "Please select", new { @class = "form-control" })
+                                    <span class="text-danger" id="spanMarcas"></span>
+                                    @*<select name="MarcaId" class="form-control" asp-items="ViewBag.Marcas"></select>*@
+                                </td>
+                            </tr>
+                            <tr class="hiddenStructure{{{Distribuidor}}}">
+                                <th style="background-color: gold;">Fecha de Lanzamiento</th>
+                                <td>
+
+                                    <input asp-for="FechaLanzamiento" type="date" class="form-control" id="fechaLanzamiento" />
+                                    <span asp-validation-for="FechaLanzamiento" class="text-danger"></span>
+                                </td>
+                            </tr>
+                            <tr class="hiddenStructure{{{Distribuidor}}}">
+                                <th style="background-color: gold;">Fecha de Descontinuacion</th>
+                                <td>
+                                    <input asp-for="Descontinuacion" type="date" class="form-control" id="descontinuacion" />
+                                    <span class="text-danger" id="spanDescontinuacion"></span>
+                                </td>
+                            </tr>
+                            <tr class="hiddenStructure{{{Distribuidor}}}">
+                                <th style="background-color: gold;">Unidades Vendidas</th>
+                                <td>
+                                    <input asp-for="UnidadesVendidas" class="form-control" />
+                                    <span asp-validation-for="UnidadesVendidas" class="text-danger"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Producto" class="btn btn-primary" id="btnCrearConsola" />
+            </div>
+        </div>
 
-        </form>
+
 
     </div>
     @*Validacion lado cliente*@
     @section Scripts{
 
         @{
-           <partial name="_ValidationScriptsPartial" />
+            @*<partial name="_ValidationScriptsPartial" />*@
 
             <script>
 
-                var inputImg = document.getElementById('file');
+                let inputImg = document.getElementById('file');
                 inputImg.addEventListener("change", function() {
                     var image = document.getElementById('output');
                     image.src = URL.createObjectURL(event.target.files[0]);
-                })
-                var descontinuacion = document.getElementById('descontinuacion');
+                });
 
-                descontinuacion.addEventListener("change", function() {
-                    var fecha = document.getElementById('fechaLanzamiento').value;
-                    var des = document.getElementById('descontinuacion').value;
+                let descontinuacion = document.getElementById('descontinuacion');
 
-                        console.log(fecha);
+                descontinuacion.addEventListener('change', function() {
 
-                    if (des < fecha) {
-                        console.log("si");
+                    if (!verificarFechaDescontinuacion()) {
+                        document.getElementById('spanDescontinuacion').innerHTML = "Descontinuacion tiene que ser mayor a fecha lanzamiento";
+                        return;
+                    }
+
+                    document.getElementById('spanDescontinuacion').innerHTML = "";
+
+
+                });
+
+                function verificarFechaDescontinuacion() {
+
+                    let fechaLanza = document.getElementById('fechaLanzamiento').value;
+                    let descont = document.getElementById('descontinuacion').value;
+
+                    if (descont < fechaLanza) {
+                        return false;
                     } else {
-                        console.log("no");
+                        return true;
 
                     }
+                };
+
+                let marcaSelect = document.getElementById('marcas');
+
+                marcaSelect.addEventListener('change', function() {
+                    if (!marcaValue()) {
+
+                        let text = "Seleccione marca";
+                        document.getElementById('spanMarcas').innerHTML = text;
+                        return;
+                    }
+                    document.getElementById('spanMarcas').innerHTML = "";
+                });
+
+                function marcaValue() {
+                    let marca = document.getElementById('marcas').value;
+                    if (marca > 0) {
+
+                        return true;
+                    }
+                    let text = "Seleccione marca";
+                    document.getElementById('spanMarcas').innerHTML = text;
+                    return false;
+                }
+
+
+                let consolaName = document.getElementById('consolaName');
+
+                consolaName.addEventListener('change', function() {
+                    checkName();
                 })
+
+
+
+                let btnCrear = document.getElementById('btnCrearConsola');
+
+                btnCrear.addEventListener('click', function() {
+
+
+                    if (checkName()) {
+
+                    }
+                    if (!marcaValue() && !verificarFechaDescontinuacion() && fechaLanzamiento()) {
+
+
+                    }
+
+
+                });
+
+                function fechaLanzamiento() {
+
+                    let fecha = $("#fechaLanzamiento").val();
+                    if (fecha) {
+                        return true;
+                    }
+                    else
+                        return false;
+
+                }
+
+                function checkName() {
+
+                    let name = document.getElementById('consolaName').value;
+
+                    if (name.length == 0) {
+                        document.getElementById('spanName').innerHTML = "Es necesario completar el campo nombre";
+                        return false;
+                    }
+                    document.getElementById('spanName').innerHTML = "";
+                }
+
+
             </script>
         }
     }

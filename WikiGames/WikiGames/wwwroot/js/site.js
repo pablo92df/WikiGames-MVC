@@ -275,7 +275,7 @@ function validarString(text)
 }
 
 function ValidarFecha(fecha) {
-    console.log(fecha);
+ 
     if (fecha)
     {
         return false;
