@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sqf+wn8QsWTXJvvxWfZxcwM+gkVtoeSjCuJjlg9UhVk=",
+  "Hash": "YBvuQkaN7wI1nMjsZrhknaC9kfdkpRjv5Y2F1Q5AGSw=",
   "Source": "WikiGames",
   "BasePath": "_content/WikiGames",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGConsolas/Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg"
     },
     {
       "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",

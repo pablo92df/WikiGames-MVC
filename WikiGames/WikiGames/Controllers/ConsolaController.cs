@@ -15,14 +15,16 @@ namespace WikiGames.Controllers
         private readonly ApplicationDbContext context;
         private readonly IWebHostEnvironment hostingEnvironment;
         private readonly ICRUD icrud;
+        private readonly IConsolaRepository consolaRepository;
         private readonly IMapper mapper;
 
-        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud)
+        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud, IConsolaRepository consolaRepository)
         {
             this.context = context;
             this.mapper = mapper;
             this.hostingEnvironment = hostingEnvironment;
             this.icrud = icrud;
+            this.consolaRepository = consolaRepository;
         }
         public async Task<IActionResult> Index(string ConsolaName, int MarcaId)
         {
@@ -114,6 +116,24 @@ namespace WikiGames.Controllers
 
             return RedirectToAction("Index");
 
+        }
+
+        public async Task<IActionResult> Edit(int id) 
+        {
+            var consola = await consolaRepository.GetConsolaById(id);
+            if (consola is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            ViewData["Marcas"] = new SelectList(context.Marcas, "MarcaId", "MarcaName");
+
+            var consolaView = mapper.Map<ConsolaCreacionViewModel>(consola);
+            return View(consolaView);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(ConsolaCreacionViewModel consola) 
+        {
+        
         }
     }
 }

@@ -19,6 +19,8 @@ namespace WikiGames.Services
             CreateMap<Consola, ConsolaAllInfoViewModel>();
             CreateMap<Consola, ConsolaAllInfoViewModel>();
             CreateMap<ConsolaCreacionViewModel, Consola>();
+            CreateMap<Consola, ConsolaCreacionViewModel>();
+
 
             CreateMap<Genero, GeneroViewModel>();
             CreateMap<GeneroViewModel, Genero>();

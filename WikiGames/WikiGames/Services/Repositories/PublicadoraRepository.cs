@@ -5,7 +5,7 @@ using WikiGames.Services.RepositoriesInterface;
 
 namespace WikiGames.Services.Repositories
 {
-    public class PublicadoraRepository: IPublicadoraRepository
+    public class PublicadoraRepository : IPublicadoraRepository
     {
         private readonly ApplicationDbContext _context;
         public PublicadoraRepository(ApplicationDbContext context)
