@@ -16,15 +16,17 @@ namespace WikiGames.Controllers
         private readonly IWebHostEnvironment hostingEnvironment;
         private readonly ICRUD icrud;
         private readonly IConsolaRepository consolaRepository;
+        private readonly IImgConsolasRepository imgConsolasRepository;
         private readonly IMapper mapper;
 
-        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud, IConsolaRepository consolaRepository)
+        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud, IConsolaRepository consolaRepository, IImgConsolasRepository imgConsolasRepository)
         {
             this.context = context;
             this.mapper = mapper;
             this.hostingEnvironment = hostingEnvironment;
             this.icrud = icrud;
             this.consolaRepository = consolaRepository;
+            this.imgConsolasRepository = imgConsolasRepository;
         }
         public async Task<IActionResult> Index(string ConsolaName, int MarcaId)
         {
@@ -131,9 +133,73 @@ namespace WikiGames.Controllers
             return View(consolaView);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(ConsolaCreacionViewModel consola) 
+        public async Task<IActionResult> Edit(ConsolaCreacionViewModel consolaEdit, IFormFile img)
         {
-        
+            if (!ModelState.IsValid) 
+            {
+                return View(consolaEdit);
+            }
+
+            var consolaexist = await consolaRepository.GetConsolaById(consolaEdit.ConsolaId);
+
+            if (consolaexist is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            context.Entry<Consola>(consolaexist).State = EntityState.Detached;
+            if (img is not null)
+            {
+                ImgConsolas imgCon = new ImgConsolas();
+                string name = Path.GetFileName(img.FileName);
+                string path = Path.Combine(this.hostingEnvironment.WebRootPath, "Images/IMGConsolas");
+
+                imgCon.ImagePath = "\\Images\\IMGConsolas\\" + name;
+                imgCon.Nombre = name;
+
+                var imgConsolaOld = await imgConsolasRepository.GetById(consolaEdit.ImgConsolasId);
+
+                FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
+                await img.CopyToAsync(stream);
+                stream.Close();
+
+                DeleteFile(imgConsolaOld.ImagePath);
+                imgConsolaOld.Nombre = imgCon.Nombre;
+                imgConsolaOld.ImagePath = imgCon.ImagePath;
+                 await icrud.Update<ImgConsolas>(imgConsolaOld);
+
+                consolaEdit.imgConsolas = imgConsolaOld;
+            }
+            else
+            {
+                var imgConsolaOld = await imgConsolasRepository.GetById(consolaEdit.ImgConsolasId);
+
+                if (imgConsolaOld is not null)
+                    consolaEdit.imgConsolas = imgConsolaOld;
+                else
+                    return RedirectToAction("Index");
+
+            }
+
+            consolaexist = mapper.Map<Consola>(consolaEdit);
+
+            await icrud.Update<Consola>(consolaexist);
+
+            TempData["mensaje"] = "Datos Editados correctamente";
+
+            return RedirectToAction("Index");
+        }
+
+        private bool DeleteFile(string path)
+        {
+            var ruta = Path.Combine(this.hostingEnvironment.WebRootPath + path);
+
+            FileInfo file = new FileInfo(ruta);
+            if (file.Exists)
+            {
+                file.Delete();
+                return true;
+            }
+            return false;
         }
     }
 }

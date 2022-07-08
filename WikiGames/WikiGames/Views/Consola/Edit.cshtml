@@ -16,12 +16,12 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <form method="post" asp-action="Create" enctype="multipart/form-data" id="formulario">
+            <form method="post" asp-action="Edit" enctype="multipart/form-data" id="formulario">
                 <input type="hidden" asp-for="ConsolaId" />
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group col-sb-2">
                     <label asp-for="ConsolaName" class="control-label"></label>
-                    <input asp-for="ConsolaName" class="form-control" id="consolaName" placeholder="@Model.ConsolaName"/>
+                    <input asp-for="ConsolaName" class="form-control" id="consolaName" placeholder="@Model.ConsolaName" />
                     <span class="text-danger" id="spanName"></span>
                 </div>
                 <div class="mw-parser-output">
@@ -44,8 +44,13 @@
                                         <td colspan="4" style="text-align: center;">
 
                                             <img src="@Model.imgConsolas.ImagePath" alt="" decoding="async" width="343" height="183" id="output" />
+                                            @* <input type="hidden" asp-for="imgConsolas.ImagePath"/>
+                                            <input type="hidden" asp-for="imgConsolas.Nombre"/>*@
+
                                             <div>
-                                                <input type="file" name="imgConsolas" class="form-control" id="file" />
+                                                <input type="file" name="img" class="form-control" id="file" />
+                                                <input type="hidden" asp-for="ImgConsolasId" />
+
                                             </div>
                                         </td>
                                     </tr>
@@ -54,14 +59,14 @@
                                         <td>
                                             @Html.DropDownList("MarcaId", (SelectList)ViewBag.Marcas, "Please select", new { @class = "form-control" })
                                             <span class="text-danger" id="spanMarcas"></span>
-                                            
+
                                         </td>
                                     </tr>
                                     <tr class="hiddenStructure{{{Distribuidor}}}">
                                         <th style="background-color: gold;">Fecha de Lanzamiento</th>
                                         <td>
 
-                                            <input asp-for="FechaLanzamiento" type="date" class="form-control" id="fechaLanzamiento" placeholder="@Model.FechaLanzamiento"/>
+                                            <input asp-for="FechaLanzamiento" type="date" class="form-control" id="fechaLanzamiento" placeholder="@Model.FechaLanzamiento" />
                                             <span id="spanFechaLanzamiento" class="text-danger"></span>
                                         </td>
                                     </tr>
@@ -97,135 +102,13 @@
 @section Scripts{
 
     @{
+        <script src="~/js/ValidarFormularioConsolas.js" asp-append-version="true"></script>
         <script>
 
-            document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("formulario").addEventListener('submit', validarFormulario);
-                document.getElementById('descripcion').addEventListener('change', checkDescripcion);
-                document.getElementById('unidadesVendidas').addEventListener('change', checkUnidades);
-                document.getElementById('descontinuacion').addEventListener('change', checkFechaDescontinuacion);
-                document.getElementById('MarcaId').addEventListener('change', marcaValue);
-                document.getElementById('fechaLanzamiento').addEventListener('change', checkFechaLanzamiento);
-                document.getElementById('consolaName').addEventListener('change', checkName);
-
-            });
-
-            function validarFormulario(evento) {
-                evento.preventDefault();
-                let flag = true;
-
-                if (!checkDescripcion()) {
-                    flag = false;
-                }
-                if (!checkFechaDescontinuacion()) {
-
-                    flag = false;
-                }
-                if (!checkFechaLanzamiento()) {
-                    flag = false;
-                }
-                if (!checkName()) {
-                    flag = false;
-                }
-                if (!marcaValue()) {
-                    flag = false;
-                }
-                if (!checkUnidades()) {
-                    flag = false;
-                }
-                if (flag) {
-                    this.submit();
-                }
-
-                return;
-            }
-
-            let inputImg = document.getElementById('file');
-            inputImg.addEventListener("change", function() {
-                var image = document.getElementById('output');
-                image.src = URL.createObjectURL(event.target.files[0]);
-            });
-
-            function checkUnidades() {
-
-                let unidades = document.getElementById('unidadesVendidas').value;
-
-                let num = parseInt(unidades);
-                if (unidades >= 0 && Number.isInteger(num)) {
-                    document.getElementById('spanUnidadesVendidas').innerHTML = "";
-                    return true;
-                }
-                document.getElementById('spanUnidadesVendidas').innerHTML = "unidad debe ser un numero positivo o 0";
-                return false;
-            }
-            function checkDescripcion() {
-                let descrip = document.getElementById('descripcion').value;
-
-                if (descrip.length == 0) {
-                    document.getElementById('spanDescripcion').innerHTML = "Cargue descripcion";
-                    return false;
-                }
-                document.getElementById('spanDescripcion').innerHTML = "";
-                return true;
-            }
-
-            function checkFechaDescontinuacion() {
-
-                let fechaLanza = document.getElementById('fechaLanzamiento').value;
-                let descont = document.getElementById('descontinuacion').value;
-
-                if (fechaLanza == "") {
-                    document.getElementById('spanFechaLanzamiento').innerHTML = "Complete fecha lanzamiento";
-                }
-                else if (descont == "" || descont > fechaLanza) {
-                    document.getElementById('spanDescontinuacion').innerHTML = "";
-
-                    return true;
-                } else {
-                    document.getElementById('spanDescontinuacion').innerHTML = "Descontinuacion tiene que ser mayor a fecha lanzamiento";
-
-                    return false;
-
-                }
-            };
-
-            function marcaValue() {
-                let marca = document.getElementById('MarcaId').value;
-                if (marca > 0) {
-
-                    return true;
-                }
-                let text = "Seleccione marca";
-                document.getElementById('spanMarcas').innerHTML = text;
-                return false;
-            }
-
-            function checkFechaLanzamiento() {
-
-                let fecha = $("#fechaLanzamiento").val();
-                checkFechaDescontinuacion();
-                if (fecha) {
-                    document.getElementById('spanFechaLanzamiento').innerHTML = "";
-                    return true;
-                }
-                else
-                    document.getElementById('spanFechaLanzamiento').innerHTML = "Complete fecha lanzamiento";
-                return false;
-            }
-
-            function checkName() {
-
-                let name = document.getElementById('consolaName').value;
-
-                if (name.length >= 3) {
-
-                    document.getElementById('spanName').innerHTML = "";
-                    return true;
-                }
-                document.getElementById('spanName').innerHTML = "Es necesario completar el campo nombre";
-                return false;
-            }
-
+            $(function()
+            {
+                ValidarFormulario();
+            })
 
         </script>
     }

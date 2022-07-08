@@ -7,6 +7,6 @@ namespace WikiGames.Models.ViewModel
         public int GeneroId { get; set; }
 
         [Required, MaxLength(50)]
-        public string Nombre;
+        public string Nombre { get; set; }
     }
 }

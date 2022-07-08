@@ -18,17 +18,15 @@ builder.Services.AddTransient<IImgDesarrolladoresRepository, ImgDesarrolladoresR
 builder.Services.AddTransient<IJuegoRepository, JuegoRepository>();
 builder.Services.AddTransient<IPublicadoraRepository, PublicadoraRepository>();
 builder.Services.AddTransient<IConsolaRepository, ConsolaRepository>();
+builder.Services.AddTransient<IImgConsolasRepository, ImgConsolaRepository>();
 
 builder.Services.AddTransient<ICRUD, CRUD>();
-
-
-
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
     opciones.UseSqlServer(connectionString, sqlServer => sqlServer.UseNetTopologySuite());
-   // opciones.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);//comportamiento por defecto para consultas solo lectua
+   //opciones.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);//comportamiento por defecto para consultas solo lectua
                                                                         // opciones.UseLazyLoadingProxies();
 }
     );

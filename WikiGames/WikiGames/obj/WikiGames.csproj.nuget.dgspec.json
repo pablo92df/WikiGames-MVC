@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj": {}
+    "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj": {
+    "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+        "projectUniqueName": "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
         "projectName": "WikiGames",
-        "projectPath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+        "projectPath": "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
         "packagesPath": "C:\\Users\\Pferreyra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
+        "outputPath": "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

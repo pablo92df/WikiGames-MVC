@@ -58,7 +58,13 @@ namespace WikiGames.Controllers
             {
                 return RedirectToAction("NoEncontrado","Home");
             }
-            return View();
+
+            GeneroViewModel generoView = new GeneroViewModel()
+            {
+                GeneroId = gen.GeneroId,
+                Nombre = gen.Nombre
+            };
+            return View(generoView);
         }
 
 

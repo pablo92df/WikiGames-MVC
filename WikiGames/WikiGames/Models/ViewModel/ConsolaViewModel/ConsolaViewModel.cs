@@ -18,9 +18,9 @@ namespace WikiGames.Models.ViewModel.ConsolaViewModel
 
         [Range(1, maximum: int.MaxValue, ErrorMessage = "Debe seleccionar una Marca")]
         public int MarcaId { get; set; }
-        public Marca Marca { get; set; }
+        public Marca? Marca { get; set; }
         public int ImgConsolasId { get; set; }
-        public ImgConsolas  imgConsolas { get; set; }
+        public ImgConsolas?  imgConsolas { get; set; }
 
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "10gSuVz6PZSk6wcDO07FwLgYJqZZiDW/gzapszKSJFrPCVjhZol17EOCuOQPBRhA430kah1H7pLHoPHyaHtjiA==",
+  "dgSpecHash": "EjnQGwLEKVWM1wTrs+SHVnPE9sO9jCll+EFwOX5VG0Pn5KUXBmtwy9l9KecZhNz9aAYsDGf/dE2CCOOsKpxeCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+  "projectFilePath": "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pferreyra\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

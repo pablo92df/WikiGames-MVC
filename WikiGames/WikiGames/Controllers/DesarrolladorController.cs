@@ -80,7 +80,7 @@ namespace WikiGames.Controllers
 			imgDesa.ImagePath = "\\Images\\IMGDesarrolladores\\" + name;
 			imgDesa.Nombre = name;
 			var img = await imgDesarrolladoresRepository.GetByPath(imgDesa.ImagePath);
-			if (img == null)
+			if (img is null)
 			{
                 FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
                await imgDesarrollador.CopyToAsync(stream);
@@ -122,6 +122,13 @@ namespace WikiGames.Controllers
             {
                 return View(desarrolladorEditDTO);
             }
+            var desarr = await desarrolladorRepository.GetById(desarrolladorEditDTO.DesarrolladorId);
+            if (desarr is null) 
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            context.Entry<Desarrollador>(desarr).State = EntityState.Detached;
+
             if (imgDesarrollador is not null)
             {
                 ImgDesarrolladores imgDesa = new ImgDesarrolladores();
@@ -145,7 +152,7 @@ namespace WikiGames.Controllers
                 imgDesarrolladorOld.Nombre = imgDesa.Nombre;
                 imgDesarrolladorOld.ImagePath = imgDesa.ImagePath;
 
-                await icrud.Update<ImgDesarrolladores>(imgDesa);
+                await icrud.Update<ImgDesarrolladores>(imgDesarrolladorOld);
 
                 desarrolladorEditDTO.ImgDesarrolladores = imgDesarrolladorOld;
             }
@@ -193,8 +200,14 @@ namespace WikiGames.Controllers
             
             DeleteFile(imgDesarrolladora.ImagePath);
 
+
             await icrud.Delete<Desarrollador>(desarrolladora);
+            //context.Entry<Desarrollador>(desarrolladora).State = EntityState.Detached;
+
+           // context.Entry<ImgDesarrolladores>(imgDesarrolladora).State = EntityState.Detached;
+
             await icrud.Delete<ImgDesarrolladores>(imgDesarrolladora);
+
 
             return RedirectToAction("Index");
         }
