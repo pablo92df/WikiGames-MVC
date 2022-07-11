@@ -189,6 +189,37 @@ namespace WikiGames.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<IActionResult> Delete(int id) 
+        {
+            var consola = await consolaRepository.GetConsolaById(id);
+            if (consola is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            var consolaView = mapper.Map<ConsolaViewModel>(consola);
+            return View(consolaView); 
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConsola(int ConsolaId) 
+        {
+            var consola = await consolaRepository.GetConsolaById(ConsolaId);
+            if (consola is null)
+            {
+                return RedirectToAction("NoEncontrado", "Home");
+            }
+            int imgConsolaId = consola.imgConsolas.ImgConsolasId;
+            await icrud.Delete<Consola>(consola);
+
+            var imgConsola = await icrud.GetByID<ImgConsolas>(imgConsolaId);
+            DeleteFile(imgConsola.ImagePath);
+            await icrud.Delete<ImgConsolas>(imgConsola);
+
+            TempData["mensaje"] = "Consola eliminada correctamente";
+
+            return RedirectToAction("Index");
+        }
+
         private bool DeleteFile(string path)
         {
             var ruta = Path.Combine(this.hostingEnvironment.WebRootPath + path);

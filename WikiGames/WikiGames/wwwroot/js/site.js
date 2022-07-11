@@ -43,24 +43,20 @@ $("#btnAgregar").click(function () {
     let consolaId = $("#consolaName option:selected").val();
     let cantidad = $("#ventas").val();
     let fecha = $("#fechaLanzamiento").val();
-   
+
     // validacionConsola(consola, cantidad, fecha);
-    if (consolaGame.length > 0)
-    {
+    if (consolaGame.length > 0) {
 
-        for (let i in consolaGame)
-        {
+        for (let i in consolaGame) {
 
-            if (consolaGame[i].ConsolaId === consolaId)
-            {
+            if (consolaGame[i].ConsolaId === consolaId) {
                 alert("Consola ya cargada");
                 return;
             }
         }
     }
 
-    if (validacionConsola())
-    {
+    if (validacionConsola()) {
 
         publicadoConsola.ConsolaName = consola;
         publicadoConsola.ConsolaId = consolaId;
@@ -86,13 +82,12 @@ $("#btnAgregar").click(function () {
         });
         resetFieldJuegoConsola();
     }
-    
-       
+
+
 });
 
 
-function validacionConsola()
-{
+function validacionConsola() {
 
     var ventas = document.getElementById("ventas");
 
@@ -123,41 +118,40 @@ function quitarConsola(idConsola) {
     }
 }
 //-------------------------AGREGAR GENEROS A LOS JUEGOS--------------------------//
-$("#generos").change(function () {
+$("#GeneroId").change(function () {
  
     let divGeneros = $("#generosSeleccionados");
-    let generoId = $("#generos option:selected").val();
-    let generoName = $("#generos option:selected").text();
+    let generoId = $("#GeneroId option:selected").val();
+    let generoName = $("#GeneroId option:selected").text();
     let flag = false;
 
-
-    for (let i in Generos)
-    {
-        if (Generos[i] === generoId)
-        {
-            flag = true;
+    if (generoId === "") {
+        return;
+    }
+    for (let i in Generos) {
+        if (Generos[i] === generoId) {
+            return;
         }
     }
-    if (!flag)
-    {
-        Generos.push(generoId);
- 
-        var $divConGenero = $('<div ><label  >' + generoName + '</label><button  value=' + generoId + ' id=' + generoName +' class="btnQuickGenero"/>X</button></div>')
-        divGeneros.append($divConGenero);
 
-        var buttonQuick = document.querySelectorAll("button.btnQuickGenero")
+    Generos.push(generoId);
 
-        buttonQuick.forEach(function (btn) {
-            btn.addEventListener('click', function (e) {
-                quitarGenero($(this).val());
-                $(this).parent().remove();
-            });
-        });  
-    }
+    var $divConGenero = $('<div ><label  class="form-label" >' + generoName + '</label><button  value=' + generoId + ' id=' + generoName + ' class="btnQuickGenero btn btn-danger  btn-sm" type="button"/>x</button></div>')
+    divGeneros.append($divConGenero);
+
+    var buttonQuick = document.querySelectorAll("button.btnQuickGenero")
+
+    buttonQuick.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            quitarGenero($(this).val());
+            $(this).parent().remove();
+        });
+    });
+
 });
 
 function quitarGenero(idGenero) {
-    
+
     for (let i in Generos) {
         if (Generos[i] === idGenero) {
             Generos.splice(i, 1);
@@ -195,8 +189,7 @@ $("#ModoDeJuegoId").change(function () {
     }
 });
 //------------------------
-function resetFieldJuegoConsola()
-{
+function resetFieldJuegoConsola() {
     $("#consolaName option:selected").text();
     $("#ventas").val('');
     $("#fechaLanzamiento").val('');
@@ -204,35 +197,31 @@ function resetFieldJuegoConsola()
 
 $("#crearJuego").click(function () {
 
- 
 
-    if (validarGeneros(Generos))
-    {
+
+    if (validarGeneros(Generos)) {
 
     }
-    if (validarString($("#juegoName").val()))
-    {
+    if (validarString($("#juegoName").val())) {
         alert("Cargar Un nombre");
         return false;
     }
-    if (validarString($("#descripcion").val()))
-    {
+    if (validarString($("#descripcion").val())) {
         alert("Cargar descripcion");
         return false;
     }
-    if (ValidarFecha($("#fechaOficial").val()))
-    {
+    if (ValidarFecha($("#fechaOficial").val())) {
         alert("Fecha Incorrecta");
         return false;
     }
 
     let juegoViewModel = {};
     juegoViewModel.JuegoName = $("#juegoName").val();
-    juegoViewModel.JuegoDescription = $("#descripcion").val(); 
+    juegoViewModel.JuegoDescription = $("#descripcion").val();
     juegoViewModel.Generos = Generos;
     juegoViewModel.FechaLanzamientoOficial = $("#fechaOficial").val();
-    juegoViewModel.DesarrolladoraId = $("#desarrollador option:selected").val();
-    juegoViewModel.PublicadoraId = $("#Publicadora option:selected").val();
+    juegoViewModel.DesarrolladoraId = $("#DesarrolladoraId option:selected").val();
+    juegoViewModel.PublicadoraId = $("#PublicadoraId option:selected").val();
     juegoViewModel.JuegosConsolaDTO = consolaGame;
     juegoViewModel.Argumento = $("#argumento").val();
     juegoViewModel.ModosDeJuegos = ModosDeJuego;
@@ -250,38 +239,33 @@ $("#crearJuego").click(function () {
             console.log(errorThrown);
         }
     })
-    
-    
+
+
 });
 
-function validarGeneros(Generos)
-{
-    for (let i in Generos)
-    {
-        if (Generos[i] < 1)
-        {
+function validarGeneros(Generos) {
+    for (let i in Generos) {
+        if (Generos[i] < 1) {
             return false;
         }
     }
     return true;
 }
-function validarString(text)
-{
+function validarString(text) {
     if (text == null || text.length == 0 || /^\s+$/.test(text)) {
-       
+
         return true;
     }
     return false;
 }
 
 function ValidarFecha(fecha) {
- 
-    if (fecha)
-    {
+
+    if (fecha) {
         return false;
     }
     return true;
 }
-//-----------------------------FIN DE CARGAR JUEGOS NUEVOS 
+//-----------------------------FIN DE CARGAR JUEGOS NUEVOS
 ////////////////////////////////
 

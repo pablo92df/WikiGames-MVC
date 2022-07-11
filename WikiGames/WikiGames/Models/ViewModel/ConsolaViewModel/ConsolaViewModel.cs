@@ -13,7 +13,7 @@ namespace WikiGames.Models.ViewModel.ConsolaViewModel
         public string ConsolaName { get; set; }
 
         [Display(Name = "Fecha Lanzamiento")]
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date)] 
         public DateTime FechaLanzamiento { get; set; }
 
         [Range(1, maximum: int.MaxValue, ErrorMessage = "Debe seleccionar una Marca")]

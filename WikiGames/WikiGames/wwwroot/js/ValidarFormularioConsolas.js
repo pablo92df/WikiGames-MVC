@@ -3,7 +3,7 @@ function ValidarFormulario()
 {
 
 
-   /* document.addEventListener("DOMContentLoaded", function () {*/
+
         document.getElementById("formulario").addEventListener('submit', validarFormulario);
         document.getElementById('descripcion').addEventListener('change', checkDescripcion);
         document.getElementById('unidadesVendidas').addEventListener('change', checkUnidades);
@@ -12,7 +12,7 @@ function ValidarFormulario()
         document.getElementById('fechaLanzamiento').addEventListener('change', checkFechaLanzamiento);
         document.getElementById('consolaName').addEventListener('change', checkName);
 
-    /*});*/
+
 
     function validarFormulario(evento) {
         evento.preventDefault();
@@ -44,11 +44,7 @@ function ValidarFormulario()
         return;
     }
 
-    let inputImg = document.getElementById('file');
-    inputImg.addEventListener("change", function () {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
-    });
+
 
     function checkUnidades() {
 

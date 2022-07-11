@@ -21,7 +21,10 @@ builder.Services.AddTransient<IConsolaRepository, ConsolaRepository>();
 builder.Services.AddTransient<IImgConsolasRepository, ImgConsolaRepository>();
 
 builder.Services.AddTransient<ICRUD, CRUD>();
-
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => {
+    options.IdleTimeout = TimeSpan.FromMinutes(10);//Puede cambiar el tiempo   
+});
 
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
 {
@@ -44,7 +47,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

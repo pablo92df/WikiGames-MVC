@@ -8,11 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WikiGames
 build_property.RootNamespace = WikiGames
-build_property.ProjectDir = C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\
+build_property.ProjectDir = C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames
+build_property.MSBuildProjectDirectory = C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/AllInfo.cshtml]
@@ -21,6 +21,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc29sYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29uc29sYVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Pferreyra/source/repos/WikiGames-MVC/WikiGames/WikiGames/Views/Consola/Edit.cshtml]

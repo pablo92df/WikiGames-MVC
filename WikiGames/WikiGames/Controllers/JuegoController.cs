@@ -7,6 +7,7 @@ using WikiGames.Models.ViewModel.JuegoViewModel;
 using WikiGames.Models.Entities;
 using WikiGames.Models.ViewModel.JuegViewModel;
 using WikiGames.Services.RepositoriesInterface;
+using WikiGames.Services;
 
 namespace WikiGames.Controllers
 {
@@ -38,6 +39,9 @@ namespace WikiGames.Controllers
         {
 
             ViewBag.Desarrolladores = new SelectList(context.Desarrolladores.OrderBy(x => x.DesarrolladorName), "DesarrolladorId", "DesarrolladorName");
+
+         
+
             ViewBag.Generos = new SelectList(context.Generos.OrderBy(x => x.Nombre), "GeneroId", "Nombre");
             ViewBag.Consolas = new SelectList(context.Consolas.OrderBy(c => c.ConsolaName), "ConsolaId", "ConsolaName");
             ViewBag.ModoJuegos = new SelectList(context.ModosDeJuegos.OrderBy(m => m.ModosDeJuegoName), "ModosDeJuegoId", "ModosDeJuegoName");
@@ -128,5 +132,18 @@ namespace WikiGames.Controllers
             return View();
         }
 
+
+        private Juego GetJuego()
+        {
+            if (HttpContext.Session.GetObject<Juego>("DataObject") == null)
+            {
+                HttpContext.Session.SetObject("DataObject", new Juego());
+            }
+            return (Juego)HttpContext.Session.GetObject<Juego>("DataObject");
+        }
+        private void RemoveJuego()
+        {
+            HttpContext.Session.SetObject("DataObject", null);
+        }
     }
 }

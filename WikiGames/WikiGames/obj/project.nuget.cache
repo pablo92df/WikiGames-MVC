@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EjnQGwLEKVWM1wTrs+SHVnPE9sO9jCll+EFwOX5VG0Pn5KUXBmtwy9l9KecZhNz9aAYsDGf/dE2CCOOsKpxeCA==",
+  "dgSpecHash": "gdzcnnHrAcPH0RiRiv4mIBcj+4v1ZV1W30Ghp3wJvJbewShN/vzvfVfovpWdWZkq0cDe+9wIisc2eOLeqO/8FQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pferreyra\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
+  "projectFilePath": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\WikiGames.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pferreyra\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
@@ -38,6 +38,7 @@
     "C:\\Users\\Pferreyra\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\nettopologysuite\\2.3.0\\nettopologysuite.2.3.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
+    "C:\\Users\\Pferreyra\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\Pferreyra\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",

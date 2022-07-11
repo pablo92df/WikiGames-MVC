@@ -1,106 +1,174 @@
 ﻿@model WikiGames.Models.ViewModel.JuegViewModel.JuegoCreacionViewModel
 @{
     ViewData["Title"] = "Cargar Nuevo Juego";
-	Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="container">
 
-	<div class="row">
-		<div class="col-sm-12">
-			<h3>Crear Juego</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div  class="col-md-5">
-			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="form-group">
-				<label asp-for="JuegoName" class="control-label"></label>
-				<input asp-for="JuegoName" class="form-control" id="juegoName"/>
-				<span asp-validation-for="JuegoName" class="text-danger" ></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="FechaLanzamientoOficial" class="control-label"></label>
-				<input asp-for="FechaLanzamientoOficial" type="date" class="form-control" id="fechaOficial"/>
-				<span asp-validation-for="FechaLanzamientoOficial"  class="text-danger" ></span>
-			</div>
-			<div class="form-group">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Crear Juego</h3>
+        </div>
+    </div>
 
-				<label class="control-label">Desarrolladora</label>
-				@Html.DropDownList("desarrollador", (SelectList)ViewBag.Desarrolladores, "Please select", new { @class = "form-control" })
+    <div class="row">
+        @*
 
-			</div>
-			<div class="form-group">
-				<label class="control-label">Publicadora</label>
-				@Html.DropDownList("Publicadora", (SelectList)ViewBag.Publicadora, "Please select", new { @class = "form-control"})
-			</div>
-			<div class="form-group">
-				<label class="control-label">Generos</label>
-				@Html.DropDownList("generos", (SelectList)ViewBag.Generos, "Please select", new { @class = "form-control"})
-			</div>
-			<div class="generosSeleccionados" id="generosSeleccionados">
 
-			</div>
-			<div class="form-group">
-				<label class="control-label">Modo de juego</label>
-				@Html.DropDownList("ModoDeJuegoId", (SelectList)ViewBag.ModoJuegos, "Please select", new { @class = "form-control" })
-			</div>
-			<div class="ModoDeJuegoSeleccionados" id="ModoDeJuegoSeleccionados">
 
-			</div>
-			<div class="modoJuego" id="modoJuego">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div >
-				<label class="form-label">Consola</label>
-				<select name="ConsolaId" class="form-select" id="consolaName"asp-items="ViewBag.Consolas"></select>
-			</div>
-			<div >
-				<label class="form-label">Fecha Lanzamiento</label>
-				<input type="date" class="form-control" id="fechaLanzamiento"/>
-			</div>
-			<div >
-				<label class="form-label">Ventas</label>
-				<input type="number" class="form-control" id="ventas"/>
-			</div>
-			<div >
-				<button class="btn-primary btnAgregar" id="btnAgregar">Agregar</button>
-			</div>
-			<table class="table table-striped" id="tableConsolas">
-				<thead>
-					<tr>
-						<th scope="col">Consola</th>
-						<th scope="col">Fecha Lanzamiento</th>
-						<th scope="col">Copias Vendidas Hasta La fecha</th>
-					</tr>
-				</thead>
-				<tbody class="tBody" id="tBody">
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<div class="row">
-		<div class="form-group">
-			<label  class="control-label">Decripcion</label>
-			<textarea  class="form-control" rows="4" id="descripcion"></textarea>
-			
-		</div>
-		<div class="form-group">
-			<label  class="control-label">Argumento</label>
-			<textarea   class="form-control" rows="4" id="argumento"></textarea>
-			
-		</div>
-		<div class="form-group">
-				<input type="submit" value="Continuar" id="crearJuego" class="btn btn-primary" />
-		</div>
-	</div>
+
+
+
+
+        <div class="col-md-5">
+        <div >
+        <label class="form-label">Consola</label>
+        <select name="ConsolaId" class="form-select" id="consolaName"asp-items="ViewBag.Consolas"></select>
+        </div>
+        <div >
+        <label class="form-label">Fecha Lanzamiento</label>
+        <input type="date" class="form-control" id="fechaLanzamiento"/>
+        </div>
+        <div >
+        <label class="form-label">Ventas</label>
+        <input type="number" class="form-control" id="ventas"/>
+        </div>
+        <div >
+        <button class="btn-primary btnAgregar" id="btnAgregar">Agregar</button>
+        </div>
+        <table class="table table-striped" id="tableConsolas">
+        <thead>
+        <tr>
+        <th scope="col">Consola</th>
+        <th scope="col">Fecha Lanzamiento</th>
+        <th scope="col">Copias Vendidas Hasta La fecha</th>
+        </tr>
+        </thead>
+        <tbody class="tBody" id="tBody">
+        </tbody>
+        </table>
+        </div>
+        </div>
+
+        <input type="submit" value="Continuar" id="crearJuego" class="btn btn-primary" />
+        </div>*@
+        <div class="col-sm-12">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-sb-2">
+                <label asp-for="JuegoName" class="control-label"></label>
+                <input asp-for="JuegoName" class="form-control" id="juegoName" />
+                <span class="text-danger" id="spanName"></span>
+            </div>
+            <div class="mw-parser-output">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <label asp-for="JuegoDescription" class="control-label"></label>
+                        <textarea asp-for="JuegoDescription" class="form-control" rows="10" id="descripcion"></textarea>
+                        <span id="spanDescripcion" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-7">
+                        <label asp-for="Argumento" class="control-label"></label>
+                        <textarea asp-for="Argumento" class="form-control" rows="10" id="argumento"></textarea>
+                        <span id="spanDescripcion" class="text-danger"></span>
+                    </div>
+                    <div class="col-sm-4">
+                        <table class="Infobox" cellpadding="2" cellspacing="2" align="right" style="font-family: verdana, sans-serif; padding: 4px; margin: 0 0 1em 1em; font-size: 10px; background-color: none; border:1px solid black;">
+                            <tbody>
+                                <tr>
+                                    <td align="center" colspan="2" bgcolor="gold" style="font-size:110%;">
+                                        <i><b></b></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" style="text-align: center;">
+
+                                        <img src="" alt="" decoding="async" width="343" height="183" id="output" />
+                                        <div>
+                                            <input type="file" name="" class="form-control" id="file" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <th style="background-color: gold;">Generos</th>
+                                    <td>
+                                        @Html.DropDownList("GeneroId", (SelectList)ViewBag.Generos, "Please select", new { @class = "form-control" })
+                                        <span class="text-danger" id="spanMarcas"></span>
+                                        <div class="generosSeleccionados" id="generosSeleccionados">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <th style="background-color: gold;">Desarrolladora</th>
+                                    <td>
+                                        @Html.DropDownList("DesarrolladoraId", (SelectList)ViewBag.Desarrollador, "Please select", new { @class = "form-control" })
+                                        <span class="text-danger" id="spanMarcas"></span>
+
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <th style="background-color: gold;">Publicadora</th>
+                                    <td>
+                                        @Html.DropDownList("PublicadoraId", (SelectList)ViewBag.Publicadora, "Please select", new { @class = "form-control" })
+                                        <span class="text-danger" id="spanMarcas"></span>
+
+                                    </td>
+                                </tr>
+                                <tr class="">
+                                    <th style="background-color: gold;">Publicadora</th>
+                                    <td>
+                                        @Html.DropDownList("ModoDeJuegoId", (SelectList)ViewBag.ModoJuegos, "Please select", new { @class = "form-control" })
+                                        <div class="ModoDeJuegoSeleccionados" id="ModoDeJuegoSeleccionados">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hiddenStructure{{{Distribuidor}}}">
+                                    <th style="background-color: gold;">Fecha de Lanzamiento</th>
+                                    <td>
+
+                                        <input asp-for="FechaLanzamientoOficial" type="date" class="form-control" id="fechaOficial" />
+                                        <span id="spanFechaLanzamiento" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr class="hiddenStructure{{{Distribuidor}}}">
+                                    <th style="background-color: gold;">Copias Vendidas</th>
+                                    <td>
+                                        <input class="form-control" id="unidadesVendidas" />
+                                        <span id="spanUnidadesVendidas" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Continuar" class="btn btn-primary" id="btnCrearConsola" />
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
 
 </div>
 @*Validacion lado cliente*@
-	@section Scripts{
+@section Scripts{
 
-			@{ <partial name="_ValidationScriptsPartial" />
-		}
-}
+    @{
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/UploadImg.js" asp-append-version="true"></script>
+
+        <script>
+
+            $(function() {
+                UploadImages();
+            })
+
+        </script>
+    }
+
+    }

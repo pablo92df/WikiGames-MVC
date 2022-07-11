@@ -1,0 +1,22 @@
+﻿@model WikiGames.Models.ViewModel.ConsolaViewModel.ConsolaViewModel
+@{
+    ViewData["Title"] = "Eliminar consola";
+}
+<h1>Desea eliminar la consola @Model.ConsolaName</h1>
+<form asp-action="DeleteConsola">
+    <input type="hidden" asp-for="ConsolaId"/>
+    <div class="col cardConsola">
+        <div class="card shadow-sm">
+            <img class="bd-placeholder-img imgConsolaCard" src="@Model.imgConsolas.ImagePath" />
+            <div class="card-body">
+                <p class="card-text">@Model.Marca.MarcaName</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a asp-controller="Consola" asp-action="Index" class="btn btn-primary">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
