@@ -33,7 +33,7 @@ namespace WikiGames.Controllers
                 Directory.CreateDirectory(path);
             }
             FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
-            imgConsolas.CopyTo(stream);
+            await imgConsolas.CopyToAsync(stream);
             return RedirectToAction("Index");
 
         }

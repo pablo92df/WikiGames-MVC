@@ -1,6 +1,10 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "Hash": "06rrqJkwx3ErChN8JKmiLc/NCb/mnO5byJes4cn6TyY=",
+=======
   "Hash": "JTbaJfHeMsi8IvEpm2zymhR7mHNoHEa8uoLfnl191lY=",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
   "Source": "WikiGames",
   "BasePath": "_content/WikiGames",
   "Mode": "Default",
@@ -10,17 +14,17 @@
     {
       "Name": "WikiGames\\wwwroot",
       "Source": "WikiGames",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WikiGames.styles.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WikiGames.styles.css",
       "SourceId": "WikiGames",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "WikiGames.styles.css",
       "AssetKind": "All",
@@ -31,13 +35,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WikiGames.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WikiGames.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WikiGames.bundle.scp.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WikiGames.bundle.scp.css",
       "SourceId": "WikiGames",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "WikiGames.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WikiGames.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WikiGames.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\css\\site.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -68,10 +72,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\favicon.ico",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -85,10 +89,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\800px-Nintendo-Famicom-Console-Set-FL.jpg",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\800px-Nintendo-Famicom-Console-Set-FL.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGConsolas/800px-Nintendo-Famicom-Console-Set-FL.jpg",
       "AssetKind": "All",
@@ -102,10 +106,31 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\800px-Nintendo-Famicom-Console-Set-FL.jpg"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg",
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\800px-Nintenqwedo-Famicom-Console-Set-FL.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGConsolas/800px-Nintenqwedo-Famicom-Console-Set-FL.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\800px-Nintenqwedo-Famicom-Console-Set-FL.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg",
+=======
+      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGConsolas/Sega-Genesis-Mk2-6button.jpg",
       "AssetKind": "All",
@@ -119,6 +144,9 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",
+=======
       "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
@@ -137,9 +165,10 @@
     },
     {
       "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGConsolas/SNES-Mod1-Console-Set.jpg",
       "AssetKind": "All",
@@ -153,10 +182,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sony-PlayStation4-Pro-Console-FR.jpg",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sony-PlayStation4-Pro-Console-FR.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGConsolas/Sony-PlayStation4-Pro-Console-FR.jpg",
       "AssetKind": "All",
@@ -170,10 +199,48 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sony-PlayStation4-Pro-Console-FR.jpg"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png",
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Xbox-console.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGConsolas/Xbox-console.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Xbox-console.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\245px-Capcom_logo.svg.png",
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGDesarrolladores/245px-Capcom_logo.svg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\245px-Capcom_logo.svg.png"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png",
+=======
+      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGDesarrolladores/Atlus_logo.png",
       "AssetKind": "All",
@@ -187,10 +254,48 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\site.js",
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Nintendo_red_logo.svg.png",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGDesarrolladores/Nintendo_red_logo.svg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Nintendo_red_logo.svg.png"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Square_Enix_logo.svg.png",
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "BasePath": "_content/WikiGames",
+      "RelativePath": "Images/IMGDesarrolladores/Square_Enix_logo.svg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Square_Enix_logo.svg.png"
+    },
+    {
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\site.js",
+=======
+      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\site.js",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+      "SourceId": "WikiGames",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -204,6 +309,9 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
+<<<<<<< HEAD
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+=======
       "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\UploadImg.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
@@ -239,9 +347,10 @@
     },
     {
       "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+>>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -255,10 +364,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -272,10 +381,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -289,10 +398,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -306,10 +415,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -323,10 +432,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -340,10 +449,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -357,10 +466,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -374,10 +483,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -391,10 +500,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -408,10 +517,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -425,10 +534,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -442,10 +551,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -459,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -476,10 +585,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -493,10 +602,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -510,10 +619,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -527,10 +636,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -544,10 +653,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -561,10 +670,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -578,10 +687,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -595,10 +704,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -612,10 +721,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -629,10 +738,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -646,10 +755,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -663,10 +772,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -680,10 +789,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -697,10 +806,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -714,10 +823,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -731,10 +840,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -748,10 +857,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -765,10 +874,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -782,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -799,10 +908,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -816,10 +925,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -833,10 +942,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -850,10 +959,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -867,10 +976,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -884,10 +993,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -901,10 +1010,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -918,10 +1027,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -935,10 +1044,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -952,10 +1061,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -969,10 +1078,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -986,10 +1095,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1003,10 +1112,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1020,10 +1129,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1037,10 +1146,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1054,10 +1163,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1071,10 +1180,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1088,10 +1197,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1105,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1122,10 +1231,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1139,10 +1248,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1156,10 +1265,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1173,10 +1282,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1190,10 +1299,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
