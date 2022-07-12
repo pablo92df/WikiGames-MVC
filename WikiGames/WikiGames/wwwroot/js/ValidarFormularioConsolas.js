@@ -2,8 +2,6 @@
 function ValidarFormulario()
 {
 
-
-
         document.getElementById("formulario").addEventListener('submit', validarFormulario);
         document.getElementById('descripcion').addEventListener('change', checkDescripcion);
         document.getElementById('unidadesVendidas').addEventListener('change', checkUnidades);

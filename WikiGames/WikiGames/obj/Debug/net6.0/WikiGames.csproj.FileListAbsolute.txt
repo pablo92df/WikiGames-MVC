@@ -132,3 +132,4 @@ C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\WikiGames.pdb
 C:\Users\Pferreyra\source\repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\WikiGames.genruntimeconfig.cache
 C:\Users\Pferreyra\Source\Repos\WikiGames-MVC\WikiGames\WikiGames\obj\Debug\net6.0\refint\WikiGames.dll
+C:\Users\Pablo\source\repos\WikiGames-MVC\WikiGames\WikiGames\bin\Debug\net6.0\Newtonsoft.Json.dll

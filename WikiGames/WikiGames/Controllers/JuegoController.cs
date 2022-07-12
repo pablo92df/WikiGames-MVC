@@ -72,20 +72,12 @@ namespace WikiGames.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateJuego(JuegoCreacionViewModel juegoViewModel)
+        public async Task<IActionResult> CreateJuego(JuegoCreacionViewModel juegoViewModel, IFormFile imgJuego)
         {
 
             if (!ModelState.IsValid)
             {
                 return View(juegoViewModel);
-            }
-            foreach (var i in juegoViewModel.Generos) 
-            {
-                var genero = icrud.GetByID<Genero>(i.GeneroId);
-                if (genero is null) 
-                {
-                    return View(juegoViewModel);
-                }
             }
 
             var desarrollador = desarrolladorRepository.GetById(juegoViewModel.DesarrolladoraId);

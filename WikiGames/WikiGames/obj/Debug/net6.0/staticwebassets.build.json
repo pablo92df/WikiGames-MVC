@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "06rrqJkwx3ErChN8JKmiLc/NCb/mnO5byJes4cn6TyY=",
-=======
-  "Hash": "JTbaJfHeMsi8IvEpm2zymhR7mHNoHEa8uoLfnl191lY=",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+  "Hash": "5QNif+qKdbJ9rMr2FHxWVeD7N89jlHqbtqKadVFabTU=",
   "Source": "WikiGames",
   "BasePath": "_content/WikiGames",
   "Mode": "Default",
@@ -106,28 +102,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\800px-Nintendo-Famicom-Console-Set-FL.jpg"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\800px-Nintenqwedo-Famicom-Console-Set-FL.jpg",
-      "SourceId": "WikiGames",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
-      "BasePath": "_content/WikiGames",
-      "RelativePath": "Images/IMGConsolas/800px-Nintenqwedo-Famicom-Console-Set-FL.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\800px-Nintenqwedo-Famicom-Console-Set-FL.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg",
-=======
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
@@ -144,13 +119,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sega-Genesis-Mk2-6button.jpg"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",
-=======
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "Images/IMGConsolas/Sega-Mega-Drive-JP-Mk1-Console-Set.jpg",
       "AssetKind": "All",
@@ -164,8 +136,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sega-Mega-Drive-JP-Mk1-Console-Set.jpg"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\SNES-Mod1-Console-Set.jpg",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
@@ -199,45 +170,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Sony-PlayStation4-Pro-Console-FR.jpg"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGConsolas\\Xbox-console.jpg",
-      "SourceId": "WikiGames",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
-      "BasePath": "_content/WikiGames",
-      "RelativePath": "Images/IMGConsolas/Xbox-console.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMGConsolas\\Xbox-console.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\245px-Capcom_logo.svg.png",
-      "SourceId": "WikiGames",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
-      "BasePath": "_content/WikiGames",
-      "RelativePath": "Images/IMGDesarrolladores/245px-Capcom_logo.svg.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\245px-Capcom_logo.svg.png"
-    },
-    {
       "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png",
-=======
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
@@ -254,45 +187,7 @@
       "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Atlus_logo.png"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Nintendo_red_logo.svg.png",
-      "SourceId": "WikiGames",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
-      "BasePath": "_content/WikiGames",
-      "RelativePath": "Images/IMGDesarrolladores/Nintendo_red_logo.svg.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Nintendo_red_logo.svg.png"
-    },
-    {
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\Images\\IMGDesarrolladores\\Square_Enix_logo.svg.png",
-      "SourceId": "WikiGames",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
-      "BasePath": "_content/WikiGames",
-      "RelativePath": "Images/IMGDesarrolladores/Square_Enix_logo.svg.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMGDesarrolladores\\Square_Enix_logo.svg.png"
-    },
-    {
       "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\site.js",
-=======
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\site.js",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
@@ -309,13 +204,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-=======
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\UploadImg.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\UploadImg.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "js/UploadImg.js",
       "AssetKind": "All",
@@ -329,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\js\\UploadImg.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\ValidarFormularioConsolas.js",
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\js\\ValidarFormularioConsolas.js",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",
       "BasePath": "_content/WikiGames",
       "RelativePath": "js/ValidarFormularioConsolas.js",
       "AssetKind": "All",
@@ -346,8 +238,7 @@
       "OriginalItemSpec": "wwwroot\\js\\ValidarFormularioConsolas.js"
     },
     {
-      "Identity": "C:\\Users\\Pferreyra\\Source\\Repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
->>>>>>> 1b4a991fee2cf48c1995af971c8339e85379f6d4
+      "Identity": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "WikiGames",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Pablo\\source\\repos\\WikiGames-MVC\\WikiGames\\WikiGames\\wwwroot\\",

@@ -1,14 +1,12 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
 
-//const { Alert } = require("../lib/bootstrap/dist/js/bootstrap.bundle");
 
-// Write your JavaScript code.
+
 const Generos = new Array();
 const consolaGame = new Array();
 const ModosDeJuego = new Array();
 
-
+/*
 ///////////////////////////////AGREGAR EVENTOS ADDEVENTLISTENER/////////
 body.addEventListener('keyup', () => {
     if (event.target.id == "ventas") {
@@ -30,7 +28,7 @@ body.addEventListener('keyup', () => {
         }
     }
 
-});
+});*/
 
 //CARGAR JUEGOS NUEVOS
 //AGREGAR LANZAMIENTO POR CONSOLA
@@ -119,7 +117,7 @@ function quitarConsola(idConsola) {
 }
 //-------------------------AGREGAR GENEROS A LOS JUEGOS--------------------------//
 $("#GeneroId").change(function () {
- 
+
     let divGeneros = $("#generosSeleccionados");
     let generoId = $("#GeneroId option:selected").val();
     let generoName = $("#GeneroId option:selected").text();
@@ -268,4 +266,78 @@ function ValidarFecha(fecha) {
 }
 //-----------------------------FIN DE CARGAR JUEGOS NUEVOS
 ////////////////////////////////
+
+
+
+
+//document.getElementById("formulario").addEventListener('submit', validarFormulario);
+
+
+
+
+/*  document.getElementById('descontinuacion').addEventListener('change', checkFechaDescontinuacion);
+  document.getElementById('MarcaId').addEventListener('change', marcaValue);
+  document.getElementById('fechaLanzamiento').addEventListener('change', checkFechaLanzamiento);
+  */
+
+
+function validarFormulario(evento) {
+    evento.preventDefault();
+    let flag = true;
+
+    if (!checkDescripcion()) {
+        flag = false;
+    }
+    if (!checkFechaDescontinuacion()) {
+
+        flag = false;
+    }
+    if (!checkFechaLanzamiento()) {
+        flag = false;
+    }
+    if (!checkName()) {
+        flag = false;
+    }
+    if (!marcaValue()) {
+        flag = false;
+    }
+    if (!checkUnidades()) {
+        flag = false;
+    }
+    if (flag) {
+        this.submit();
+    }
+
+    return;
+}
+
+
+
+
+function marcaValue() {
+    let marca = document.getElementById('MarcaId').value;
+    if (marca > 0) {
+
+        return true;
+    }
+    let text = "Seleccione marca";
+    document.getElementById('spanMarcas').innerHTML = text;
+    return false;
+}
+
+function checkFechaLanzamiento() {
+
+    let fecha = $("#fechaLanzamiento").val();
+
+    if (fecha) {
+        document.getElementById('spanFechaLanzamiento').innerHTML = "";
+        return true;
+    }
+    else
+        document.getElementById('spanFechaLanzamiento').innerHTML = "Complete fecha lanzamiento";
+    return false;
+}
+
+
+
 
