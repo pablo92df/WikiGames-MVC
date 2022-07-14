@@ -3,7 +3,7 @@
 
 
 const Generos = new Array();
-const consolaGame = new Array();
+//const consolaGame = new Array();
 const ModosDeJuego = new Array();
 
 /*
@@ -33,88 +33,81 @@ body.addEventListener('keyup', () => {
 //CARGAR JUEGOS NUEVOS
 //AGREGAR LANZAMIENTO POR CONSOLA
 
-$("#btnAgregar").click(function () {
+//$("#btnAgregar").click(function () {
 
-    let publicadoConsola = {};
-    let listConsolas = $("#tBody");
-    let consola = $("#consolaName option:selected").text();
-    let consolaId = $("#consolaName option:selected").val();
-    let cantidad = $("#ventas").val();
-    let fecha = $("#fechaLanzamiento").val();
+//    let publicadoConsola = {};
+//    let listConsolas = $("#tBody");
+//    let consola = $("#consolaName option:selected").text();
+//    let consolaId = $("#consolaName option:selected").val();
+//    let cantidad = $("#ventas").val();
+//    let fecha = $("#fechaLanzamiento").val();
 
-    // validacionConsola(consola, cantidad, fecha);
-    if (consolaGame.length > 0) {
+//    // validacionConsola(consola, cantidad, fecha);
+//    if (consolaGame.length > 0) {
 
-        for (let i in consolaGame) {
+//        for (let i in consolaGame) {
 
-            if (consolaGame[i].ConsolaId === consolaId) {
-                alert("Consola ya cargada");
-                return;
-            }
-        }
-    }
+//            if (consolaGame[i].ConsolaId === consolaId) {
+//                alert("Consola ya cargada");
+//                return;
+//            }
+//        }
+//    }
 
-    if (validacionConsola()) {
+//    if (validacionConsola()) {
 
-        publicadoConsola.ConsolaName = consola;
-        publicadoConsola.ConsolaId = consolaId;
-        publicadoConsola.FechaLanzamiento = fecha;
-        publicadoConsola.CopiasVendidas = cantidad;
-        consolaGame.push(publicadoConsola);
+//        publicadoConsola.ConsolaName = consola;
+//        publicadoConsola.ConsolaId = consolaId;
+//        publicadoConsola.FechaLanzamiento = fecha;
+//        publicadoConsola.CopiasVendidas = cantidad;
+//        consolaGame.push(publicadoConsola);
 
-        let juegoConsola =
-            "<tr><td>" + consola
-            + "</td><td>" + fecha
-            + "</td><td>" + cantidad
-            + "</td><td><button class='btnQuickConsola' id=" + consolaId + ">Borrar</button></td></tr >";
+//        let juegoConsola =
+//            "<tr><td>" + consola
+//            + "</td><td>" + fecha
+//            + "</td><td>" + cantidad
+//            + "</td><td><button class='btnQuickConsola' id=" + consolaId + ">Borrar</button></td></tr >";
 
-        listConsolas.append(juegoConsola);
-        let buttonQuickConsola = document.querySelectorAll("button.btnQuickConsola")
+//        listConsolas.append(juegoConsola);
+//        let buttonQuickConsola = document.querySelectorAll("button.btnQuickConsola")
 
-        buttonQuickConsola.forEach(function (btn) {
-            btn.addEventListener('click', function (e) {
-                console.log(e.target.id);
-                quitarConsola(e.target.id);
-                $(this).closest('tr').remove();
-            });
-        });
-        resetFieldJuegoConsola();
-    }
-
-
-});
+//        buttonQuickConsola.forEach(function (btn) {
+//            btn.addEventListener('click', function (e) {
+//                console.log(e.target.id);
+//                quitarConsola(e.target.id);
+//                $(this).closest('tr').remove();
+//            });
+//        });
+//        resetFieldJuegoConsola();
+//    }
 
 
-function validacionConsola() {
-
-    var ventas = document.getElementById("ventas");
-
-    let flag = true;
-    //if (validarString(consola)) {
-    //    // alert("Cargar Un nombre consola");
+//});
 
 
-    //    flag = false;
-    //}
-    if (ventas.value == '') {
-        ventas.style.borderColor = "red";
-        flag = false;
-    }
-    //if (ValidarFecha($("#fechaOficial").val())) {
-    //   // alert("Fecha Incorrecta");
-    //    console.log("Cantidad fecha");
-    //    flag = false;
-    //}
-    return flag;
-}
-function quitarConsola(idConsola) {
+//function validacionConsola() {
 
-    for (let i in consolaGame) {
-        if (consolaGame[i].ConsolaId === idConsola) {
-            consolaGame.splice(i, 1);
-        }
-    }
-}
+//    var ventas = document.getElementById("ventas");
+
+//    let flag = true;
+//    //if (validarString(consola)) {
+//    //    // alert("Cargar Un nombre consola");
+
+
+//    //    flag = false;
+//    //}
+//    if (ventas.value == '') {
+//        ventas.style.borderColor = "red";
+//        flag = false;
+//    }
+//    //if (ValidarFecha($("#fechaOficial").val())) {
+//    //   // alert("Fecha Incorrecta");
+//    //    console.log("Cantidad fecha");
+//    //    flag = false;
+//    //}
+//    return flag;
+//}
+
 //-------------------------AGREGAR GENEROS A LOS JUEGOS--------------------------//
 $("#GeneroId").change(function () {
 
@@ -187,11 +180,11 @@ $("#ModoDeJuegoId").change(function () {
     }
 });
 //------------------------
-function resetFieldJuegoConsola() {
-    $("#consolaName option:selected").text();
-    $("#ventas").val('');
-    $("#fechaLanzamiento").val('');
-}
+//function resetFieldJuegoConsola() {
+//    $("#consolaName option:selected").text();
+//    $("#ventas").val('');
+//    $("#fechaLanzamiento").val('');
+//}
 
 $("#crearJuego").click(function () {
 

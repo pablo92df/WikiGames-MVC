@@ -61,7 +61,7 @@
                         <th style="background-color: gold;">Desarrolladora</th>
                         <td>
                             @Html.DropDownList("DesarrolladoraId", (SelectList)ViewBag.Desarrollador, "Please select", new { @class = "form-control" })
-                            <span class="text-danger" id="spanMarcas"></span>
+                            <span class="text-danger" id="spanDesarrolladora"></span>
 
                         </td>
                     </tr>
@@ -69,7 +69,8 @@
                         <th style="background-color: gold;">Publicadora</th>
                         <td>
                             @Html.DropDownList("PublicadoraId", (SelectList)ViewBag.Publicadora, "Please select", new { @class = "form-control" })
-                            <span class="text-danger" id="spanMarcas"></span>
+
+                            <span class="text-danger" id="spanPublicadora"></span>
 
                         </td>
                     </tr>
@@ -104,11 +105,15 @@
         <div class="col-sm-6">
             <div>
                 <label class="form-label">Consola</label>
-                <select name="ConsolaId" class="form-select" id="consolaName" asp-items="ViewBag.Consolas"></select>
+
+                @Html.DropDownList("ConsolaId", (SelectList)ViewBag.Consolas, "Please select", new { @class = "form-control" })
+                <span id="spanConsola" class="text-danger"></span>
+
             </div>
             <div>
                 <label class="form-label">Fecha Lanzamiento</label>
-                <input type="date" class="form-control" id="fechaLanzamiento" />
+                <input type="date" class="form-control" id="fechaLanzamientoEnConsola" />
+                <span class="text-danger" id="spanLanzamientoEnConsola"></span>
             </div>
             <div>
                 <label class="form-label">Ventas</label>
@@ -142,96 +147,267 @@
 @section Scripts{
 
     @{
-    <partial name="_ValidationScriptsPartial" />
-    <script src="~/js/UploadImg.js" asp-append-version="true"></script>
-
-    <script>
-
-        $(function() {
-            UploadImages();
-        })
-
-        document.getElementById('juegoName').addEventListener('change', checkJuegoName);
-        document.getElementById('descripcion').addEventListener('change', checkDescripcion);
-        document.getElementById('argumento').addEventListener('change', checkArgumento);
-        document.getElementById('unidadesVendidas').addEventListener('change', checkUnidades);
 
 
+        <partial name="_ValidationScriptsPartial" />
+        <script src="~/js/UploadImg.js" asp-append-version="true"></script>
 
+        <script>
 
+            const consolaGame = new Array();
 
-        function checkUnidades() {
+            $(function() {
+                UploadImages();
+            })
 
-            let unidadesValue = document.getElementById('unidadesVendidas').value;
-            let unidades = document.getElementById('unidadesVendidas');
+            document.getElementById('juegoName').addEventListener('change', checkJuegoName);
+            document.getElementById('descripcion').addEventListener('change', checkDescripcion);
+            document.getElementById('argumento').addEventListener('change', checkArgumento);
+            document.getElementById('unidadesVendidas').addEventListener('change', checkUnidades);
+            document.getElementById('fechaOficial').addEventListener('change', checkFechaLanzamiento);
+            document.getElementById('fechaLanzamientoEnConsola').addEventListener('change', checkLanzamientoEnConsola);
 
-            let num = parseInt(unidades);
-            if (unidadesValue >= 0 && Number.isInteger(num)) {
-                document.getElementById('spanUnidadesVendidas').innerHTML = "";
-            unidades.style.borderColor = "green";
+            document.getElementById('PublicadoraId').addEventListener('change', function() {
+                let publicadora = document.getElementById('PublicadoraId');
 
-                return true;
-            }
-            document.getElementById('spanUnidadesVendidas').innerHTML = "unidad debe ser un numero positivo o 0";
-        unidades.style.borderColor = "red";
+                if (!checkSelects(publicadora)) {
+                    document.getElementById('spanPublicadora').innerHTML = "Seleccione Publicadora";
+                    return;
+                }
+                document.getElementById('spanPublicadora').innerHTML = "";
+            });
 
-            return false;
-        }
+            document.getElementById('DesarrolladoraId').addEventListener('change', function() {
+                let desarrolladora = document.getElementById('DesarrolladoraId');
 
+                if (!checkSelects(desarrolladora)) {
+                    document.getElementById('spanDesarrolladora').innerHTML = "Seleccione Desarrolladora";
+                    return;
+                }
+                document.getElementById('spanDesarrolladora').innerHTML = "";
+            });
 
+            function checkFechaLanzamiento() {
 
-        function checkDescripcion() {
-            let descripValue = document.getElementById('descripcion').value;
-            let descrip = document.getElementById('descripcion');
+                let fecha = $("#fechaOficial").val();
+                checkLanzamientoEnConsola();
+                if (fecha) {
+                    document.getElementById('spanFechaLanzamiento').innerHTML = "";
+                    return true;
 
-            if (descripValue.length >= 3) {
-
-                document.getElementById('spanDescripcion').innerHTML = "";
-            descrip.style.borderColor = "green";
-
-                return true;
-            }
-            document.getElementById('spanDescripcion').innerHTML = "Cargue Descripcion";
-
-            descrip.style.borderColor = "red";
-
-            return false;
-        }
-
-        function checkJuegoName() {
-            let nameValue = document.getElementById('juegoName').value;
-            let name = document.getElementById('juegoName');
-
-            if (nameValue.length >= 1) {
-                document.getElementById('spanName').innerHTML = "";
-            name.style.borderColor = "green";
-
-                return true;
-            }
-            document.getElementById('spanName').innerHTML = "Cargue Nombre";
-            name.style.borderColor = "red";
-
-            return false;
-        }
-
-        function checkArgumento() {
-            let argumenValue = document.getElementById('argumento').value;
-            let argumen = document.getElementById('argumento');
-
-            if (argumenValue.length == 0) {
-                document.getElementById('spanArgumento').innerHTML = "Cargue argumento";
-            argumen.style.borderColor = "red";
+                }
+                else
+                    document.getElementById('spanFechaLanzamiento').innerHTML = "Complete fecha lanzamiento";
 
                 return false;
             }
-            document.getElementById('spanArgumento').innerHTML = "";
-            argumen.style.borderColor = "green";
+            function checkUnidades() {
 
-            return true;
-        }
+                let unidadesValue = document.getElementById('unidadesVendidas').value;
+                let unidades = document.getElementById('unidadesVendidas');
+
+                let num = parseInt(unidades);
+                if (unidadesValue >= 0 && Number.isInteger(num)) {
+                    document.getElementById('spanUnidadesVendidas').innerHTML = "";
+                    unidades.style.borderColor = "green";
+
+                    return true;
+                }
+                document.getElementById('spanUnidadesVendidas').innerHTML = "unidad debe ser un numero positivo o 0";
+                unidades.style.borderColor = "red";
+
+                return false;
+            }
+
+            function checkSelects(valueSelect) {
+
+                if (valueSelect.value == "") {
+                    valueSelect.style.borderColor = "red";
+                    return false;
+                }
+                valueSelect.style.borderColor = "green";
+                return true;
+            }
+
+            function checkDescripcion() {
+                let descripValue = document.getElementById('descripcion').value;
+                let descrip = document.getElementById('descripcion');
+
+                if (descripValue.length >= 3) {
+
+                    document.getElementById('spanDescripcion').innerHTML = "";
+                    descrip.style.borderColor = "green";
+
+                    return true;
+                }
+                document.getElementById('spanDescripcion').innerHTML = "Cargue Descripcion";
+
+                descrip.style.borderColor = "red";
+
+                return false;
+            }
+
+            function checkJuegoName() {
+                let nameValue = document.getElementById('juegoName').value;
+                let name = document.getElementById('juegoName');
+
+                if (nameValue.length >= 1) {
+                    document.getElementById('spanName').innerHTML = "";
+                    name.style.borderColor = "green";
+
+                    return true;
+                }
+                document.getElementById('spanName').innerHTML = "Cargue Nombre";
+                name.style.borderColor = "red";
+
+                return false;
+            }
+
+            function checkArgumento() {
+                let argumenValue = document.getElementById('argumento').value;
+                let argumen = document.getElementById('argumento');
+
+                if (argumenValue.length == 0) {
+                    document.getElementById('spanArgumento').innerHTML = "Cargue argumento";
+                    argumen.style.borderColor = "red";
+
+                    return false;
+                }
+                document.getElementById('spanArgumento').innerHTML = "";
+                argumen.style.borderColor = "green";
+
+                return true;
+            }
+            function checkLanzamientoEnConsola() {
+                let fechaEnConsola = document.getElementById('fechaLanzamientoEnConsola').value;
+                let fechaOficial = document.getElementById('fechaOficial').value;
+
+                if ((fechaEnConsola == "" || fechaEnConsola >= fechaOficial) && fechaOficial != "") {
+                    document.getElementById('spanLanzamientoEnConsola').innerHTML = "";
+
+                    return true;
+                }
+
+                document.getElementById('spanLanzamientoEnConsola').innerHTML = "Lanzamiento de consola tiene que ser mayor a fecha lanzamiento oficial";
+                return false;
+
+            }
 
 
-    </script>
+
+            $("#btnAgregar").click(function() {
+
+                let consola = {};
+                let tBodyConsolas = $("#tBody");
+                let consolaName = $("#ConsolaId option:selected").text();
+                let consolaId = $("#ConsolaId option:selected").val();
+                let cantidad = document.getElementById('ventas').value;
+                let fecha = document.getElementById('fechaLanzamiento').value;
+                let as = $("#fechaLanzamiento").val();
+
+                // validacionConsola(consola, cantidad, fecha);
+                if (consolaGame.length > 0) {
+
+                    for (let i in consolaGame) {
+                        if (consolaGame[i].ConsolaId === consolaId) {
+                            alert("Consola ya cargada");
+                            return;
+                        }
+                    }
+                }
+
+                if (validacionConsola()) {
+
+                    consola.ConsolaName = consolaName;
+                    consola.ConsolaId = consolaId;
+                    consola.FechaLanzamiento = fecha;
+                    consola.CopiasVendidas = cantidad.value;
+                    consolaGame.push(consola);
+
+
+                    document.getElementById('spanConsola').innerHTML = "";
+                    document.getElementById('ConsolaId').style.borderColor = "#ced4da";
+                    document.getElementById('')
+                    let juegoConsola =
+                        "<tr><td>" + consolaName
+                        + "</td><td>" + fecha
+                        + "</td><td>" + cantidad
+                        + "</td><td><button class='btnQuickConsola' id=" + consolaId + ">Borrar</button></td></tr >";
+
+                    tBodyConsolas.append(juegoConsola);
+                    let buttonQuickConsola = document.querySelectorAll("button.btnQuickConsola")
+
+                    buttonQuickConsola.forEach(function(btn) {
+                        btn.addEventListener('click', function(e) {
+
+                            quitarConsola(e.target.id);
+                            $(this).closest('tr').remove();
+                        });
+                    });
+                    resetFieldJuegoConsola();
+                }
+
+
+            });
+
+            function validacionConsola() {
+
+                let unidades = document.getElementById("ventas");
+                let consola = document.getElementById('ConsolaId');
+                let flag = true;
+                if (!checkSelects(consola)) {
+                    document.getElementById('spanConsola').innerHTML = "Seleccione Consola";
+                    flag = false;
+                }
+                else {
+                    document.getElementById('spanConsola').innerHTML = "";
+
+                }
+
+
+                //if (validarString(consola)) {
+                //    // alert("Cargar Un nombre consola");
+
+
+                //    flag = false;
+                //}
+                if (unidades.value == '') {
+                    unidades.style.borderColor = "red";
+                    flag = false;
+                }
+                //if (ValidarFecha($("#fechaOficial").val())) {
+                //   // alert("Fecha Incorrecta");
+                //    console.log("Cantidad fecha");
+                //    flag = false;
+                //}
+                return flag;
+            }
+
+            function quitarConsola(idConsola) {
+
+                for (let i in consolaGame) {
+                    if (consolaGame[i].ConsolaId === idConsola) {
+                        consolaGame.splice(i, 1);
+                    }
+                }
+            }
+
+
+            function resetFieldJuegoConsola() {
+                $("#consolaName option:selected").text();
+                $("#ventas").val('');
+                $("#fechaLanzamiento").val('');
+            }
+            function quitarConsola(idConsola) {
+
+                for (let i in consolaGame) {
+                    if (consolaGame[i].ConsolaId === idConsola) {
+                        consolaGame.splice(i, 1);
+                    }
+                }
+            }
+
+        </script>
     }
 
 }

@@ -74,7 +74,9 @@ namespace WikiGames.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateJuego(JuegoCreacionViewModel juegoViewModel, IFormFile imgJuego)
         {
+          
 
+           
             if (!ModelState.IsValid)
             {
                 return View(juegoViewModel);
@@ -86,7 +88,7 @@ namespace WikiGames.Controllers
             {
                 return View(desarrollador);
             }
-            Juego juego = mapper.Map<Juego>(juegoViewModel);
+           Juego juego = mapper.Map<Juego>(juegoViewModel);
            
             await icrud.Create(juego);
 
