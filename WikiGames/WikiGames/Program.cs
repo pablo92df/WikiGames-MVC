@@ -19,6 +19,8 @@ builder.Services.AddTransient<IJuegoRepository, JuegoRepository>();
 builder.Services.AddTransient<IPublicadoraRepository, PublicadoraRepository>();
 builder.Services.AddTransient<IConsolaRepository, ConsolaRepository>();
 builder.Services.AddTransient<IImgConsolasRepository, ImgConsolaRepository>();
+builder.Services.AddTransient<IImgJuegoRepository, ImgJuegosRepository>();
+
 
 builder.Services.AddTransient<ICRUD, CRUD>();
 builder.Services.AddDistributedMemoryCache();

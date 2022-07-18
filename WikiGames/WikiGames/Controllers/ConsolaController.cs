@@ -19,7 +19,12 @@ namespace WikiGames.Controllers
         private readonly IImgConsolasRepository imgConsolasRepository;
         private readonly IMapper mapper;
 
-        public ConsolaController(ApplicationDbContext context, IMapper mapper, IWebHostEnvironment hostingEnvironment, ICRUD icrud, IConsolaRepository consolaRepository, IImgConsolasRepository imgConsolasRepository)
+        public ConsolaController(ApplicationDbContext context,
+            IMapper mapper,
+            IWebHostEnvironment hostingEnvironment,
+            ICRUD icrud,
+            IConsolaRepository consolaRepository,
+            IImgConsolasRepository imgConsolasRepository)
         {
             this.context = context;
             this.mapper = mapper;

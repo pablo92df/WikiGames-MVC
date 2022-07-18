@@ -26,5 +26,7 @@ namespace WikiGames.Models.ViewModel.JuegViewModel
         public List<JuegoConsolaViewModel> JuegosConsolaDTO { get; set; }
         public List<ModosDeJuego> ModosDeJuegos { get; set; }
         public List<Personaje> Personajes { get; set; }
+
+
     }
 }

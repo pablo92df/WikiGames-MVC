@@ -18,6 +18,8 @@ namespace WikiGames.Controllers
         private readonly IJuegoRepository juegoRepository;
         private readonly IGeneroRepository generoRepository;
         private readonly IDesarrolladorRepository desarrolladorRepository;
+        private readonly IImgJuegoRepository imgJuegoRepository;
+        private readonly IWebHostEnvironment hostingEnvironment;
         private readonly ICRUD icrud;
 
         public JuegoController(ApplicationDbContext context,
@@ -25,6 +27,8 @@ namespace WikiGames.Controllers
             IJuegoRepository juegoRepository,
             IGeneroRepository generoRepository,
             IDesarrolladorRepository desarrolladorRepository,
+            IImgJuegoRepository imgJuegoRepository,
+            IWebHostEnvironment hostingEnvironment,
             ICRUD icrud)
         {
             this.context = context;
@@ -32,6 +36,8 @@ namespace WikiGames.Controllers
             this.juegoRepository = juegoRepository;
             this.generoRepository = generoRepository;
             this.desarrolladorRepository = desarrolladorRepository;
+            this.imgJuegoRepository = imgJuegoRepository;
+            this.hostingEnvironment = hostingEnvironment;
             this.icrud = icrud;
         }
         [HttpGet]
@@ -72,11 +78,12 @@ namespace WikiGames.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateJuego(JuegoCreacionViewModel juegoViewModel, IFormFile imgJuego)
+        public async Task<IActionResult> CreateJuego()
         {
-          
 
-           
+            JuegoCreacionViewModel juegoViewModel = new JuegoCreacionViewModel();
+            var file = Request.Form.Files;
+        
             if (!ModelState.IsValid)
             {
                 return View(juegoViewModel);
@@ -88,7 +95,44 @@ namespace WikiGames.Controllers
             {
                 return View(desarrollador);
             }
-           Juego juego = mapper.Map<Juego>(juegoViewModel);
+            var publicadora = icrud.GetByID<Publicadora>(juegoViewModel.PublicadoraId);
+            if (publicadora is null) 
+            {
+                return View(desarrollador);
+            }
+
+            ImgJuegos imgJuego = new ImgJuegos();
+            //string name = Path.GetFileName(imgJuegoView.FileName);
+            //string path = Path.Combine(this.hostingEnvironment.WebRootPath, "Images/IMGJuegos");
+
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //}
+            //imgJuego.ImagePath = "\\Images\\IMGJuegos\\" + name;
+            //imgJuego.Nombre = name;
+            //var img = await context.ImgJuegos.Where(i => i.ImagePath == imgJuego.ImagePath).FirstOrDefaultAsync();
+            //if (img == null)
+            //{
+            //    FileStream stream = new FileStream(Path.Combine(path, name), FileMode.Create);
+            //    imgJuegoView.CopyTo(stream);
+            //    stream.Close();
+            //    context.ImgJuegos.Add(imgJuego);
+            //    await context.SaveChangesAsync();
+            //    var juegoToSave = mapper.Map<Juego>(juegoViewModel);
+            //    juegoToSave.ImgJuegos = imgJuego;
+            //    context.Juegos.Add(juegoToSave);
+            //    await context.SaveChangesAsync();
+            //    TempData["mensaje"] = "Juego Cargado con exito";
+            //    return RedirectToAction("Index");
+
+            //}
+
+
+            TempData["mensaje"] = "Error al Cargar datos";
+
+            return RedirectToAction("Index");
+            Juego juego = mapper.Map<Juego>(juegoViewModel);
            
             await icrud.Create(juego);
 
